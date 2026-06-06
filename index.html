@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The AI Brief — Daily AI Intelligence</title>
+  <meta name="description" content="The most important AI stories, fact-checked and delivered every morning. Curated from the world's top AI newsletters.">
+  <meta property="og:title" content="The AI Brief">
+  <meta property="og:description" content="The most important AI stories, fact-checked and delivered every morning.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #09090b;
+      --white: #ffffff;
+      --gray-50: #fafafa;
+      --gray-100: #f4f4f5;
+      --gray-200: #e4e4e7;
+      --gray-400: #a1a1aa;
+      --gray-500: #71717a;
+      --gray-600: #52525b;
+      --indigo: #6366f1;
+      --indigo-dark: #4f46e5;
+      --green: #22c55e;
+      --green-bg: #f0fdf4;
+      --green-text: #15803d;
+      --amber: #f59e0b;
+      --amber-bg: #fffbeb;
+      --amber-text: #92400e;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--gray-50);
+      color: var(--black);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(9,9,11,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo .dot {
+      width: 8px; height: 8px;
+      background: var(--indigo);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--indigo);
+      color: var(--white) !important;
+      padding: 7px 16px;
+      border-radius: 6px;
+      font-size: 13px !important;
+      font-weight: 600 !important;
+      transition: background 0.15s !important;
+    }
+
+    .nav-cta:hover { background: var(--indigo-dark) !important; color: var(--white) !important; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(160deg, #09090b 0%, #0f0f23 50%, #0d0d1f 100%);
+      padding: 140px 24px 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(ellipse, rgba(99,102,241,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(99,102,241,0.15);
+      border: 1px solid rgba(99,102,241,0.3);
+      color: #a5b4fc;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .hero-label .pulse {
+      width: 6px; height: 6px;
+      background: #a5b4fc;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 60px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #a5b4fc, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.55);
+      max-width: 460px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .subscribe-form {
+      display: flex;
+      gap: 8px;
+      max-width: 420px;
+      margin: 0 auto 20px;
+    }
+
+    .subscribe-form input {
+      flex: 1;
+      padding: 13px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.07);
+      color: var(--white);
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .subscribe-form input::placeholder { color: rgba(255,255,255,0.3); }
+    .subscribe-form input:focus {
+      border-color: rgba(99,102,241,0.6);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .subscribe-form button {
+      padding: 13px 22px;
+      background: var(--indigo);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .subscribe-form button:hover { background: var(--indigo-dark); }
+    .subscribe-form button:active { transform: scale(0.98); }
+    .subscribe-form button:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .hero-proof {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .hero-proof strong { color: rgba(255,255,255,0.6); }
+
+    .form-message {
+      max-width: 420px;
+      margin: 12px auto 0;
+      font-size: 13px;
+      font-weight: 500;
+      display: none;
+    }
+
+    .form-message.success { color: #4ade80; display: block; }
+    .form-message.error { color: #f87171; display: block; }
+
+    /* SOURCES BAR */
+    .sources-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 14px 24px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--gray-500);
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    .sources-bar span { color: var(--gray-400); margin: 0 6px; }
+
+    /* MAIN CONTENT */
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .briefing-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .briefing-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--indigo);
+    }
+
+    .briefing-meta {
+      font-size: 13px;
+      color: var(--gray-400);
+    }
+
+    /* STORY CARD */
+    .story {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 16px;
+      transition: box-shadow 0.15s, border-color 0.15s;
+      position: relative;
+    }
+
+    .story:hover {
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      border-color: var(--gray-300, #d4d4d8);
+    }
+
+    .story-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .story-number {
+      width: 26px; height: 26px;
+      background: var(--gray-100);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--gray-600);
+      flex-shrink: 0;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    .badge.high {
+      background: var(--green-bg);
+      color: var(--green-text);
+    }
+
+    .badge.medium {
+      background: var(--amber-bg);
+      color: var(--amber-text);
+    }
+
+    .badge .vote {
+      opacity: 0.6;
+      font-weight: 500;
+    }
+
+    .story h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--black);
+      line-height: 1.3;
+      letter-spacing: -0.3px;
+      margin-bottom: 10px;
+    }
+
+    .story-summary {
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .story-why {
+      background: linear-gradient(135deg, #f0f0ff, #f5f3ff);
+      border-left: 3px solid var(--indigo);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #4c4f8a;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .story-why strong { color: var(--indigo-dark); }
+
+    .story-sources {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .story-sources a {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--indigo);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      transition: color 0.15s;
+    }
+
+    .story-sources a:hover { color: var(--indigo-dark); }
+
+    .story-sources a::after {
+      content: '↗';
+      font-size: 11px;
+      opacity: 0.7;
+    }
+
+    /* BOTTOM CTA */
+    .cta-section {
+      background: linear-gradient(135deg, #09090b, #0f0f23);
+      border-radius: 16px;
+      padding: 48px 40px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .cta-section h2 {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+    }
+
+    .cta-section p {
+      color: rgba(255,255,255,0.5);
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    .cta-form {
+      display: flex;
+      gap: 8px;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    .cta-form input {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.07);
+      color: var(--white);
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .cta-form input::placeholder { color: rgba(255,255,255,0.3); }
+    .cta-form input:focus { border-color: rgba(99,102,241,0.6); }
+
+    .cta-form button {
+      padding: 12px 20px;
+      background: var(--indigo);
+      color: var(--white);
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .cta-form button:hover { background: var(--indigo-dark); }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      color: rgba(255,255,255,0.4);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    footer a:hover { color: rgba(255,255,255,0.7); }
+
+    .footer-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-logo {
+      font-weight: 800;
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+    }
+
+    /* LOADING STATE */
+    .loading {
+      text-align: center;
+      padding: 60px 0;
+      color: var(--gray-400);
+      font-size: 14px;
+    }
+
+    .skeleton {
+      background: linear-gradient(90deg, var(--gray-100) 25%, var(--gray-200) 50%, var(--gray-100) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+      border-radius: 4px;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* MOBILE */
+    @media (max-width: 540px) {
+      .subscribe-form { flex-direction: column; }
+      .story { padding: 20px; }
+      .cta-form { flex-direction: column; }
+      .cta-section { padding: 32px 20px; }
+      .nav-links .hide-mobile { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <span class="dot"></span> The AI Brief
+    </a>
+    <div class="nav-links">
+      <a href="#briefing" class="hide-mobile">Today's Issue</a>
+      <a href="#subscribe" class="nav-cta">Subscribe Free →</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-label">
+      <span class="pulse"></span>
+      Daily · Fact-Checked · Free
+    </div>
+    <h1>AI news that<br><span>actually matters.</span></h1>
+    <p class="hero-sub">
+      The most important AI stories, verified and summarized every morning.
+      No noise. No hype. Just signal.
+    </p>
+    <form class="subscribe-form" id="hero-form" onsubmit="subscribe(event, 'hero')">
+      <input type="email" placeholder="you@example.com" required autocomplete="email">
+      <button type="submit" id="hero-btn">Subscribe Free →</button>
+    </form>
+    <p class="form-message" id="hero-msg"></p>
+    <p class="hero-proof">Delivered every morning at <strong>7 AM EST</strong> · Free forever</p>
+  </section>
+
+  <!-- SOURCES BAR -->
+  <div class="sources-bar">
+    Curated from
+    <strong>The Rundown AI</strong><span>·</span>
+    <strong>TLDR AI</strong><span>·</span>
+    <strong>Ben's Bites</strong><span>·</span>
+    <strong>Import AI</strong><span>·</span>
+    <strong>The Batch by DeepLearning.AI</strong>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="briefing">
+    <div class="briefing-header">
+      <div class="briefing-title">Today's Briefing</div>
+      <div class="briefing-meta" id="briefing-date">Loading...</div>
+    </div>
+    <div id="stories-container">
+      <!-- Stories are injected by JS -->
+      <div class="loading">Loading today's stories...</div>
+    </div>
+
+    <!-- BOTTOM CTA -->
+    <div class="cta-section" id="subscribe">
+      <h2>Never miss a story.</h2>
+      <p>Join readers getting the AI brief every morning at 7 AM EST.</p>
+      <form class="cta-form" id="cta-form" onsubmit="subscribe(event, 'cta')">
+        <input type="email" placeholder="you@example.com" required autocomplete="email">
+        <button type="submit" id="cta-btn">Subscribe →</button>
+      </form>
+      <p class="form-message" id="cta-msg" style="color:#4ade80;margin-top:12px"></p>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">The AI Brief</span>
+      <span>Published daily by <a href="https://inpharmd.com">InPharmD</a></span>
+      <span>support@inpharmd.com</span>
+    </div>
+  </footer>
+
+  <script>
+    async function loadBriefing() {
+      try {
+        const res = await fetch('/data/latest.json');
+        const data = await res.json();
+
+        document.getElementById('briefing-date').textContent =
+          `Issue #${data.issue} · ${data.date}`;
+
+        const container = document.getElementById('stories-container');
+        container.innerHTML = data.stories.map(story => `
+          <article class="story">
+            <div class="story-top">
+              <div class="story-number">${story.id}</div>
+              <span class="badge ${story.confidence.toLowerCase()}">
+                ${story.confidence} <span class="vote">${story.vote}</span>
+              </span>
+            </div>
+            <h2>${story.headline}</h2>
+            <p class="story-summary">${story.summary}</p>
+            <div class="story-why">
+              <strong>Why it matters —</strong> ${story.why}
+            </div>
+            <div class="story-sources">
+              ${story.sources.map(s => `<a href="${s.url}" target="_blank" rel="noopener">${s.label}</a>`).join('')}
+            </div>
+          </article>
+        `).join('');
+      } catch (e) {
+        document.getElementById('stories-container').innerHTML =
+          '<p style="color:#71717a;text-align:center;padding:40px 0">Unable to load today\'s briefing. Check back soon.</p>';
+      }
+    }
+
+    async function subscribe(e, formId) {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.querySelector('input[type="email"]').value;
+      const btn = document.getElementById(`${formId}-btn`);
+      const msg = document.getElementById(`${formId}-msg`);
+
+      btn.disabled = true;
+      btn.textContent = 'Subscribing...';
+      msg.className = 'form-message';
+      msg.textContent = '';
+
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+
+        if (res.ok) {
+          msg.textContent = '🎉 You\'re in! Check your inbox for a welcome email.';
+          msg.className = 'form-message success';
+          form.querySelector('input').value = '';
+          btn.textContent = 'Subscribed ✓';
+        } else {
+          throw new Error('Subscribe failed');
+        }
+      } catch {
+        msg.textContent = 'Something went wrong. Try again or email support@inpharmd.com';
+        msg.className = 'form-message error';
+        btn.disabled = false;
+        btn.textContent = formId === 'hero' ? 'Subscribe Free →' : 'Subscribe →';
+      }
+    }
+
+    loadBriefing();
+  </script>
+</body>
+</html>
