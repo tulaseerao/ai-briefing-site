@@ -186,7 +186,11 @@
       window.scrollTo(0, 0);
     }
 
-    loadArchive();
+    loadArchive().then(() => {
+      // Support deep-linking from homepage issue cards
+      const hash = window.location.hash.slice(1);
+      if (hash && hash.match(/^\d{4}-\d{2}-\d{2}$/)) loadIssue(hash);
+    });
   </script>
 </body>
 </html>

@@ -25,9 +25,16 @@ function parseRSS(xml, sourceName) {
     };
     const title = get('title');
     const link = get('link') || get('guid');
-    const desc = get('description').replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, ' ').trim().substring(0, 220);
+    const rawDesc = get('description');
+    // Extract image from media:content, enclosure, or first <img> in description
+    const image =
+      block.match(/<media:content[^>]+url="([^"]+)"[^>]*/)?.[1] ||
+      block.match(/<enclosure[^>]+url="([^"]+)"[^>]+type="image/)?.[1] ||
+      rawDesc.match(/<img[^>]+src="([^"']+)"/)?.[1] ||
+      null;
+    const desc = rawDesc.replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, ' ').trim().substring(0, 220);
     const isSkippable = SKIP_TITLES.some(s => title.toLowerCase().includes(s));
-    if (title && link && !isSkippable) items.push({ title, link, desc, source: sourceName });
+    if (title && link && !isSkippable) items.push({ title, link, desc, image, source: sourceName });
   }
   return items.slice(0, 2);
 }
@@ -117,6 +124,7 @@ module.exports = async function handler(req, res) {
       headline: item.title,
       summary: item.desc || 'Read the full story at the source.',
       why: `An important development covered by ${item.source} worth tracking today.`,
+      image: item.image || null,
       sources: [{ label: item.source, url: item.link }]
     }));
 
