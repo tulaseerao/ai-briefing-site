@@ -1,9 +1,17 @@
 const RSS_SOURCES = [
+  // Direct RSS feeds
   { url: 'https://techcrunch.com/category/artificial-intelligence/feed/', source: 'TechCrunch AI' },
   { url: 'https://venturebeat.com/category/ai/feed/', source: 'VentureBeat AI' },
   { url: 'https://www.theverge.com/ai-artificial-intelligence/rss/index.xml', source: 'The Verge AI' },
-  { url: 'https://feeds.feedburner.com/nvidiablog', source: 'NVIDIA Blog' },
+  { url: 'https://aisecret.us/rss/', source: 'AI Secret' },
+  // Google News RSS for newsletters that block direct feed access
+  { url: 'https://news.google.com/rss/search?q=site:superhuman.ai+AI&hl=en-US&gl=US&ceid=US:en', source: 'Superhuman AI' },
+  { url: 'https://news.google.com/rss/search?q=site:aitoast.beehiiv.com&hl=en-US&gl=US&ceid=US:en', source: 'AI Toast' },
+  { url: 'https://news.google.com/rss/search?q=site:newsletter.theaireport.ai&hl=en-US&gl=US&ceid=US:en', source: 'The AI Report' },
 ];
+
+// Titles that indicate non-article pages to skip
+const SKIP_TITLES = ['subscribe', 'home', 'refund', 'privacy', 'about', 'contact', 'google news', 'join the world'];
 
 function parseRSS(xml, sourceName) {
   const items = [];
@@ -18,9 +26,10 @@ function parseRSS(xml, sourceName) {
     const title = get('title');
     const link = get('link') || get('guid');
     const desc = get('description').replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, ' ').trim().substring(0, 220);
-    if (title && link) items.push({ title, link, desc, source: sourceName });
+    const isSkippable = SKIP_TITLES.some(s => title.toLowerCase().includes(s));
+    if (title && link && !isSkippable) items.push({ title, link, desc, source: sourceName });
   }
-  return items.slice(0, 3);
+  return items.slice(0, 2);
 }
 
 async function fetchAllNews() {
