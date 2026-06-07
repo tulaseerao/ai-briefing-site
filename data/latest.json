@@ -1,74 +1,90 @@
 {
-  "date": "June 5, 2026",
-  "date_slug": "2026-06-05",
-  "issue": 1,
+  "date": "June 7, 2026",
+  "date_slug": "2026-06-07",
+  "issue": 3,
   "stories": [
     {
       "id": 1,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "Anthropic's Claude Writes 80%+ of Its Own Production Code",
-      "summary": "Anthropic's June 4 paper \"When AI Builds Itself\" reveals Claude authored over 80% of merged production code in May 2026. Engineers now ship ~8x more code volume per day vs. 2024, with Anthropic internally estimating ~4x true productivity gain.",
-      "why": "This is the first major AI lab to publicly disclose that their AI is primarily writing their own production code — and simultaneously warn that recursive self-improvement \"could come sooner than most institutions are prepared for.\"",
+      "headline": "OpenAI unveils Lockdown Mode to protect sensitive data from prompt injection attacks",
+      "summary": "Even with Lockdown Mode, ChatGPT could be still vulnerable to prompt injections, but the goal is to reduce the likelihood that sensitive data gets shared in the process.",
+      "why": "An important development covered by TechCrunch AI worth tracking today.",
       "sources": [
-        { "label": "Anthropic Institute", "url": "https://anthropic.com/institute/recursive-self-improvement" },
-        { "label": "The Rundown AI", "url": "https://www.therundown.ai/p/anthropic-confronts-the-rsi-clock" }
+        {
+          "label": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/"
+        }
       ]
     },
     {
       "id": 2,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "Anthropic Eclipses OpenAI in Valuation at ~$965B",
-      "summary": "Anthropic's Series H values it at ~$965B, surpassing OpenAI's ~$852B valuation. Annualized revenue hit $47B ARR (~$10.9B in Q2 2026), driven by enterprise Claude adoption.",
-      "why": "A new valuation leader has emerged in AI — faster than most expected. This reshapes the competitive narrative and signals that safety-focused labs can also win commercially.",
+      "headline": "What to expect from WWDC 2026: Siri&#8217;s highly anticipated revamp and Apple Intelligence updates",
+      "summary": "Apple's WWDC nears: Here's what you can look forward to.",
+      "why": "An important development covered by TechCrunch AI worth tracking today.",
       "sources": [
-        { "label": "Fortune", "url": "https://fortune.com/2026/06/02/anthropic-confidential-s-1-ai-ipo-race/" },
-        { "label": "The Rundown AI", "url": "https://www.therundown.ai/p/anthropic-just-eclipsed-openai" }
+        {
+          "label": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/06/06/what-to-expect-from-wwdc-2026-siris-highly-anticipated-revamp-and-apple-intelligence-updates/"
+        }
       ]
     },
     {
       "id": 3,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "Microsoft Launches MAI-Thinking-1 — Its First In-House Reasoning Model",
-      "summary": "MAI-Thinking-1 is a ~1 trillion parameter mixture-of-experts model with 35B active parameters and a 256K context window, purpose-built for reasoning and software engineering tasks.",
-      "why": "Microsoft's first proprietary reasoning model signals a strategic shift to reduce OpenAI dependency. Big Tech is now building frontier models, not just licensing them.",
+      "headline": "Google just redesigned the search box for the first time in 25 years — here’s why it matters more than you think.",
+      "summary": "For a quarter century, the Google search box has been one of the most recognizable interfaces in computing: a thin white rectangle, a blinking cursor, a few typed words, and a list of blue links. On Tuesday, Google will ",
+      "why": "An important development covered by VentureBeat AI worth tracking today.",
       "sources": [
-        { "label": "Microsoft AI Blog", "url": "https://microsoft.ai/news/introducing-mai-thinking-1/" }
+        {
+          "label": "VentureBeat AI",
+          "url": "https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think"
+        }
       ]
     },
     {
       "id": 4,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "Google Gemini 3.5 Flash Goes Global Across All Surfaces",
-      "summary": "Released May 19, Gemini 3.5 Flash is now live across the Gemini app, Google Search AI Mode, Android Studio, AI Studio, the Antigravity 2.0 agent platform, and Gemini Enterprise.",
-      "why": "Google's broad rollout across consumer and developer surfaces signals it's competing hard on accessibility and ubiquity, not just benchmark performance.",
+      "headline": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
+      "summary": "Railway, a San Francisco-based cloud platform that has quietly amassed two million developers without spending a dollar on marketing, announced Thursday that it raised $100 million in a Series B funding round, as surging",
+      "why": "An important development covered by VentureBeat AI worth tracking today.",
       "sources": [
-        { "label": "Google DeepMind Blog", "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/" }
+        {
+          "label": "VentureBeat AI",
+          "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud"
+        }
       ]
     },
     {
       "id": 5,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "OpenAI Launches \"Dreaming V3\" — Persistent Memory Synthesis for ChatGPT",
-      "summary": "A background memory system that auto-updates time-sensitive memories and improves continuity over long time horizons, rolling out first to Plus and Pro users in the US.",
-      "why": "Persistent, evolving memory is a key step toward truly personal AI — assistants that improve with use rather than resetting each session.",
+      "headline": "🛎️ ChatGPT Crossed 1 Billion",
+      "summary": "Plus: Google's Opt-Out Is a Trap, Lovable Races Its Own Suppliers",
+      "why": "An important development covered by AI Secret worth tracking today.",
       "sources": [
-        { "label": "OpenAI Blog", "url": "https://openai.com/index/chatgpt-memory-dreaming/" }
+        {
+          "label": "AI Secret",
+          "url": "https://aisecret.us/chatgpt-crossed-1-billion/"
+        }
       ]
     },
     {
       "id": 6,
-      "confidence": "MEDIUM",
-      "vote": "2-1",
-      "headline": "DARPA + NSF Jointly Launch AI Forge R&D Program",
-      "summary": "A joint program to fund AI research with no immediate commercial applications, developed in collaboration with NIST's Center for AI Standards and Innovation (CAISI).",
-      "why": "Government-funded foundational AI research fills a critical gap — areas with no short-term ROI but massive long-term strategic importance that private industry ignores.",
+      "confidence": "HIGH",
+      "vote": "3-0",
+      "headline": "🛎️ A Statistical Blackout",
+      "summary": "Plus: Microsoft Picked Easy Opponents, Meta's AI Got Talked Into a Hack",
+      "why": "An important development covered by AI Secret worth tracking today.",
       "sources": [
-        { "label": "DARPA.mil", "url": "https://www.darpa.mil/news/2026/ai-forge-accelerating-ai-breakthroughs-national-security" }
+        {
+          "label": "AI Secret",
+          "url": "https://aisecret.us/a-statistical-blackout/"
+        }
       ]
     }
   ]
