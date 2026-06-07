@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -6,13 +6,12 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { email } = req.body;
+  const { email } = req.body || {};
   if (!email || !email.includes('@')) {
     return res.status(400).json({ error: 'Valid email required' });
   }
 
   try {
-    // Add contact to SendGrid marketing list
     const contactRes = await fetch('https://api.sendgrid.com/v3/marketing/contacts', {
       method: 'PUT',
       headers: {
@@ -28,7 +27,6 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'Failed to subscribe' });
     }
 
-    // Send welcome email
     await fetch('https://api.sendgrid.com/v3/mail/send', {
       method: 'POST',
       headers: {
@@ -45,7 +43,7 @@ export default async function handler(req, res) {
             <p style="color:#71717a;font-size:15px;margin-bottom:24px">You're now subscribed. Every morning at 7 AM EST, you'll receive the most important AI stories — fact-checked and concisely summarized.</p>
             <p style="font-size:15px">We curate from <strong>The Rundown AI, TLDR AI, Ben's Bites, Import AI</strong> and <strong>The Batch</strong> — so you don't have to.</p>
             <hr style="border:none;border-top:1px solid #e4e4e7;margin:32px 0">
-            <p style="color:#a1a1aa;font-size:13px">You subscribed at theaibrief.vercel.app &bull; <a href="#" style="color:#a1a1aa">Unsubscribe</a></p>
+            <p style="color:#a1a1aa;font-size:13px">You subscribed at theaibrief.vercel.app</p>
           </body></html>`
         }]
       })
@@ -56,4 +54,4 @@ export default async function handler(req, res) {
     console.error('Subscribe error:', err);
     return res.status(500).json({ error: 'Server error' });
   }
-}
+};
