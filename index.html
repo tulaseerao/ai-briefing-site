@@ -4,243 +4,299 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The AI Brief — Daily AI Intelligence</title>
-  <meta name="description" content="The most important AI stories, fact-checked and delivered every morning. Curated from the world's top AI newsletters.">
-  <meta property="og:title" content="The AI Brief">
-  <meta property="og:description" content="The most important AI stories, fact-checked and delivered every morning.">
-  <meta property="og:type" content="website">
+  <meta name="description" content="The most important AI stories, fact-checked and delivered every morning.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --black: #09090b; --white: #fff; --gray-50: #fafafa; --gray-100: #f4f4f5;
-      --gray-200: #e4e4e7; --gray-400: #a1a1aa; --gray-500: #71717a; --gray-600: #52525b;
-      --indigo: #6366f1; --indigo-dark: #4f46e5;
+      --bg: #ffffff;
+      --bg2: #f8f9fa;
+      --border: #e9ecef;
+      --text: #1a1a2e;
+      --text2: #6c757d;
+      --text3: #adb5bd;
+      --indigo: #5c6bc0;
+      --indigo-light: #e8eaf6;
+      --indigo-dark: #3949ab;
+      --green: #2e7d32;
+      --green-bg: #e8f5e9;
+      --amber: #e65100;
+      --amber-bg: #fff3e0;
+      --radius: 14px;
+      --shadow: 0 2px 12px rgba(0,0,0,0.06);
+      --shadow-lg: 0 8px 32px rgba(0,0,0,0.10);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg2);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 80px;
     }
 
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--gray-50); color: var(--black); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-
-    /* NAV */
+    /* ── NAV ── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(9,9,11,0.95); backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding: 0 24px; height: 60px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 90;
+      padding: 0 24px; height: 58px;
       display: flex; align-items: center; justify-content: space-between;
     }
-    .nav-logo { font-size: 15px; font-weight: 800; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px; }
-    .nav-logo .dot { width: 8px; height: 8px; background: var(--indigo); border-radius: 50%; display: inline-block; }
-    .nav-links { display: flex; align-items: center; gap: 24px; }
-    .nav-links a { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.15s; }
-    .nav-links a:hover { color: #fff; }
-    .nav-cta { background: var(--indigo) !important; color: #fff !important; padding: 7px 16px; border-radius: 6px; font-weight: 600 !important; }
-    .nav-cta:hover { background: var(--indigo-dark) !important; }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(160deg, #09090b 0%, #0f0f23 50%, #0d0d1f 100%);
-      padding: 140px 24px 100px; text-align: center; position: relative; overflow: hidden;
+    .nav-logo {
+      font-size: 16px; font-weight: 900; color: var(--text);
+      text-decoration: none; display: flex; align-items: center; gap: 8px;
     }
-    .hero::before {
-      content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%);
-      width: 600px; height: 600px;
-      background: radial-gradient(ellipse, rgba(99,102,241,0.15) 0%, transparent 70%);
-      pointer-events: none;
+    .nav-dot { width: 9px; height: 9px; background: var(--indigo); border-radius: 50%; }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-right a { font-size: 13px; font-weight: 500; color: var(--text2); text-decoration: none; }
+    .nav-right a:hover { color: var(--text); }
+    .nav-issue {
+      font-size: 13px; font-weight: 600; color: var(--text2);
+      background: var(--bg2); padding: 5px 12px; border-radius: 20px;
+      border: 1px solid var(--border);
     }
-    .hero-label {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.3);
-      color: #a5b4fc; font-size: 12px; font-weight: 600;
-      padding: 5px 12px; border-radius: 100px; margin-bottom: 24px;
-      letter-spacing: 0.3px; text-transform: uppercase;
+
+    /* ── ISSUE BANNER ── */
+    .issue-banner {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 8px;
     }
-    .hero-label .pulse { width: 6px; height: 6px; background: #a5b4fc; border-radius: 50%; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-    .hero h1 { font-size: clamp(36px,6vw,60px); font-weight: 900; color: #fff; line-height: 1.1; letter-spacing: -2px; max-width: 700px; margin: 0 auto 20px; }
-    .hero h1 span { background: linear-gradient(135deg,#a5b4fc,#818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .hero-sub { font-size: 17px; color: rgba(255,255,255,0.55); max-width: 460px; margin: 0 auto 40px; line-height: 1.6; }
-    .subscribe-form { display: flex; gap: 8px; max-width: 420px; margin: 0 auto 20px; }
-    .subscribe-form input { flex: 1; padding: 13px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.07); color: #fff; font-size: 14px; font-family: inherit; outline: none; transition: border-color 0.15s; }
-    .subscribe-form input::placeholder { color: rgba(255,255,255,0.3); }
-    .subscribe-form input:focus { border-color: rgba(99,102,241,0.6); }
-    .subscribe-form button { padding: 13px 22px; background: var(--indigo); color: #fff; border: none; border-radius: 8px; font-size: 14px; font-weight: 700; font-family: inherit; cursor: pointer; white-space: nowrap; transition: background 0.15s; }
-    .subscribe-form button:hover { background: var(--indigo-dark); }
-    .subscribe-form button:disabled { opacity: 0.6; cursor: not-allowed; }
-    .hero-proof { font-size: 13px; color: rgba(255,255,255,0.35); }
-    .hero-proof strong { color: rgba(255,255,255,0.6); }
-    .form-message { max-width: 420px; margin: 12px auto 0; font-size: 13px; font-weight: 500; display: none; }
-    .form-message.success { color: #4ade80; display: block; }
-    .form-message.error { color: #f87171; display: block; }
-
-    /* SOURCES BAR */
-    .sources-bar { background: #fff; border-bottom: 1px solid var(--gray-200); padding: 14px 24px; text-align: center; font-size: 12px; color: var(--gray-500); font-weight: 500; letter-spacing: 0.3px; flex-wrap: wrap; }
-    .sources-bar span { color: var(--gray-300, #d4d4d8); margin: 0 5px; }
-
-    /* MAIN */
-    main { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
-
-    .section-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 8px; }
-    .section-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--indigo); }
-    .section-meta { font-size: 13px; color: var(--gray-400); }
-    .section-link { font-size: 13px; font-weight: 600; color: var(--indigo); text-decoration: none; }
-    .section-link:hover { color: var(--indigo-dark); }
-
-    /* STORY CARD */
-    .story { background: #fff; border: 1px solid var(--gray-200); border-radius: 14px; margin-bottom: 16px; overflow: hidden; transition: box-shadow 0.15s, border-color 0.15s; }
-    .story:hover { box-shadow: 0 6px 28px rgba(0,0,0,0.08); border-color: #d4d4d8; }
-
-    .story-image {
-      width: 100%; height: 200px; object-fit: cover; display: block;
-      background-size: cover; background-position: center;
+    .issue-banner-left { display: flex; align-items: center; gap: 12px; }
+    .issue-tag {
+      background: var(--indigo); color: #fff;
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px; padding: 4px 10px; border-radius: 6px;
     }
-    .story-image-placeholder {
-      width: 100%; height: 160px;
+    .issue-title { font-size: 15px; font-weight: 700; color: var(--text); }
+    .issue-sub { font-size: 13px; color: var(--text2); }
+    .sources-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+    .source-tag {
+      font-size: 11px; font-weight: 600; color: var(--indigo);
+      background: var(--indigo-light); padding: 3px 9px; border-radius: 20px;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 28px 20px; }
+
+    /* ── FEATURED STORY ── */
+    .featured {
+      background: var(--bg); border-radius: var(--radius);
+      border: 1px solid var(--border); overflow: hidden;
+      margin-bottom: 20px; box-shadow: var(--shadow);
+      display: grid; grid-template-columns: 1fr 420px;
+      transition: box-shadow 0.2s;
+    }
+    .featured:hover { box-shadow: var(--shadow-lg); }
+    .featured-img {
+      width: 100%; height: 100%; min-height: 300px;
+      object-fit: cover; display: block;
+      background: #e0e0e0;
+    }
+    .featured-body { padding: 32px 36px; display: flex; flex-direction: column; justify-content: center; }
+    .featured-body .story-top { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+    .featured-body h2 { font-size: 22px; font-weight: 800; line-height: 1.3; letter-spacing: -0.3px; margin-bottom: 12px; color: var(--text); }
+    .featured-body .summary { font-size: 15px; color: var(--text2); line-height: 1.7; margin-bottom: 16px; }
+    .why-box { background: var(--indigo-light); border-left: 3px solid var(--indigo); border-radius: 0 8px 8px 0; padding: 11px 14px; font-size: 13px; color: #3949ab; line-height: 1.6; margin-bottom: 18px; }
+    .why-box strong { font-weight: 700; }
+    .story-sources a { font-size: 13px; font-weight: 600; color: var(--indigo); text-decoration: none; margin-right: 14px; }
+    .story-sources a:hover { color: var(--indigo-dark); text-decoration: underline; }
+
+    /* ── STORY GRID ── */
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+
+    .story-card {
+      background: var(--bg); border-radius: var(--radius);
+      border: 1px solid var(--border); overflow: hidden;
+      box-shadow: var(--shadow); transition: box-shadow 0.2s, transform 0.15s;
+      display: flex; flex-direction: column;
+    }
+    .story-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .card-img { width: 100%; height: 180px; object-fit: cover; display: block; background: #e9ecef; }
+    .card-body { padding: 20px 22px; flex: 1; display: flex; flex-direction: column; }
+    .card-body .story-top { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+    .card-body h2 { font-size: 16px; font-weight: 800; line-height: 1.35; letter-spacing: -0.2px; margin-bottom: 8px; color: var(--text); }
+    .card-body .summary { font-size: 13px; color: var(--text2); line-height: 1.65; flex: 1; margin-bottom: 12px; }
+    .card-body .why-box { font-size: 12px; padding: 9px 12px; margin-bottom: 14px; }
+
+    /* ── STORY FULL WIDTH ── */
+    .story-full {
+      background: var(--bg); border-radius: var(--radius);
+      border: 1px solid var(--border); overflow: hidden;
+      box-shadow: var(--shadow); margin-bottom: 20px;
+      display: grid; grid-template-columns: 280px 1fr;
+      transition: box-shadow 0.2s;
+    }
+    .story-full:hover { box-shadow: var(--shadow-lg); }
+    .story-full .full-img { width: 100%; height: 100%; min-height: 180px; object-fit: cover; display: block; background: #e9ecef; }
+    .story-full .full-body { padding: 24px 28px; display: flex; flex-direction: column; justify-content: center; }
+    .story-full .full-body h2 { font-size: 17px; font-weight: 800; line-height: 1.35; margin-bottom: 8px; }
+    .story-full .full-body .summary { font-size: 14px; color: var(--text2); line-height: 1.65; margin-bottom: 12px; }
+
+    /* ── SHARED STORY COMPONENTS ── */
+    .num-badge {
+      width: 26px; height: 26px; border-radius: 7px;
+      background: var(--bg2); border: 1px solid var(--border);
       display: flex; align-items: center; justify-content: center;
-      font-size: 40px; font-weight: 900; color: rgba(255,255,255,0.25);
-      letter-spacing: -2px;
+      font-size: 11px; font-weight: 800; color: var(--text2); flex-shrink: 0;
     }
-
-    .story-body { padding: 22px 26px 24px; }
-    .story-top { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-    .story-number { width: 24px; height: 24px; background: var(--gray-100); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: var(--gray-600); flex-shrink: 0; }
-    .badge { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.4px; text-transform: uppercase; }
-    .badge.high { background: #f0fdf4; color: #15803d; }
-    .badge.medium { background: #fffbeb; color: #92400e; }
-    .badge .vote { opacity: 0.6; font-weight: 500; }
-    .story h2 { font-size: 17px; font-weight: 800; color: var(--black); line-height: 1.3; letter-spacing: -0.3px; margin-bottom: 10px; }
-    .story-summary { font-size: 14px; color: var(--gray-600); line-height: 1.65; margin-bottom: 14px; }
-    .story-why { background: linear-gradient(135deg,#f0f0ff,#f5f3ff); border-left: 3px solid var(--indigo); border-radius: 0 8px 8px 0; padding: 10px 14px; font-size: 13px; color: #4c4f8a; line-height: 1.6; margin-bottom: 14px; }
-    .story-why strong { color: var(--indigo-dark); }
-    .story-sources a { font-size: 13px; font-weight: 600; color: var(--indigo); text-decoration: none; margin-right: 12px; }
-    .story-sources a::after { content: ' ↗'; font-size: 11px; opacity: 0.7; }
-    .story-sources a:hover { color: var(--indigo-dark); }
-
-    /* PAST ISSUES */
-    .past-issues { margin-top: 56px; }
-    .issues-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-
-    .issue-card {
-      border-radius: 12px; overflow: hidden; text-decoration: none; color: inherit;
-      border: 1px solid var(--gray-200); background: #fff;
-      transition: box-shadow 0.15s, transform 0.15s;
+    .conf-badge {
+      font-size: 10px; font-weight: 700; padding: 3px 8px;
+      border-radius: 5px; text-transform: uppercase; letter-spacing: 0.3px;
     }
-    .issue-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.09); transform: translateY(-2px); }
+    .conf-badge.high { background: var(--green-bg); color: var(--green); }
+    .conf-badge.medium { background: var(--amber-bg); color: var(--amber); }
 
-    .issue-card-hero {
-      height: 80px; display: flex; align-items: center; justify-content: center;
-      font-size: 22px; font-weight: 900; color: rgba(255,255,255,0.3); letter-spacing: -1px;
+    /* ── PAST ISSUES ── */
+    .past-issues { margin-top: 8px; }
+    .section-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .section-head h3 { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text2); }
+    .section-head a { font-size: 13px; font-weight: 600; color: var(--indigo); text-decoration: none; }
+    .issues-scroll { display: flex; gap: 14px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: none; }
+    .issues-scroll::-webkit-scrollbar { display: none; }
+    .issue-chip {
+      flex-shrink: 0; width: 180px; border-radius: 12px;
+      overflow: hidden; text-decoration: none; color: var(--text);
+      border: 1px solid var(--border); background: var(--bg);
+      box-shadow: var(--shadow); transition: box-shadow 0.15s, transform 0.15s;
     }
-    .issue-card-body { padding: 14px; }
-    .issue-card-num { font-size: 10px; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
-    .issue-card-date { font-size: 13px; font-weight: 700; color: var(--black); margin-bottom: 3px; }
-    .issue-card-count { font-size: 12px; color: var(--gray-400); }
+    .issue-chip:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .chip-hero { height: 70px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 900; color: rgba(255,255,255,0.3); }
+    .chip-body { padding: 12px 14px; }
+    .chip-num { font-size: 10px; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+    .chip-date { font-size: 13px; font-weight: 700; color: var(--text); }
+    .chip-count { font-size: 11px; color: var(--text3); margin-top: 2px; }
 
-    /* gradients for story images and issue cards */
-    .grad-0 { background: linear-gradient(135deg,#667eea,#764ba2); }
-    .grad-1 { background: linear-gradient(135deg,#f093fb,#f5576c); }
-    .grad-2 { background: linear-gradient(135deg,#4facfe,#00f2fe); }
-    .grad-3 { background: linear-gradient(135deg,#43e97b,#38f9d7); }
-    .grad-4 { background: linear-gradient(135deg,#fa709a,#fee140); }
-    .grad-5 { background: linear-gradient(135deg,#a18cd1,#fbc2eb); }
+    /* ── STICKY SUBSCRIBE BAR ── */
+    #subscribe-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+      background: var(--bg); border-top: 1px solid var(--border);
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.08);
+      padding: 14px 24px;
+      display: flex; align-items: center; justify-content: center; gap: 16px;
+      flex-wrap: wrap;
+    }
+    #subscribe-bar p { font-size: 14px; font-weight: 600; color: var(--text); white-space: nowrap; }
+    #subscribe-bar p span { color: var(--indigo); }
+    .sub-form { display: flex; gap: 8px; }
+    .sub-form input {
+      padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--bg2); font-size: 14px; font-family: inherit;
+      outline: none; width: 240px; color: var(--text);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .sub-form input:focus { border-color: var(--indigo); box-shadow: 0 0 0 3px rgba(92,107,192,0.1); }
+    .sub-form input::placeholder { color: var(--text3); }
+    .sub-btn {
+      padding: 10px 20px; background: var(--indigo); color: #fff;
+      border: none; border-radius: 8px; font-size: 14px; font-weight: 700;
+      font-family: inherit; cursor: pointer; white-space: nowrap;
+      transition: background 0.15s;
+    }
+    .sub-btn:hover { background: var(--indigo-dark); }
+    .sub-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .dismiss-btn {
+      position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+      background: none; border: none; color: var(--text3); font-size: 20px;
+      cursor: pointer; line-height: 1; padding: 4px 8px;
+    }
+    .dismiss-btn:hover { color: var(--text2); }
+    .sub-msg { font-size: 13px; font-weight: 600; display: none; }
+    .sub-msg.success { color: #2e7d32; display: inline; }
+    .sub-msg.error { color: #c62828; display: inline; }
 
-    /* BOTTOM CTA */
-    .cta-section { background: linear-gradient(135deg,#09090b,#0f0f23); border-radius: 16px; padding: 48px 40px; text-align: center; margin-top: 56px; }
-    .cta-section h2 { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: -0.5px; margin-bottom: 10px; }
-    .cta-section p { color: rgba(255,255,255,0.5); font-size: 15px; margin-bottom: 28px; }
-    .cta-form { display: flex; gap: 8px; max-width: 380px; margin: 0 auto; }
-    .cta-form input { flex: 1; padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.07); color: #fff; font-size: 14px; font-family: inherit; outline: none; }
-    .cta-form input::placeholder { color: rgba(255,255,255,0.3); }
-    .cta-form input:focus { border-color: rgba(99,102,241,0.6); }
-    .cta-form button { padding: 12px 20px; background: var(--indigo); color: #fff; border: none; border-radius: 8px; font-size: 14px; font-weight: 700; font-family: inherit; cursor: pointer; transition: background 0.15s; }
-    .cta-form button:hover { background: var(--indigo-dark); }
+    /* ── GRADIENTS ── */
+    .g0 { background: linear-gradient(135deg,#5c6bc0,#7986cb); }
+    .g1 { background: linear-gradient(135deg,#26a69a,#4db6ac); }
+    .g2 { background: linear-gradient(135deg,#ef5350,#e57373); }
+    .g3 { background: linear-gradient(135deg,#7e57c2,#9575cd); }
+    .g4 { background: linear-gradient(135deg,#26c6da,#4dd0e1); }
+    .g5 { background: linear-gradient(135deg,#ffa726,#ffb74d); }
 
-    /* FOOTER */
-    footer { background: var(--black); color: rgba(255,255,255,0.4); padding: 32px 24px; text-align: center; font-size: 13px; }
-    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text); color: rgba(255,255,255,0.45);
+      padding: 28px 24px; text-align: center; font-size: 13px; margin-top: 40px;
+    }
+    footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
     footer a:hover { color: rgba(255,255,255,0.7); }
-    .footer-inner { max-width: 720px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .footer-logo { font-weight: 800; color: rgba(255,255,255,0.7); font-size: 14px; }
+    .footer-inner { max-width: 700px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+    .footer-logo { font-weight: 800; color: #fff; font-size: 14px; }
 
-    @media (max-width: 600px) {
-      .subscribe-form, .cta-form { flex-direction: column; }
-      .story-body { padding: 16px 18px 20px; }
-      .issues-grid { grid-template-columns: repeat(2,1fr); }
-      .cta-section { padding: 32px 20px; }
-      .nav-links .hide-mobile { display: none; }
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .featured { grid-template-columns: 1fr; }
+      .featured-img { height: 220px; }
+      .featured-body { padding: 22px 22px; }
     }
-    @media (max-width: 380px) { .issues-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) {
+      .story-grid { grid-template-columns: 1fr; }
+      .story-full { grid-template-columns: 1fr; }
+      .story-full .full-img { height: 180px; }
+      .sub-form input { width: 180px; }
+      .issue-banner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 420px) {
+      #subscribe-bar { padding: 12px 16px; }
+      .sub-form { flex-direction: column; width: 100%; }
+      .sub-form input { width: 100%; }
+      .sub-btn { width: 100%; }
+    }
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
   <nav>
-    <a href="/" class="nav-logo"><span class="dot"></span> The AI Brief</a>
-    <div class="nav-links">
-      <a href="#briefing" class="hide-mobile">Today's Issue</a>
-      <a href="#past-issues" class="hide-mobile">Archive</a>
-      <a href="#subscribe" class="nav-cta">Subscribe Free →</a>
+    <a href="/" class="nav-logo"><span class="nav-dot"></span>The AI Brief</a>
+    <div class="nav-right">
+      <span class="nav-issue" id="nav-issue">Daily AI Intelligence</span>
+      <a href="/archive.html">Archive</a>
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="hero-label"><span class="pulse"></span> Daily · Fact-Checked · Free</div>
-    <h1>AI news that<br><span>actually matters.</span></h1>
-    <p class="hero-sub">The most important AI stories, verified and summarized every morning. No noise. No hype. Just signal.</p>
-    <form class="subscribe-form" id="hero-form" onsubmit="subscribe(event,'hero')">
-      <input type="email" placeholder="you@example.com" required autocomplete="email">
-      <button type="submit" id="hero-btn">Subscribe Free →</button>
-    </form>
-    <p class="form-message" id="hero-msg"></p>
-    <p class="hero-proof">Delivered every morning at <strong>7 AM EST</strong> · Free forever</p>
-  </section>
-
-  <div class="sources-bar">
-    Curated from
-    <strong>The Rundown AI</strong><span>·</span>
-    <strong>TLDR AI</strong><span>·</span>
-    <strong>Ben's Bites</strong><span>·</span>
-    <strong>Import AI</strong><span>·</span>
-    <strong>The Batch</strong><span>·</span>
-    <strong>AI Secret</strong><span>·</span>
-    <strong>Superhuman AI</strong><span>·</span>
-    <strong>AI Toast</strong><span>·</span>
-    <strong>The AI Report</strong>
+  <!-- ISSUE BANNER -->
+  <div class="issue-banner">
+    <div class="issue-banner-left">
+      <span class="issue-tag" id="issue-tag">Issue #—</span>
+      <div>
+        <div class="issue-title" id="issue-title">Loading today's briefing…</div>
+        <div class="issue-sub">Curated from 9 world-class AI newsletters · Fact-checked</div>
+      </div>
+    </div>
+    <div class="sources-tags">
+      <span class="source-tag">The Rundown AI</span>
+      <span class="source-tag">TLDR AI</span>
+      <span class="source-tag">AI Secret</span>
+      <span class="source-tag">Superhuman AI</span>
+      <span class="source-tag">The AI Report</span>
+      <span class="source-tag">Ben's Bites</span>
+    </div>
   </div>
 
-  <main>
-    <!-- TODAY'S BRIEFING -->
-    <div id="briefing">
-      <div class="section-header">
-        <span class="section-label">Today's Briefing</span>
-        <span class="section-meta" id="briefing-date">Loading...</span>
-      </div>
-      <div id="stories-container"></div>
+  <!-- MAIN -->
+  <div class="container">
+    <div id="briefing-content">
+      <!-- Injected by JS -->
+      <div style="text-align:center;padding:60px 0;color:#adb5bd;font-size:15px">Loading stories…</div>
     </div>
 
     <!-- PAST ISSUES -->
-    <div class="past-issues" id="past-issues">
-      <div class="section-header">
-        <span class="section-label">Past Issues</span>
-        <a href="/archive.html" class="section-link">View all →</a>
+    <div class="past-issues" id="past-issues-section">
+      <div class="section-head">
+        <h3>Past Issues</h3>
+        <a href="/archive.html">View all →</a>
       </div>
-      <div class="issues-grid" id="issues-grid"></div>
+      <div class="issues-scroll" id="issues-scroll"></div>
     </div>
+  </div>
 
-    <!-- SUBSCRIBE CTA -->
-    <div class="cta-section" id="subscribe">
-      <h2>Never miss a story.</h2>
-      <p>Join readers getting the AI brief every morning at 7 AM EST.</p>
-      <form class="cta-form" id="cta-form" onsubmit="subscribe(event,'cta')">
-        <input type="email" placeholder="you@example.com" required autocomplete="email">
-        <button type="submit" id="cta-btn">Subscribe →</button>
-      </form>
-      <p class="form-message" id="cta-msg" style="margin-top:12px"></p>
-    </div>
-  </main>
-
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <span class="footer-logo">The AI Brief</span>
@@ -249,94 +305,187 @@
     </div>
   </footer>
 
+  <!-- STICKY SUBSCRIBE BAR -->
+  <div id="subscribe-bar">
+    <p>Get tomorrow's briefing in your inbox — <span>free forever</span></p>
+    <form class="sub-form" onsubmit="subscribe(event)">
+      <input type="email" id="sub-email" placeholder="your@email.com" required autocomplete="email">
+      <button type="submit" class="sub-btn" id="sub-btn">Subscribe Free →</button>
+    </form>
+    <span class="sub-msg" id="sub-msg"></span>
+    <button class="dismiss-btn" onclick="dismissBar()" title="Dismiss">×</button>
+  </div>
+
   <script>
-    const GRADS = ['grad-0','grad-1','grad-2','grad-3','grad-4','grad-5'];
+    const FALLBACK_IMGS = [
+      'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=900&q=75&fit=crop',
+      'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=900&q=75&fit=crop',
+      'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=900&q=75&fit=crop',
+      'https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=75&fit=crop',
+      'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=900&q=75&fit=crop',
+      'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=900&q=75&fit=crop'
+    ];
+    const GRADS = ['g0','g1','g2','g3','g4','g5'];
+
+    function imgSrc(story, idx) {
+      return story.image || FALLBACK_IMGS[idx % FALLBACK_IMGS.length];
+    }
+
+    function badgeHtml(s, idx) {
+      return `<div class="num-badge">${s.id}</div>
+              <span class="conf-badge ${s.confidence.toLowerCase()}">${s.confidence}</span>`;
+    }
+
+    function sourcesHtml(s) {
+      return s.sources.map(src => `<a href="${src.url}" target="_blank" rel="noopener">${src.label} ↗</a>`).join('');
+    }
+
+    function whyHtml(s) {
+      return `<div class="why-box"><strong>Why it matters —</strong> ${s.why}</div>`;
+    }
 
     async function loadBriefing() {
       try {
-        const res = await fetch('/data/latest.json');
-        const data = await res.json();
-        document.getElementById('briefing-date').textContent = `Issue #${data.issue} · ${data.date}`;
+        const data = await fetch('/data/latest.json').then(r => r.json());
 
-        document.getElementById('stories-container').innerHTML = data.stories.map((s, i) => {
-          const gradClass = GRADS[i % GRADS.length];
-          const imageHtml = s.image
-            ? `<img class="story-image" src="${s.image}" alt="${s.headline}" loading="lazy" onerror="this.parentNode.replaceChild(makePlaceholder(${i},'${s.id}'),this)">`
-            : `<div class="story-image-placeholder ${gradClass}">#${s.id}</div>`;
+        document.getElementById('nav-issue').textContent = `Issue #${data.issue} · ${data.date}`;
+        document.getElementById('issue-tag').textContent = `Issue #${data.issue}`;
+        document.getElementById('issue-title').textContent = data.date;
 
-          return `
-            <article class="story">
-              ${imageHtml}
-              <div class="story-body">
-                <div class="story-top">
-                  <div class="story-number">${s.id}</div>
-                  <span class="badge ${s.confidence.toLowerCase()}">${s.confidence} <span class="vote">${s.vote}</span></span>
+        const s = data.stories;
+        let html = '';
+
+        // ── FEATURED (story 1) ──
+        html += `
+          <div class="featured">
+            <img class="featured-img" src="${imgSrc(s[0],0)}" alt="${s[0].headline}" loading="lazy"
+                 onerror="this.style.background='linear-gradient(135deg,#5c6bc0,#7986cb)';this.style.minHeight='300px';this.removeAttribute('src')">
+            <div class="featured-body">
+              <div class="story-top">${badgeHtml(s[0],0)}</div>
+              <h2>${s[0].headline}</h2>
+              <p class="summary">${s[0].summary}</p>
+              ${whyHtml(s[0])}
+              <div class="story-sources">${sourcesHtml(s[0])}</div>
+            </div>
+          </div>`;
+
+        // ── GRID (stories 2 & 3) ──
+        if (s.length > 2) {
+          html += `<div class="story-grid">`;
+          [s[1], s[2]].forEach((story, i) => {
+            html += `
+              <div class="story-card">
+                <img class="card-img" src="${imgSrc(story, i+1)}" alt="${story.headline}" loading="lazy"
+                     onerror="this.style.background='${['linear-gradient(135deg,#26a69a,#4db6ac)','linear-gradient(135deg,#ef5350,#e57373)'][i]}';this.removeAttribute('src')">
+                <div class="card-body">
+                  <div class="story-top">${badgeHtml(story, i+1)}</div>
+                  <h2>${story.headline}</h2>
+                  <p class="summary">${story.summary}</p>
+                  ${whyHtml(story)}
+                  <div class="story-sources">${sourcesHtml(story)}</div>
                 </div>
-                <h2>${s.headline}</h2>
-                <p class="story-summary">${s.summary}</p>
-                <div class="story-why"><strong>Why it matters —</strong> ${s.why}</div>
-                <div class="story-sources">${s.sources.map(src => `<a href="${src.url}" target="_blank" rel="noopener">${src.label}</a>`).join('')}</div>
-              </div>
-            </article>`;
-        }).join('');
-      } catch {
-        document.getElementById('stories-container').innerHTML =
-          '<p style="color:#71717a;text-align:center;padding:40px 0">Unable to load today\'s briefing. Check back soon.</p>';
-      }
-    }
+              </div>`;
+          });
+          html += `</div>`;
+        }
 
-    function makePlaceholder(i, id) {
-      const d = document.createElement('div');
-      d.className = `story-image-placeholder ${GRADS[i % GRADS.length]}`;
-      d.textContent = `#${id}`;
-      return d;
+        // ── GRID (stories 4 & 5) ──
+        if (s.length > 4) {
+          html += `<div class="story-grid">`;
+          [s[3], s[4]].forEach((story, i) => {
+            html += `
+              <div class="story-card">
+                <img class="card-img" src="${imgSrc(story, i+3)}" alt="${story.headline}" loading="lazy"
+                     onerror="this.style.background='${['linear-gradient(135deg,#7e57c2,#9575cd)','linear-gradient(135deg,#26c6da,#4dd0e1)'][i]}';this.removeAttribute('src')">
+                <div class="card-body">
+                  <div class="story-top">${badgeHtml(story, i+3)}</div>
+                  <h2>${story.headline}</h2>
+                  <p class="summary">${story.summary}</p>
+                  ${whyHtml(story)}
+                  <div class="story-sources">${sourcesHtml(story)}</div>
+                </div>
+              </div>`;
+          });
+          html += `</div>`;
+        }
+
+        // ── FULL WIDTH (story 6) ──
+        if (s.length > 5) {
+          const last = s[5];
+          html += `
+            <div class="story-full">
+              <img class="full-img" src="${imgSrc(last,5)}" alt="${last.headline}" loading="lazy"
+                   onerror="this.style.background='linear-gradient(135deg,#ffa726,#ffb74d)';this.removeAttribute('src')">
+              <div class="full-body">
+                <div class="story-top" style="margin-bottom:10px">${badgeHtml(last,5)}</div>
+                <h2>${last.headline}</h2>
+                <p class="summary">${last.summary}</p>
+                ${whyHtml(last)}
+                <div class="story-sources">${sourcesHtml(last)}</div>
+              </div>
+            </div>`;
+        }
+
+        document.getElementById('briefing-content').innerHTML = html;
+      } catch(e) {
+        document.getElementById('briefing-content').innerHTML =
+          '<p style="text-align:center;padding:60px 0;color:#adb5bd">Unable to load today\'s briefing. Check back soon.</p>';
+      }
     }
 
     async function loadArchive() {
       try {
-        const res = await fetch('/data/archive.json');
-        const archive = await res.json();
-        const grid = document.getElementById('issues-grid');
-        // Show up to 6 most recent (skip today's since it's already shown above)
-        const past = archive.slice(1, 7);
-        if (!past.length) { grid.parentElement.style.display = 'none'; return; }
-        grid.innerHTML = past.map((issue, i) => `
-          <a class="issue-card" href="/archive.html#${issue.date_slug}">
-            <div class="issue-card-hero ${GRADS[i % GRADS.length]}">#${issue.issue}</div>
-            <div class="issue-card-body">
-              <div class="issue-card-num">Issue #${issue.issue}</div>
-              <div class="issue-card-date">${issue.date}</div>
-              <div class="issue-card-count">${issue.storiesCount || 6} stories</div>
+        const archive = await fetch('/data/archive.json').then(r => r.json());
+        const past = archive.slice(1, 8);
+        if (!past.length) { document.getElementById('past-issues-section').style.display='none'; return; }
+        document.getElementById('issues-scroll').innerHTML = past.map((issue, i) => `
+          <a class="issue-chip" href="/archive.html#${issue.date_slug}">
+            <div class="chip-hero ${GRADS[i % GRADS.length]}">#${issue.issue}</div>
+            <div class="chip-body">
+              <div class="chip-num">Issue #${issue.issue}</div>
+              <div class="chip-date">${issue.date}</div>
+              <div class="chip-count">${issue.storiesCount || 6} stories</div>
             </div>
           </a>`).join('');
-      } catch { document.getElementById('past-issues').style.display = 'none'; }
+      } catch { document.getElementById('past-issues-section').style.display='none'; }
     }
 
-    async function subscribe(e, formId) {
+    async function subscribe(e) {
       e.preventDefault();
-      const form = e.target;
-      const email = form.querySelector('input[type="email"]').value;
-      const btn = document.getElementById(`${formId}-btn`);
-      const msg = document.getElementById(`${formId}-msg`);
-      btn.disabled = true; btn.textContent = 'Subscribing...';
-      msg.className = 'form-message'; msg.textContent = '';
+      const email = document.getElementById('sub-email').value;
+      const btn = document.getElementById('sub-btn');
+      const msg = document.getElementById('sub-msg');
+      btn.disabled = true; btn.textContent = 'Subscribing…';
+      msg.className = 'sub-msg'; msg.textContent = '';
       try {
         const res = await fetch('/api/subscribe', {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          method: 'POST', headers: {'Content-Type':'application/json'},
           body: JSON.stringify({ email })
         });
         if (res.ok) {
-          msg.textContent = '🎉 You\'re in! Check your inbox for a welcome email.';
-          msg.className = 'form-message success';
-          form.querySelector('input').value = '';
+          msg.textContent = '🎉 You\'re in! Check your inbox.';
+          msg.className = 'sub-msg success';
+          document.getElementById('sub-email').value = '';
           btn.textContent = 'Subscribed ✓';
+          localStorage.setItem('subscribed','1');
         } else throw new Error();
       } catch {
-        msg.textContent = 'Something went wrong. Try again or email support@inpharmd.com';
-        msg.className = 'form-message error';
-        btn.disabled = false;
-        btn.textContent = formId === 'hero' ? 'Subscribe Free →' : 'Subscribe →';
+        msg.textContent = 'Something went wrong, try again.';
+        msg.className = 'sub-msg error';
+        btn.disabled = false; btn.textContent = 'Subscribe Free →';
       }
+    }
+
+    function dismissBar() {
+      document.getElementById('subscribe-bar').style.display = 'none';
+      document.body.style.paddingBottom = '0';
+      sessionStorage.setItem('bar-dismissed','1');
+    }
+
+    // Hide bar if already subscribed or dismissed this session
+    if (localStorage.getItem('subscribed') || sessionStorage.getItem('bar-dismissed')) {
+      document.getElementById('subscribe-bar').style.display = 'none';
+      document.body.style.paddingBottom = '0';
     }
 
     loadBriefing();
