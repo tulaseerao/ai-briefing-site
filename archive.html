@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Archive — The AI Brief</title>
+  <meta name="description" content="All past issues of The AI Brief — daily AI intelligence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #09090b; --white: #fff; --gray-50: #fafafa; --gray-100: #f4f4f5;
+      --gray-200: #e4e4e7; --gray-400: #a1a1aa; --gray-500: #71717a; --gray-600: #52525b;
+      --indigo: #6366f1; --indigo-dark: #4f46e5;
+    }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--gray-50); color: var(--black); -webkit-font-smoothing: antialiased; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(9,9,11,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 0 24px; height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-size: 15px; font-weight: 800; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .nav-logo .dot { width: 8px; height: 8px; background: var(--indigo); border-radius: 50%; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.15s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta { background: var(--indigo); color: #fff !important; padding: 7px 16px; border-radius: 6px; font-weight: 600 !important; }
+
+    main { max-width: 720px; margin: 0 auto; padding: 96px 24px 80px; }
+
+    .page-header { margin-bottom: 40px; }
+    .page-header h1 { font-size: 32px; font-weight: 900; letter-spacing: -0.5px; margin-bottom: 8px; }
+    .page-header p { color: var(--gray-500); font-size: 15px; }
+
+    .issue-list { display: flex; flex-direction: column; gap: 0; }
+
+    .issue-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 0; border-bottom: 1px solid var(--gray-200);
+      text-decoration: none; color: var(--black);
+      transition: padding-left 0.15s;
+    }
+    .issue-item:hover { padding-left: 6px; }
+    .issue-item:first-child { border-top: 1px solid var(--gray-200); }
+
+    .issue-left { display: flex; flex-direction: column; gap: 3px; }
+    .issue-number { font-size: 11px; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: 0.5px; }
+    .issue-date { font-size: 16px; font-weight: 700; }
+    .issue-count { font-size: 13px; color: var(--gray-400); }
+
+    .issue-arrow { font-size: 18px; color: var(--gray-400); transition: color 0.15s, transform 0.15s; }
+    .issue-item:hover .issue-arrow { color: var(--indigo); transform: translateX(3px); }
+
+    /* STORY VIEW */
+    #story-view { display: none; }
+    .back-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600; color: var(--indigo);
+      background: none; border: none; cursor: pointer; padding: 0;
+      margin-bottom: 32px; font-family: inherit;
+    }
+    .back-btn:hover { color: var(--indigo-dark); }
+
+    .story { background: #fff; border: 1px solid var(--gray-200); border-radius: 12px; padding: 24px 28px; margin-bottom: 14px; }
+    .story-top { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .story-number { width: 24px; height: 24px; background: var(--gray-100); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: var(--gray-600); flex-shrink: 0; }
+    .badge { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.4px; text-transform: uppercase; }
+    .badge.high { background: #f0fdf4; color: #15803d; }
+    .badge.medium { background: #fffbeb; color: #92400e; }
+    .story h2 { font-size: 17px; font-weight: 800; line-height: 1.3; letter-spacing: -0.3px; margin-bottom: 10px; }
+    .story-summary { font-size: 14px; color: var(--gray-600); line-height: 1.65; margin-bottom: 12px; }
+    .story-why { background: linear-gradient(135deg,#f0f0ff,#f5f3ff); border-left: 3px solid var(--indigo); border-radius: 0 8px 8px 0; padding: 10px 14px; font-size: 13px; color: #4c4f8a; line-height: 1.6; margin-bottom: 14px; }
+    .story-why strong { color: var(--indigo-dark); }
+    .story-sources a { font-size: 13px; font-weight: 600; color: var(--indigo); text-decoration: none; margin-right: 12px; }
+    .story-sources a::after { content: ' ↗'; font-size: 11px; opacity: 0.7; }
+
+    .empty { text-align: center; padding: 60px 0; color: var(--gray-400); font-size: 15px; }
+
+    @media (max-width: 540px) { .story { padding: 18px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/" class="nav-logo"><span class="dot"></span> The AI Brief</a>
+    <div class="nav-links">
+      <a href="/">Today's Issue</a>
+      <a href="/archive.html" style="color:#fff">Archive</a>
+      <a href="/#subscribe" class="nav-cta">Subscribe Free →</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ARCHIVE LIST VIEW -->
+    <div id="list-view">
+      <div class="page-header">
+        <h1>Archive</h1>
+        <p>Every issue of The AI Brief, from the beginning.</p>
+      </div>
+      <div class="issue-list" id="issue-list">
+        <div class="empty">Loading archive...</div>
+      </div>
+    </div>
+
+    <!-- STORY DETAIL VIEW -->
+    <div id="story-view">
+      <button class="back-btn" onclick="showList()">← Back to Archive</button>
+      <div id="issue-header" style="margin-bottom:28px"></div>
+      <div id="issue-stories"></div>
+    </div>
+  </main>
+
+  <script>
+    let archiveData = [];
+
+    async function loadArchive() {
+      try {
+        const res = await fetch('/data/archive.json');
+        archiveData = await res.json();
+        renderList();
+      } catch {
+        document.getElementById('issue-list').innerHTML =
+          '<div class="empty">No past issues yet. Check back tomorrow!</div>';
+      }
+    }
+
+    function renderList() {
+      const list = document.getElementById('issue-list');
+      if (!archiveData.length) {
+        list.innerHTML = '<div class="empty">No past issues yet. Check back tomorrow!</div>';
+        return;
+      }
+      list.innerHTML = archiveData.map(issue => `
+        <a class="issue-item" href="#" onclick="loadIssue('${issue.date_slug}'); return false;">
+          <div class="issue-left">
+            <span class="issue-number">Issue #${issue.issue}</span>
+            <span class="issue-date">${issue.date}</span>
+            <span class="issue-count">${issue.storiesCount || 6} stories</span>
+          </div>
+          <span class="issue-arrow">→</span>
+        </a>
+      `).join('');
+    }
+
+    async function loadIssue(slug) {
+      try {
+        const res = await fetch(`/data/${slug}.json`);
+        const data = await res.json();
+        showIssue(data);
+      } catch {
+        alert('Could not load this issue.');
+      }
+    }
+
+    function showIssue(data) {
+      document.getElementById('list-view').style.display = 'none';
+      document.getElementById('story-view').style.display = 'block';
+      window.scrollTo(0, 0);
+
+      document.getElementById('issue-header').innerHTML = `
+        <div style="font-size:12px;font-weight:700;color:var(--indigo);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Issue #${data.issue}</div>
+        <h1 style="font-size:26px;font-weight:900;letter-spacing:-0.5px;margin-bottom:4px">${data.date}</h1>
+        <p style="color:var(--gray-500);font-size:14px">${data.stories.length} stories · Curated from 9 AI newsletters</p>
+      `;
+
+      document.getElementById('issue-stories').innerHTML = data.stories.map(s => `
+        <article class="story">
+          <div class="story-top">
+            <div class="story-number">${s.id}</div>
+            <span class="badge ${s.confidence.toLowerCase()}">${s.confidence} <span style="opacity:.6">${s.vote}</span></span>
+          </div>
+          <h2>${s.headline}</h2>
+          <p class="story-summary">${s.summary}</p>
+          <div class="story-why"><strong>Why it matters —</strong> ${s.why}</div>
+          <div class="story-sources">${s.sources.map(src => `<a href="${src.url}" target="_blank" rel="noopener">${src.label}</a>`).join('')}</div>
+        </article>
+      `).join('');
+    }
+
+    function showList() {
+      document.getElementById('story-view').style.display = 'none';
+      document.getElementById('list-view').style.display = 'block';
+      window.scrollTo(0, 0);
+    }
+
+    loadArchive();
+  </script>
+</body>
+</html>

@@ -46,38 +46,57 @@ async function fetchAllNews() {
   return results.flatMap(r => r.status === 'fulfilled' ? r.value : []);
 }
 
-async function commitToGitHub(content) {
-  const token = process.env.GITHUB_TOKEN;
+async function githubPut(token, path, content, message) {
   const owner = 'tulaseerao';
   const repo = 'ai-briefing-site';
-  const path = 'data/latest.json';
   const apiBase = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
-
   const headers = {
     'Authorization': `Bearer ${token}`,
     'Accept': 'application/vnd.github+json',
     'Content-Type': 'application/json',
   };
 
-  // Get current file SHA (required for update)
+  // Get current SHA if file exists
   const getRes = await fetch(apiBase, { headers });
-  const { sha } = await getRes.json();
+  const existing = await getRes.json();
+  const sha = existing.sha || undefined;
 
   const encoded = Buffer.from(JSON.stringify(content, null, 2)).toString('base64');
-  const putRes = await fetch(apiBase, {
-    method: 'PUT',
-    headers,
-    body: JSON.stringify({
-      message: `Daily briefing: ${content.date}`,
-      content: encoded,
-      sha
-    })
-  });
+  const body = { message, content: encoded };
+  if (sha) body.sha = sha;
 
-  if (!putRes.ok) {
-    const err = await putRes.text();
-    throw new Error(`GitHub commit failed: ${err}`);
+  const putRes = await fetch(apiBase, { method: 'PUT', headers, body: JSON.stringify(body) });
+  if (!putRes.ok) throw new Error(`GitHub write failed for ${path}: ${await putRes.text()}`);
+}
+
+async function commitToGitHub(briefing) {
+  const token = process.env.GITHUB_TOKEN;
+  const msg = `Daily briefing: ${briefing.date}`;
+
+  // 1. Update latest.json
+  await githubPut(token, 'data/latest.json', briefing, msg);
+
+  // 2. Save dated archive file
+  await githubPut(token, `data/${briefing.date_slug}.json`, briefing, msg);
+
+  // 3. Update archive index
+  const owner = 'tulaseerao';
+  const repo = 'ai-briefing-site';
+  const headers = {
+    'Authorization': `Bearer ${token}`,
+    'Accept': 'application/vnd.github+json',
+  };
+  const archiveRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/data/archive.json`, { headers });
+  const archiveFile = await archiveRes.json();
+  let archive = [];
+  if (archiveFile.content) {
+    archive = JSON.parse(Buffer.from(archiveFile.content, 'base64').toString('utf-8'));
   }
+  // Add today if not already present
+  if (!archive.find(e => e.date_slug === briefing.date_slug)) {
+    archive.unshift({ date: briefing.date, date_slug: briefing.date_slug, issue: briefing.issue, storiesCount: briefing.stories.length });
+  }
+  await githubPut(token, 'data/archive.json', archive, msg);
 }
 
 module.exports = async function handler(req, res) {
