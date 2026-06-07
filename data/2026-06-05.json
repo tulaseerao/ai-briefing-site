@@ -1,0 +1,73 @@
+{
+  "date": "June 5, 2026",
+  "date_slug": "2026-06-05",
+  "issue": 1,
+  "stories": [
+    {
+      "id": 1,
+      "confidence": "HIGH",
+      "vote": "3-0",
+      "headline": "Anthropic's Claude Writes 80%+ of Its Own Production Code",
+      "summary": "Anthropic's June 4 paper \"When AI Builds Itself\" reveals Claude authored over 80% of merged production code in May 2026. Engineers now ship ~8x more code volume per day vs. 2024, with Anthropic internally estimating ~4x true productivity gain.",
+      "why": "This is the first major AI lab to publicly disclose that their AI is primarily writing their own production code — and simultaneously warn that recursive self-improvement could come sooner than most institutions are prepared for.",
+      "image": null,
+      "sources": [
+        { "label": "Anthropic Institute", "url": "https://anthropic.com/institute/recursive-self-improvement" },
+        { "label": "The Rundown AI", "url": "https://www.therundown.ai/p/anthropic-confronts-the-rsi-clock" }
+      ]
+    },
+    {
+      "id": 2,
+      "confidence": "HIGH",
+      "vote": "3-0",
+      "headline": "Anthropic Eclipses OpenAI in Valuation at ~$965B",
+      "summary": "Anthropic's Series H values it at ~$965B, surpassing OpenAI's ~$852B valuation. Annualized revenue hit $47B ARR (~$10.9B in Q2 2026), driven by enterprise Claude adoption.",
+      "why": "A new valuation leader has emerged in AI — faster than most expected. This reshapes the competitive narrative and signals that safety-focused labs can also win commercially.",
+      "image": null,
+      "sources": [
+        { "label": "Fortune", "url": "https://fortune.com/2026/06/02/anthropic-confidential-s-1-ai-ipo-race/" },
+        { "label": "The Rundown AI", "url": "https://www.therundown.ai/p/anthropic-just-eclipsed-openai" }
+      ]
+    },
+    {
+      "id": 3,
+      "confidence": "HIGH",
+      "vote": "3-0",
+      "headline": "Microsoft Launches MAI-Thinking-1 — Its First In-House Reasoning Model",
+      "summary": "MAI-Thinking-1 is a ~1 trillion parameter mixture-of-experts model with 35B active parameters and a 256K context window, purpose-built for reasoning and software engineering tasks.",
+      "why": "Microsoft's first proprietary reasoning model signals a strategic shift to reduce OpenAI dependency. Big Tech is now building frontier models, not just licensing them.",
+      "image": null,
+      "sources": [{ "label": "Microsoft AI Blog", "url": "https://microsoft.ai/news/introducing-mai-thinking-1/" }]
+    },
+    {
+      "id": 4,
+      "confidence": "HIGH",
+      "vote": "3-0",
+      "headline": "Google Gemini 3.5 Flash Goes Global Across All Surfaces",
+      "summary": "Released May 19, Gemini 3.5 Flash is now live across the Gemini app, Google Search AI Mode, Android Studio, AI Studio, the Antigravity 2.0 agent platform, and Gemini Enterprise.",
+      "why": "Google's broad rollout across consumer and developer surfaces signals it's competing hard on accessibility and ubiquity, not just benchmark performance.",
+      "image": null,
+      "sources": [{ "label": "Google DeepMind Blog", "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/" }]
+    },
+    {
+      "id": 5,
+      "confidence": "HIGH",
+      "vote": "3-0",
+      "headline": "OpenAI Launches \"Dreaming V3\" — Persistent Memory Synthesis for ChatGPT",
+      "summary": "A background memory system that auto-updates time-sensitive memories and improves continuity over long time horizons, rolling out first to Plus and Pro users in the US.",
+      "why": "Persistent, evolving memory is a key step toward truly personal AI — assistants that improve with use rather than resetting each session.",
+      "image": null,
+      "sources": [{ "label": "OpenAI Blog", "url": "https://openai.com/index/chatgpt-memory-dreaming/" }]
+    },
+    {
+      "id": 6,
+      "confidence": "MEDIUM",
+      "vote": "2-1",
+      "headline": "DARPA + NSF Jointly Launch AI Forge R&D Program",
+      "summary": "A joint program to fund AI research with no immediate commercial applications, developed in collaboration with NIST's Center for AI Standards and Innovation (CAISI).",
+      "why": "Government-funded foundational AI research fills a critical gap — areas with no short-term ROI but massive long-term strategic importance that private industry ignores.",
+      "image": null,
+      "sources": [{ "label": "DARPA.mil", "url": "https://www.darpa.mil/news/2026/ai-forge-accelerating-ai-breakthroughs-national-security" }]
+    }
+  ]
+}
