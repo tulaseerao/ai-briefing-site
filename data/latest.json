@@ -1,19 +1,20 @@
 {
-  "date": "June 7, 2026",
-  "date_slug": "2026-06-07",
-  "issue": 3,
+  "date": "June 8, 2026",
+  "date_slug": "2026-06-08",
+  "issue": 4,
   "stories": [
     {
       "id": 1,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "OpenAI unveils Lockdown Mode to protect sensitive data from prompt injection attacks",
-      "summary": "Even with Lockdown Mode, ChatGPT could be still vulnerable to prompt injections, but the goal is to reduce the likelihood that sensitive data gets shared in the process.",
+      "headline": "Is this the dawn of the Tokenpocalypse?",
+      "summary": "We're likely to see more price increases as the big AI companies plan to go public.",
       "why": "An important development covered by TechCrunch AI worth tracking today.",
+      "image": null,
       "sources": [
         {
           "label": "TechCrunch AI",
-          "url": "https://techcrunch.com/2026/06/06/openai-unveils-lockdown-mode-to-protect-sensitive-data-from-prompt-injection-attacks/"
+          "url": "https://techcrunch.com/2026/06/07/is-this-the-dawn-of-the-tokenpocalypse/"
         }
       ]
     },
@@ -21,13 +22,14 @@
       "id": 2,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "What to expect from WWDC 2026: Siri&#8217;s highly anticipated revamp and Apple Intelligence updates",
-      "summary": "Apple's WWDC nears: Here's what you can look forward to.",
+      "headline": "Notion restores access to Anthropic after service disruption",
+      "summary": "Notion's head of product said he was \"astonished\" at “the amount of people RT-ing this.\"",
       "why": "An important development covered by TechCrunch AI worth tracking today.",
+      "image": null,
       "sources": [
         {
           "label": "TechCrunch AI",
-          "url": "https://techcrunch.com/2026/06/06/what-to-expect-from-wwdc-2026-siris-highly-anticipated-revamp-and-apple-intelligence-updates/"
+          "url": "https://techcrunch.com/2026/06/07/notion-restores-access-to-anthropic-after-service-disruption/"
         }
       ]
     },
@@ -38,6 +40,7 @@
       "headline": "Google just redesigned the search box for the first time in 25 years — here’s why it matters more than you think.",
       "summary": "For a quarter century, the Google search box has been one of the most recognizable interfaces in computing: a thin white rectangle, a blinking cursor, a few typed words, and a list of blue links. On Tuesday, Google will ",
       "why": "An important development covered by VentureBeat AI worth tracking today.",
+      "image": "https://images.ctfassets.net/jdtwqhzvc2n1/1TD0Sl7Zq6nnBSZMK9FXpl/41ce2cc6da055da7647670c71ba8aa6b/Nuneybits_Vector_art_of_an_oversized_white_search_bar_rimmed_in_695cac3f-1536-4438-acc1-51c16e2ff51f.webp?w=300&amp;q=30",
       "sources": [
         {
           "label": "VentureBeat AI",
@@ -52,6 +55,7 @@
       "headline": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
       "summary": "Railway, a San Francisco-based cloud platform that has quietly amassed two million developers without spending a dollar on marketing, announced Thursday that it raised $100 million in a Series B funding round, as surging",
       "why": "An important development covered by VentureBeat AI worth tracking today.",
+      "image": "https://images.ctfassets.net/jdtwqhzvc2n1/5RLyQIpBeVXxv0RpcXZxWQ/fd9680c6d82acd8208ac341fc575f5fb/nuneybits_Vector_art_of_a_sleek_bullet_train_bursting_from_a_cl_32a805aa-272c-4b34-ac16-cf20508b7ff4.webp?w=300&amp;q=30",
       "sources": [
         {
           "label": "VentureBeat AI",
@@ -63,13 +67,14 @@
       "id": 5,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "🛎️ ChatGPT Crossed 1 Billion",
-      "summary": "Plus: Google's Opt-Out Is a Trap, Lovable Races Its Own Suppliers",
+      "headline": "🛎️ Bots Now Outnumber Humans",
+      "summary": "Plus: OpenAI Wants Washington In, New York Paused the Data Centers",
       "why": "An important development covered by AI Secret worth tracking today.",
+      "image": "https://d18e5vrcqydw4b.cloudfront.net/2026/06/bots_main_16x9-1.jpg",
       "sources": [
         {
           "label": "AI Secret",
-          "url": "https://aisecret.us/chatgpt-crossed-1-billion/"
+          "url": "https://aisecret.us/bots-now-outnumber-humans/"
         }
       ]
     },
@@ -77,13 +82,14 @@
       "id": 6,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "🛎️ A Statistical Blackout",
-      "summary": "Plus: Microsoft Picked Easy Opponents, Meta's AI Got Talked Into a Hack",
+      "headline": "🛎️ ChatGPT Crossed 1 Billion",
+      "summary": "Plus: Google's Opt-Out Is a Trap, Lovable Races Its Own Suppliers",
       "why": "An important development covered by AI Secret worth tracking today.",
+      "image": "https://d18e5vrcqydw4b.cloudfront.net/2026/06/763SH5WWNRNPJE6SRY7FE432BY-1.jpg",
       "sources": [
         {
           "label": "AI Secret",
-          "url": "https://aisecret.us/a-statistical-blackout/"
+          "url": "https://aisecret.us/chatgpt-crossed-1-billion/"
         }
       ]
     }
