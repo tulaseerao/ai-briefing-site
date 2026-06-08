@@ -10,6 +10,13 @@ const RSS_SOURCES = [
   { url: 'https://news.google.com/rss/search?q=site:newsletter.theaireport.ai&hl=en-US&gl=US&ceid=US:en', source: 'The AI Report' },
 ];
 
+const PHARMA_SOURCES = [
+  { url: 'https://news.google.com/rss/search?q=AI+FDA+drug+discovery+pharma+clinical+trials&hl=en-US&gl=US&ceid=US:en', source: 'Google News' },
+  { url: 'https://news.google.com/rss/search?q=AI+hospital+healthcare+diagnosis+treatment&hl=en-US&gl=US&ceid=US:en', source: 'Google News' },
+  { url: 'https://www.fiercehealthcare.com/rss/xml', source: 'Fierce Healthcare' },
+  { url: 'https://www.statnews.com/feed/', source: 'STAT News' },
+];
+
 // Titles that indicate non-article pages to skip
 const SKIP_TITLES = ['subscribe', 'home', 'refund', 'privacy', 'about', 'contact', 'google news', 'join the world'];
 
@@ -39,9 +46,9 @@ function parseRSS(xml, sourceName) {
   return items.slice(0, 2);
 }
 
-async function fetchAllNews() {
+async function fetchFromSources(sources) {
   const results = await Promise.allSettled(
-    RSS_SOURCES.map(async ({ url, source }) => {
+    sources.map(async ({ url, source }) => {
       const res = await fetch(url, {
         headers: { 'User-Agent': 'Mozilla/5.0 (compatible; AIBriefBot/1.0)' },
         signal: AbortSignal.timeout(8000)
@@ -51,6 +58,14 @@ async function fetchAllNews() {
     })
   );
   return results.flatMap(r => r.status === 'fulfilled' ? r.value : []);
+}
+
+async function fetchAllNews() {
+  return fetchFromSources(RSS_SOURCES);
+}
+
+async function fetchPharmaNews() {
+  return fetchFromSources(PHARMA_SOURCES);
 }
 
 async function githubPut(token, path, content, message) {
@@ -114,8 +129,12 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const items = await fetchAllNews();
+    const [items, pharmaItems] = await Promise.all([fetchAllNews(), fetchPharmaNews()]);
     const now = new Date();
+    const dateStr = now.toLocaleDateString('en-US', {
+      year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/New_York'
+    });
+    const dateSlug = now.toISOString().split('T')[0];
 
     const stories = items.slice(0, 6).map((item, i) => ({
       id: i + 1,
@@ -132,21 +151,40 @@ module.exports = async function handler(req, res) {
     const issue = Math.floor((now - startDate) / 86400000) + 1;
 
     const briefing = {
-      date: now.toLocaleDateString('en-US', {
-        year: 'numeric', month: 'long', day: 'numeric', timeZone: 'America/New_York'
-      }),
-      date_slug: now.toISOString().split('T')[0],
+      date: dateStr,
+      date_slug: dateSlug,
       issue: Math.max(1, issue),
       stories
     };
 
-    await commitToGitHub(briefing);
+    // Deduplicate pharma items and pick top 4
+    const seen = new Set();
+    const pharmaStories = pharmaItems
+      .filter(item => { if (seen.has(item.title)) return false; seen.add(item.title); return true; })
+      .slice(0, 4)
+      .map((item, i) => ({
+        id: i + 1,
+        headline: item.title,
+        summary: item.desc || 'Read the full story at the source.',
+        why: `Healthcare AI development covered by ${item.source}.`,
+        image: item.image || null,
+        sources: [{ label: item.source, url: item.link }]
+      }));
+
+    const pharmaData = { date: dateStr, date_slug: dateSlug, stories: pharmaStories };
+
+    await Promise.all([
+      commitToGitHub(briefing),
+      githubPut(process.env.GITHUB_TOKEN, 'data/pharma-latest.json', pharmaData,
+        `Pharma briefing: ${dateStr}`)
+    ]);
 
     return res.status(200).json({
       success: true,
       date: briefing.date,
       issue: briefing.issue,
-      storiesCount: stories.length
+      storiesCount: stories.length,
+      pharmaStoriesCount: pharmaStories.length
     });
   } catch (err) {
     console.error('Cron error:', err);

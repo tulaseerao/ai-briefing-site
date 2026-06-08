@@ -1,0 +1,38 @@
+{
+  "date": "June 7, 2026",
+  "date_slug": "2026-06-07",
+  "stories": [
+    {
+      "id": 1,
+      "headline": "EMA and FDA Set Common Principles for AI in Medicine Development",
+      "summary": "The European Medicines Agency and US FDA issued a joint framework establishing shared standards for AI use in drug development, clinical trial design, and regulatory submissions.",
+      "why": "A transatlantic regulatory alignment on AI in pharma removes a major barrier for global drug developers — one framework instead of two.",
+      "image": null,
+      "sources": [{ "label": "European Medicines Agency", "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOQ1pkYXNMX0FyNjB3UzRJQkd2NUdQTklPT1hsZlZPdkFkY2JBZ3U1UHl3azJKYjdJdGtpN3hmUGEzRXVtWm93dTFWMjlnU2tYbDZFakE4dXZiRWl2N190b24waG1TcXdmTEtTSWtmZ3UzVHRzQ21pNG90R3J4T3pQLWtJT2RqdHNmZFp3cUxwN1ctbG8?oc=5" }]
+    },
+    {
+      "id": 2,
+      "headline": "AI-Driven Drug Discovery Picks Up as FDA Pushes to Reduce Animal Testing",
+      "summary": "Reuters reports a surge in AI-powered preclinical research as the FDA signals openness to computational models replacing traditional animal studies in early-stage drug evaluation.",
+      "why": "Reducing animal testing requirements via AI could cut years and hundreds of millions from drug development timelines.",
+      "image": null,
+      "sources": [{ "label": "Reuters", "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNakxtczF4Q0NIS0Q3d1lVQzUyaVk1NTR5clhSYjU1U1Zlc0NkQVp2Wjk2R0Vob0R6QXpJWXhZSGpzNnVGU3dGeEpTU1BtUk52ZmY3QWV3U0g2NzNCT2oyWVlsUW1zZkpwVWVldEM0bXM0OWUxUThLUlU4dUpxWUhYaXF4M2ZyLTZxb2hTOWRPVURqcXQ4c2xqZjR5NllfdUFna1hsWGVMSmFFVUFRY29zTVAyMi00d1NYVXZyNDE4ZzQybVluTnZvdE9GZ29CdmNNVFlMcw?oc=5" }]
+    },
+    {
+      "id": 3,
+      "headline": "Merck and Mayo Clinic Team Up on AI-Driven Drug Discovery",
+      "summary": "The partnership will apply Mayo Clinic's de-identified patient data alongside Merck's compound libraries to train models that predict clinical outcomes earlier in the pipeline.",
+      "why": "Pairing a leading health system's real-world data with a top pharma's compound library represents a new template for AI drug discovery partnerships.",
+      "image": null,
+      "sources": [{ "label": "Healthcare Brew", "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQX2FvX0JHS2JZNVJxbzYyaVhCdFJNMXRpR0Vjd1FoSDA5TFdSdHpnM1lCUFFmM0t0cWM2bEtDOE9NbXlOZ0hSb3JJV1JMa0lrVlJ3UDVKYWVFcUhaaWlKRXpJYmU4NHNiQktFVnVaWXByNWlzMjVuYW9RUWhCYXBiZnN0MnlLUUdJbXFn?oc=5" }]
+    },
+    {
+      "id": 4,
+      "headline": "Roche and NVIDIA Deploy the Pharma Industry's Largest AI Factory",
+      "summary": "Roche has activated a large-scale NVIDIA DGX-powered compute cluster dedicated to molecular simulation, protein folding, and multi-omics analysis for oncology pipeline acceleration.",
+      "why": "Industrial-scale GPU compute inside a major pharma signals that AI drug discovery is moving from research project to core business infrastructure.",
+      "image": null,
+      "sources": [{ "label": "2 Minute Medicine", "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPOWV5TjIwNVJzYktPai1MNGM5NmxTbXVoYVlpcmtVMnJZWFdMaUJRdThzM0tWcjg0TVhPNWthZEdNT0FHcXhVLTJKMDJ3ekRCWWRsWUFPTWhkQnhSajd1QVpEWVl4Z3drdHpFZUlpRFFuQ3k3dEhQNnVubFp1NWZkbjVtajRCbjlnNlJyS3NrWTZvNk9EUjl2djdjWWZ6bkxyNWlWdnVFTVlQeUlRS0NJUFJsQkFCTjZGcTVKZFEtRFVUTzBVeFpuSG4zdG9PVmItdDJpSXNhQ0xXeGJFVERhamVuRFU?oc=5" }]
+    }
+  ]
+}

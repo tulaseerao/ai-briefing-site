@@ -20,6 +20,10 @@
       --indigo: #5c6bc0;
       --indigo-light: #e8eaf6;
       --indigo-dark: #3949ab;
+      --teal: #00897b;
+      --teal-light: #e0f2f1;
+      --teal-dark: #00695c;
+      --teal-border: #b2dfdb;
       --green: #2e7d32;
       --green-bg: #e8f5e9;
       --amber: #e65100;
@@ -83,6 +87,59 @@
 
     /* ── MAIN LAYOUT ── */
     .container { max-width: 1100px; margin: 0 auto; padding: 28px 20px; }
+
+    /* ── PHARMA SECTION ── */
+    .pharma-section {
+      background: var(--bg);
+      border: 1px solid var(--teal-border);
+      border-top: 3px solid var(--teal);
+      border-radius: var(--radius);
+      padding: 20px 24px 22px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow);
+    }
+    .pharma-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .pharma-title {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 0.8px; color: var(--teal);
+    }
+    .pharma-icon { font-size: 16px; }
+    .pharma-date { font-size: 12px; color: var(--text3); font-weight: 500; }
+    .pharma-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .pharma-card {
+      padding: 14px 16px;
+      border: 1px solid var(--teal-light);
+      border-left: 3px solid var(--teal);
+      border-radius: 8px;
+      background: #f9fefe;
+      display: flex; flex-direction: column; gap: 6px;
+      transition: box-shadow 0.15s, transform 0.15s;
+    }
+    .pharma-card:hover { box-shadow: 0 4px 16px rgba(0,137,123,0.12); transform: translateY(-2px); }
+    .pharma-headline a {
+      font-size: 13px; font-weight: 700; line-height: 1.4;
+      color: var(--text); text-decoration: none;
+    }
+    .pharma-headline a:hover { color: var(--teal-dark); text-decoration: underline; }
+    .pharma-summary { font-size: 12px; color: var(--text2); line-height: 1.55; flex: 1; }
+    .pharma-source a {
+      font-size: 11px; font-weight: 700; color: var(--teal);
+      text-decoration: none;
+    }
+    .pharma-source a:hover { text-decoration: underline; }
+
+    /* ── HEADLINE LINKS ── */
+    h2 a {
+      color: inherit; text-decoration: none;
+    }
+    h2 a:hover { text-decoration: underline; }
 
     /* ── FEATURED STORY ── */
     .featured {
@@ -151,6 +208,11 @@
     }
     .conf-badge.high { background: var(--green-bg); color: var(--green); }
     .conf-badge.medium { background: var(--amber-bg); color: var(--amber); }
+
+    /* ── SECTION DIVIDER ── */
+    .section-divider { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .section-divider h3 { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text2); }
+    .section-divider a { font-size: 13px; font-weight: 600; color: var(--indigo); text-decoration: none; }
 
     /* ── PAST ISSUES ── */
     .past-issues { margin-top: 8px; }
@@ -233,6 +295,7 @@
       .featured { grid-template-columns: 1fr; }
       .featured-img { height: 220px; }
       .featured-body { padding: 22px 22px; }
+      .pharma-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 640px) {
       .story-grid { grid-template-columns: 1fr; }
@@ -240,6 +303,7 @@
       .story-full .full-img { height: 180px; }
       .sub-form input { width: 180px; }
       .issue-banner { flex-direction: column; align-items: flex-start; }
+      .pharma-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 420px) {
       #subscribe-bar { padding: 12px 16px; }
@@ -281,8 +345,27 @@
 
   <!-- MAIN -->
   <div class="container">
+
+    <!-- PHARMA & HEALTHCARE SECTION -->
+    <div id="pharma-section" style="display:none">
+      <div class="pharma-section">
+        <div class="pharma-header">
+          <div class="pharma-title">
+            <span class="pharma-icon">⚕</span>
+            Pharma &amp; Healthcare AI
+          </div>
+          <span class="pharma-date" id="pharma-date"></span>
+        </div>
+        <div class="pharma-grid" id="pharma-grid"></div>
+      </div>
+    </div>
+
+    <!-- AI BRIEFING SECTION LABEL -->
+    <div class="section-divider" id="ai-section-head" style="display:none">
+      <h3>Today's AI Briefing</h3>
+    </div>
+
     <div id="briefing-content">
-      <!-- Injected by JS -->
       <div style="text-align:center;padding:60px 0;color:#adb5bd;font-size:15px">Loading stories…</div>
     </div>
 
@@ -331,9 +414,14 @@
       return story.image || FALLBACK_IMGS[idx % FALLBACK_IMGS.length];
     }
 
-    function badgeHtml(s, idx) {
+    function badgeHtml(s) {
       return `<div class="num-badge">${s.id}</div>
               <span class="conf-badge ${s.confidence.toLowerCase()}">${s.confidence}</span>`;
+    }
+
+    function headlineLink(story) {
+      const url = story.sources && story.sources[0] ? story.sources[0].url : '#';
+      return `<a href="${url}" target="_blank" rel="noopener">${story.headline}</a>`;
     }
 
     function sourcesHtml(s) {
@@ -351,6 +439,7 @@
         document.getElementById('nav-issue').textContent = `Issue #${data.issue} · ${data.date}`;
         document.getElementById('issue-tag').textContent = `Issue #${data.issue}`;
         document.getElementById('issue-title').textContent = data.date;
+        document.getElementById('ai-section-head').style.display = 'flex';
 
         const s = data.stories;
         let html = '';
@@ -361,8 +450,8 @@
             <img class="featured-img" src="${imgSrc(s[0],0)}" alt="${s[0].headline}" loading="lazy"
                  onerror="this.style.background='linear-gradient(135deg,#5c6bc0,#7986cb)';this.style.minHeight='300px';this.removeAttribute('src')">
             <div class="featured-body">
-              <div class="story-top">${badgeHtml(s[0],0)}</div>
-              <h2>${s[0].headline}</h2>
+              <div class="story-top">${badgeHtml(s[0])}</div>
+              <h2>${headlineLink(s[0])}</h2>
               <p class="summary">${s[0].summary}</p>
               ${whyHtml(s[0])}
               <div class="story-sources">${sourcesHtml(s[0])}</div>
@@ -378,8 +467,8 @@
                 <img class="card-img" src="${imgSrc(story, i+1)}" alt="${story.headline}" loading="lazy"
                      onerror="this.style.background='${['linear-gradient(135deg,#26a69a,#4db6ac)','linear-gradient(135deg,#ef5350,#e57373)'][i]}';this.removeAttribute('src')">
                 <div class="card-body">
-                  <div class="story-top">${badgeHtml(story, i+1)}</div>
-                  <h2>${story.headline}</h2>
+                  <div class="story-top">${badgeHtml(story)}</div>
+                  <h2>${headlineLink(story)}</h2>
                   <p class="summary">${story.summary}</p>
                   ${whyHtml(story)}
                   <div class="story-sources">${sourcesHtml(story)}</div>
@@ -398,8 +487,8 @@
                 <img class="card-img" src="${imgSrc(story, i+3)}" alt="${story.headline}" loading="lazy"
                      onerror="this.style.background='${['linear-gradient(135deg,#7e57c2,#9575cd)','linear-gradient(135deg,#26c6da,#4dd0e1)'][i]}';this.removeAttribute('src')">
                 <div class="card-body">
-                  <div class="story-top">${badgeHtml(story, i+3)}</div>
-                  <h2>${story.headline}</h2>
+                  <div class="story-top">${badgeHtml(story)}</div>
+                  <h2>${headlineLink(story)}</h2>
                   <p class="summary">${story.summary}</p>
                   ${whyHtml(story)}
                   <div class="story-sources">${sourcesHtml(story)}</div>
@@ -417,8 +506,8 @@
               <img class="full-img" src="${imgSrc(last,5)}" alt="${last.headline}" loading="lazy"
                    onerror="this.style.background='linear-gradient(135deg,#ffa726,#ffb74d)';this.removeAttribute('src')">
               <div class="full-body">
-                <div class="story-top" style="margin-bottom:10px">${badgeHtml(last,5)}</div>
-                <h2>${last.headline}</h2>
+                <div class="story-top" style="margin-bottom:10px">${badgeHtml(last)}</div>
+                <h2>${headlineLink(last)}</h2>
                 <p class="summary">${last.summary}</p>
                 ${whyHtml(last)}
                 <div class="story-sources">${sourcesHtml(last)}</div>
@@ -431,6 +520,27 @@
         document.getElementById('briefing-content').innerHTML =
           '<p style="text-align:center;padding:60px 0;color:#adb5bd">Unable to load today\'s briefing. Check back soon.</p>';
       }
+    }
+
+    async function loadPharma() {
+      try {
+        const data = await fetch('/data/pharma-latest.json').then(r => r.json());
+        if (!data.stories || !data.stories.length) return;
+
+        document.getElementById('pharma-date').textContent = data.date;
+        document.getElementById('pharma-grid').innerHTML = data.stories.map(s => `
+          <div class="pharma-card">
+            <div class="pharma-headline">
+              <a href="${s.sources[0].url}" target="_blank" rel="noopener">${s.headline}</a>
+            </div>
+            <div class="pharma-summary">${s.summary}</div>
+            <div class="pharma-source">
+              <a href="${s.sources[0].url}" target="_blank" rel="noopener">${s.sources[0].label} ↗</a>
+            </div>
+          </div>`).join('');
+
+        document.getElementById('pharma-section').style.display = 'block';
+      } catch { /* silently skip if no pharma data yet */ }
     }
 
     async function loadArchive() {
@@ -482,12 +592,12 @@
       sessionStorage.setItem('bar-dismissed','1');
     }
 
-    // Hide bar if already subscribed or dismissed this session
     if (localStorage.getItem('subscribed') || sessionStorage.getItem('bar-dismissed')) {
       document.getElementById('subscribe-bar').style.display = 'none';
       document.body.style.paddingBottom = '0';
     }
 
+    loadPharma();
     loadBriefing();
     loadArchive();
   </script>
