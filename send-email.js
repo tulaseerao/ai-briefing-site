@@ -175,7 +175,11 @@ function sendEmail(to, subject, html) {
       personalizations: [{ to: [{ email: to }] }],
       from: { email: FROM, name: 'The AI Brief by InPharmD' },
       subject,
-      content: [{ type: 'text/html', value: html }]
+      content: [{ type: 'text/html', value: html }],
+      tracking_settings: {
+        click_tracking: { enable: true },
+        open_tracking:  { enable: true }
+      }
     });
     const opts = {
       hostname: 'api.sendgrid.com', path: '/v3/mail/send', method: 'POST',

@@ -184,7 +184,11 @@ async function sendNewsletter(briefing, pharmaData) {
     personalizations: [{ to: allTo.map(email => ({ email })) }],
     from: { email: from, name: 'The AI Brief by InPharmD' },
     subject,
-    content: [{ type: 'text/html', value: html }]
+    content: [{ type: 'text/html', value: html }],
+    tracking_settings: {
+      click_tracking: { enable: true },
+      open_tracking:  { enable: true }
+    }
   });
 
   const res = await fetch('https://api.sendgrid.com/v3/mail/send', {

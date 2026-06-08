@@ -53,6 +53,48 @@
     .nav-links a:hover { color: var(--text); }
     .nav-meta { font-size: 13px; color: var(--text3); }
 
+    /* ── NAV SUBSCRIBE BUTTON ── */
+    .nav-sub-btn {
+      background: var(--brand); color: #fff !important;
+      padding: 7px 15px; border-radius: 7px; font-size: 13px !important;
+      font-weight: 700 !important; text-decoration: none;
+      transition: background 0.15s;
+    }
+    .nav-sub-btn:hover { background: var(--brand-dk) !important; color: #fff !important; }
+
+    /* ── TOP SUBSCRIBE SECTION ── */
+    .subscribe-top {
+      background: var(--brand);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
+    }
+    .subscribe-top-left h2 {
+      font-size: 18px; font-weight: 800; color: #fff;
+      letter-spacing: -0.2px; margin-bottom: 4px;
+    }
+    .subscribe-top-left p { font-size: 13px; color: rgba(255,255,255,0.72); }
+    .subscribe-top-form { display: flex; gap: 8px; flex-shrink: 0; }
+    .subscribe-top-form input {
+      padding: 10px 16px; border-radius: 8px; border: none;
+      font-size: 14px; font-family: inherit; width: 220px; outline: none;
+      color: var(--text);
+    }
+    .subscribe-top-form input::placeholder { color: var(--text3); }
+    .subscribe-top-form input:focus { box-shadow: 0 0 0 3px rgba(255,255,255,0.25); }
+    .subscribe-top-form button {
+      padding: 10px 18px; background: #fff; color: var(--brand);
+      border: none; border-radius: 8px; font-size: 14px; font-weight: 800;
+      font-family: inherit; cursor: pointer; white-space: nowrap;
+      transition: opacity 0.15s;
+    }
+    .subscribe-top-form button:hover { opacity: 0.9; }
+    .subscribe-top-form button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .sub-top-msg { font-size: 13px; font-weight: 600; color: #fff; margin-top: 8px; display: none; width: 100%; }
+    .sub-top-msg.show { display: block; }
+
     /* ── MAIN COLUMN ── */
     .container { max-width: 700px; margin: 0 auto; padding: 36px 20px; }
 
@@ -237,10 +279,27 @@
     <div class="nav-links">
       <span class="nav-meta" id="nav-meta"></span>
       <a href="/archive.html">Archive</a>
+      <a href="/admin.html" style="color:var(--text3);font-size:12px;">Admin</a>
+      <a href="#subscribe-top" class="nav-sub-btn">Subscribe Free</a>
     </div>
   </nav>
 
   <div class="container">
+
+    <!-- TOP SUBSCRIBE -->
+    <div class="subscribe-top" id="subscribe-top">
+      <div class="subscribe-top-left">
+        <h2>The AI Brief — Free Daily Newsletter</h2>
+        <p>AI &amp; Healthcare intelligence, delivered every morning at 7 AM EST</p>
+      </div>
+      <div>
+        <form class="subscribe-top-form" onsubmit="doSubscribeTop(event)">
+          <input type="email" id="sub-top-email" placeholder="your@email.com" required autocomplete="email">
+          <button type="submit" id="sub-top-btn">Subscribe →</button>
+        </form>
+        <div class="sub-top-msg" id="sub-top-msg"></div>
+      </div>
+    </div>
 
     <!-- ISSUE HEADER -->
     <div class="issue-header" id="issue-header" style="display:none">
@@ -378,6 +437,32 @@
 
         document.getElementById('past-section').style.display = 'block';
       } catch { /* skip */ }
+    }
+
+    async function doSubscribeTop(e) {
+      e.preventDefault();
+      const email = document.getElementById('sub-top-email').value;
+      const btn   = document.getElementById('sub-top-btn');
+      const msg   = document.getElementById('sub-top-msg');
+      btn.disabled = true; btn.textContent = 'Subscribing…';
+      msg.className = 'sub-top-msg'; msg.textContent = '';
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST', headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({ email })
+        });
+        if (res.ok) {
+          msg.textContent = '🎉 You\'re in! Check your inbox for a welcome email.';
+          msg.className = 'sub-top-msg show';
+          document.getElementById('sub-top-email').value = '';
+          btn.textContent = 'Subscribed ✓';
+          localStorage.setItem('subscribed','1');
+        } else throw new Error();
+      } catch {
+        msg.textContent = 'Something went wrong, please try again.';
+        msg.className = 'sub-top-msg show';
+        btn.disabled = false; btn.textContent = 'Subscribe →';
+      }
     }
 
     async function doSubscribe(e) {
