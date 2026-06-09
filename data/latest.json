@@ -1,20 +1,20 @@
 {
-  "date": "June 8, 2026",
-  "date_slug": "2026-06-08",
-  "issue": 4,
+  "date": "June 9, 2026",
+  "date_slug": "2026-06-09",
+  "issue": 5,
   "stories": [
     {
       "id": 1,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "Is this the dawn of the Tokenpocalypse?",
-      "summary": "We're likely to see more price increases as the big AI companies plan to go public.",
+      "headline": "Why Apple&#8217;s slow-and-steady AI bet is starting to look pretty smart",
+      "summary": "Can Apple's new AI glow up put to bed accusations that it's losing an all-important industry race?",
       "why": "An important development covered by TechCrunch AI worth tracking today.",
       "image": null,
       "sources": [
         {
           "label": "TechCrunch AI",
-          "url": "https://techcrunch.com/2026/06/07/is-this-the-dawn-of-the-tokenpocalypse/"
+          "url": "https://techcrunch.com/2026/06/08/why-apples-slow-and-steady-ai-bet-is-starting-to-look-pretty-smart/"
         }
       ]
     },
@@ -22,14 +22,14 @@
       "id": 2,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "Notion restores access to Anthropic after service disruption",
-      "summary": "Notion's head of product said he was \"astonished\" at “the amount of people RT-ing this.\"",
+      "headline": "Mercor’s Brendan Foody calls out Sequoia, accusing it of &#8216;dual-pricing&#8217; valuation tricks",
+      "summary": "Sequoia is just one of the top firms that sells same equity at two different prices.",
       "why": "An important development covered by TechCrunch AI worth tracking today.",
       "image": null,
       "sources": [
         {
           "label": "TechCrunch AI",
-          "url": "https://techcrunch.com/2026/06/07/notion-restores-access-to-anthropic-after-service-disruption/"
+          "url": "https://techcrunch.com/2026/06/08/mercors-brendan-foody-calls-out-sequoia-over-dual-pricing-valuation-tricks/"
         }
       ]
     },
@@ -67,6 +67,21 @@
       "id": 5,
       "confidence": "HIGH",
       "vote": "3-0",
+      "headline": "🛎️ A Second Starlink",
+      "summary": "Plus: Apple Finally Have AI, The Bottleneck Wasn't the Brain",
+      "why": "An important development covered by AI Secret worth tracking today.",
+      "image": "https://d18e5vrcqydw4b.cloudfront.net/2026/06/LRY2US7EFFOARARE4H7W3IBFQU-1.jpg",
+      "sources": [
+        {
+          "label": "AI Secret",
+          "url": "https://aisecret.us/a-second-starlink/"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "confidence": "HIGH",
+      "vote": "3-0",
       "headline": "🛎️ Bots Now Outnumber Humans",
       "summary": "Plus: OpenAI Wants Washington In, New York Paused the Data Centers",
       "why": "An important development covered by AI Secret worth tracking today.",
@@ -75,21 +90,6 @@
         {
           "label": "AI Secret",
           "url": "https://aisecret.us/bots-now-outnumber-humans/"
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "confidence": "HIGH",
-      "vote": "3-0",
-      "headline": "🛎️ ChatGPT Crossed 1 Billion",
-      "summary": "Plus: Google's Opt-Out Is a Trap, Lovable Races Its Own Suppliers",
-      "why": "An important development covered by AI Secret worth tracking today.",
-      "image": "https://d18e5vrcqydw4b.cloudfront.net/2026/06/763SH5WWNRNPJE6SRY7FE432BY-1.jpg",
-      "sources": [
-        {
-          "label": "AI Secret",
-          "url": "https://aisecret.us/chatgpt-crossed-1-billion/"
         }
       ]
     }
