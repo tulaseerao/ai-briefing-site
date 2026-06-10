@@ -1,38 +1,58 @@
 {
-  "date": "June 7, 2026",
-  "date_slug": "2026-06-07",
+  "date": "June 10, 2026",
+  "date_slug": "2026-06-10",
   "stories": [
     {
       "id": 1,
-      "headline": "EMA and FDA Set Common Principles for AI in Medicine Development",
-      "summary": "The European Medicines Agency and US FDA issued a joint framework establishing shared standards for AI use in drug development, clinical trial design, and regulatory submissions.",
-      "why": "A transatlantic regulatory alignment on AI in pharma removes a major barrier for global drug developers — one framework instead of two.",
+      "headline": "U.S. Medical Centers Need a New Model for Drug Discovery and Development - Harvard Business Review",
+      "summary": "a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxNaGJUdllMN2VXUjRBMGtYYjVLZEtQUWNrbTFnbGV0QnpEZ3lGMHJYZTU0U2hOUGFXdVpDSHNodVBUaGh3QTlCZjc4N29Pak5PejQxWEhtTHFLVWkzaXFTSlBlbnhfaDE4RURXTEZlZHF6TnhBQi11eEJaWnh0a3J",
+      "why": "Healthcare AI development covered by Google News.",
       "image": null,
-      "sources": [{ "label": "European Medicines Agency", "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOQ1pkYXNMX0FyNjB3UzRJQkd2NUdQTklPT1hsZlZPdkFkY2JBZ3U1UHl3azJKYjdJdGtpN3hmUGEzRXVtWm93dTFWMjlnU2tYbDZFakE4dXZiRWl2N190b24waG1TcXdmTEtTSWtmZ3UzVHRzQ21pNG90R3J4T3pQLWtJT2RqdHNmZFp3cUxwN1ctbG8?oc=5" }]
+      "sources": [
+        {
+          "label": "Google News",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaGJUdllMN2VXUjRBMGtYYjVLZEtQUWNrbTFnbGV0QnpEZ3lGMHJYZTU0U2hOUGFXdVpDSHNodVBUaGh3QTlCZjc4N29Pak5PejQxWEhtTHFLVWkzaXFTSlBlbnhfaDE4RURXTEZlZHF6TnhBQi11eEJaWnh0a3JGbTFjSWpmTXJMSU9nVXNDV2c3R2hhY1NjNDZsdw?oc=5"
+        }
+      ]
     },
     {
       "id": 2,
-      "headline": "AI-Driven Drug Discovery Picks Up as FDA Pushes to Reduce Animal Testing",
-      "summary": "Reuters reports a surge in AI-powered preclinical research as the FDA signals openness to computational models replacing traditional animal studies in early-stage drug evaluation.",
-      "why": "Reducing animal testing requirements via AI could cut years and hundreds of millions from drug development timelines.",
+      "headline": "FDA launches effort to speed up clinical trials, using AI - statnews.com",
+      "summary": "a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPZmxKRXVjRnZISW96WXU2SjRnLWpXSm5UeWxvZlRpbGFDTTM2THVvLUhNNW12eEFkV0ZhbWc3cE9JS2NobXA4M0F4VmdXOFlDZXhQMWZvM1FjZVhreG1UejNIWnVMY3ROaExIV0w2V2hUVnJWNG1haXAzQWp1RFB",
+      "why": "Healthcare AI development covered by Google News.",
       "image": null,
-      "sources": [{ "label": "Reuters", "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNakxtczF4Q0NIS0Q3d1lVQzUyaVk1NTR5clhSYjU1U1Zlc0NkQVp2Wjk2R0Vob0R6QXpJWXhZSGpzNnVGU3dGeEpTU1BtUk52ZmY3QWV3U0g2NzNCT2oyWVlsUW1zZkpwVWVldEM0bXM0OWUxUThLUlU4dUpxWUhYaXF4M2ZyLTZxb2hTOWRPVURqcXQ4c2xqZjR5NllfdUFna1hsWGVMSmFFVUFRY29zTVAyMi00d1NYVXZyNDE4ZzQybVluTnZvdE9GZ29CdmNNVFlMcw?oc=5" }]
+      "sources": [
+        {
+          "label": "Google News",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZmxKRXVjRnZISW96WXU2SjRnLWpXSm5UeWxvZlRpbGFDTTM2THVvLUhNNW12eEFkV0ZhbWc3cE9JS2NobXA4M0F4VmdXOFlDZXhQMWZvM1FjZVhreG1UejNIWnVMY3ROaExIV0w2V2hUVnJWNG1haXAzQWp1RFBNdlZ3Z0xNM1phX3hCZElwNkxvc1NhdDNJNUplVFpKNzNyWkYtQm56ZmtncmJ3NW43cA?oc=5"
+        }
+      ]
     },
     {
       "id": 3,
-      "headline": "Merck and Mayo Clinic Team Up on AI-Driven Drug Discovery",
-      "summary": "The partnership will apply Mayo Clinic's de-identified patient data alongside Merck's compound libraries to train models that predict clinical outcomes earlier in the pipeline.",
-      "why": "Pairing a leading health system's real-world data with a top pharma's compound library represents a new template for AI drug discovery partnerships.",
+      "headline": "7 ways AI is transforming healthcare - The World Economic Forum",
+      "summary": "a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTFBlZ0NJWmozWnBaTTNmUHFmVFM5OVFCY2Q1bWdqSWpsWVk2OVBKRDdZdHhzc0lMbE5WNHJWcXRXTlhvbFYzSHV6Y3ZScXRZcDQ0WktOYlV2S0tHNEVVRVN1OHI4SWtQUGRMWGRjb0VEVjdBZ19HZUExUzZB?oc=5\" ",
+      "why": "Healthcare AI development covered by Google News.",
       "image": null,
-      "sources": [{ "label": "Healthcare Brew", "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQX2FvX0JHS2JZNVJxbzYyaVhCdFJNMXRpR0Vjd1FoSDA5TFdSdHpnM1lCUFFmM0t0cWM2bEtDOE9NbXlOZ0hSb3JJV1JMa0lrVlJ3UDVKYWVFcUhaaWlKRXpJYmU4NHNiQktFVnVaWXByNWlzMjVuYW9RUWhCYXBiZnN0MnlLUUdJbXFn?oc=5" }]
+      "sources": [
+        {
+          "label": "Google News",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBlZ0NJWmozWnBaTTNmUHFmVFM5OVFCY2Q1bWdqSWpsWVk2OVBKRDdZdHhzc0lMbE5WNHJWcXRXTlhvbFYzSHV6Y3ZScXRZcDQ0WktOYlV2S0tHNEVVRVN1OHI4SWtQUGRMWGRjb0VEVjdBZ19HZUExUzZB?oc=5"
+        }
+      ]
     },
     {
       "id": 4,
-      "headline": "Roche and NVIDIA Deploy the Pharma Industry's Largest AI Factory",
-      "summary": "Roche has activated a large-scale NVIDIA DGX-powered compute cluster dedicated to molecular simulation, protein folding, and multi-omics analysis for oncology pipeline acceleration.",
-      "why": "Industrial-scale GPU compute inside a major pharma signals that AI drug discovery is moving from research project to core business infrastructure.",
+      "headline": "From cure to care: China's first AI hospital shows how artificial intelligence could connect diagnosis, treatment and long-term health management - Global Times",
+      "summary": "a href=\"https://news.google.com/rss/articles/CBMiYkFVX3lxTE50bjE4MzlXU29YWnRRRTdSdWZGbjZGWkt6TTZmYkp0UEtNQkpFUVloR3VOeUdVdFdKMWp3cC1WYWg4cG03SGdKbi15eXZkN0wydEtnYVhSV2hBbG1KTlhYWnV3?oc=5\" target=\"_blank\" From cure to car",
+      "why": "Healthcare AI development covered by Google News.",
       "image": null,
-      "sources": [{ "label": "2 Minute Medicine", "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPOWV5TjIwNVJzYktPai1MNGM5NmxTbXVoYVlpcmtVMnJZWFdMaUJRdThzM0tWcjg0TVhPNWthZEdNT0FHcXhVLTJKMDJ3ekRCWWRsWUFPTWhkQnhSajd1QVpEWVl4Z3drdHpFZUlpRFFuQ3k3dEhQNnVubFp1NWZkbjVtajRCbjlnNlJyS3NrWTZvNk9EUjl2djdjWWZ6bkxyNWlWdnVFTVlQeUlRS0NJUFJsQkFCTjZGcTVKZFEtRFVUTzBVeFpuSG4zdG9PVmItdDJpSXNhQ0xXeGJFVERhamVuRFU?oc=5" }]
+      "sources": [
+        {
+          "label": "Google News",
+          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE50bjE4MzlXU29YWnRRRTdSdWZGbjZGWkt6TTZmYkp0UEtNQkpFUVloR3VOeUdVdFdKMWp3cC1WYWg4cG03SGdKbi15eXZkN0wydEtnYVhSV2hBbG1KTlhYWnV3?oc=5"
+        }
+      ]
     }
   ]
 }
