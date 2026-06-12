@@ -53,113 +53,166 @@ const FALLBACK_IMGS = [
 ];
 
 function buildEmailHtml(briefing, pharma) {
-  const site   = 'https://ai-briefing-site.vercel.app';
-  const unsub  = 'mailto:support@inpharmd.com?subject=Unsubscribe%20from%20The%20AI%20Brief';
+  const site  = 'https://ai-briefing-site.vercel.app';
+  const unsub = 'mailto:support@inpharmd.com?subject=Unsubscribe%20from%20The%20AI%20Brief';
 
-  const pharmaRows = pharma.stories.map(s => `
-    <tr><td style="padding:12px 0;border-bottom:1px solid #d0f0ec;">
+  const pharmaRows = pharma.stories.map((s, i) => `
+    <tr><td style="padding:14px 0;${i < pharma.stories.length - 1 ? 'border-bottom:1px solid #d0f0ec;' : ''}">
       <a href="${s.sources[0].url}" target="_blank"
-         style="font-size:14px;font-weight:700;color:#1a1a2e;text-decoration:none;line-height:1.4;display:block;margin-bottom:4px;"
+         style="font-size:17px;font-weight:700;color:#1a1a2e;text-decoration:none;line-height:1.4;display:block;margin-bottom:6px;"
       >${decodeEntities(s.headline)}</a>
-      <p style="margin:0 0 6px;font-size:13px;color:#4a5568;line-height:1.55;">${decodeEntities(s.summary)}</p>
+      <p style="margin:0 0 8px;font-size:15px;color:#374151;line-height:1.6;">${decodeEntities(s.summary)}</p>
       <a href="${s.sources[0].url}" target="_blank"
-         style="font-size:11px;font-weight:700;color:#00897b;text-decoration:none;"
+         style="font-size:13px;font-weight:700;color:#00897b;text-decoration:none;"
       >${s.sources[0].label} ↗</a>
     </td></tr>`).join('');
 
-  const storyRows = briefing.stories.map((s, i) => `
-    ${i > 0 ? '<tr><td><hr style="border:none;border-top:1px solid #e5e7eb;margin:0"></td></tr>' : ''}
-    <tr><td style="padding:${i === 0 ? '0' : '28px'} 0 28px;">
-      <img src="${s.image || FALLBACK_IMGS[i % FALLBACK_IMGS.length]}" width="560"
-           alt="" style="width:100%;max-width:560px;height:240px;object-fit:cover;border-radius:8px;display:block;margin-bottom:16px;">
-      <table cellpadding="0" cellspacing="0" style="margin-bottom:10px;"><tr>
-        <td style="width:22px;height:22px;background:#194aff;border-radius:5px;text-align:center;line-height:22px;font-size:11px;font-weight:800;color:#fff;vertical-align:middle;">${s.id}</td>
-        <td style="padding-left:8px;font-size:11px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.5px;vertical-align:middle;">${s.sources[0].label}</td>
-      </tr></table>
-      <a href="${s.sources[0].url}" target="_blank"
-         style="font-size:20px;font-weight:800;color:#1a1a2e;text-decoration:none;line-height:1.35;display:block;margin-bottom:12px;letter-spacing:-0.2px;"
-      >${decodeEntities(s.headline)}</a>
-      <p style="margin:0 0 12px;font-size:15px;color:#4a5568;line-height:1.7;">
-        <strong style="color:#1a1a2e;">TL;DR:</strong> ${decodeEntities(s.summary)}
-      </p>
-      <table cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:14px;">
-        <tr><td style="background:#f0f4ff;border-left:3px solid #194aff;border-radius:0 6px 6px 0;padding:10px 14px;">
-          <p style="margin:0;font-size:13px;color:#1a3acc;line-height:1.6;">
-            <strong>Why it matters —</strong> ${decodeEntities(s.why)}
-          </p>
-        </td></tr>
+  const storyRows = briefing.stories.map((s, i) => {
+    const imgUrl = s.image || FALLBACK_IMGS[i % FALLBACK_IMGS.length];
+    return `
+    ${i > 0 ? '<tr><td style="padding:0;"><hr style="border:none;border-top:1px solid #e5e7eb;margin:0;"></td></tr>' : ''}
+    <tr><td style="padding:${i === 0 ? '0' : '30px'} 0 30px;">
+
+      <!-- image: email-safe, no object-fit -->
+      <img src="${imgUrl}" alt="" width="536"
+           style="width:100%;height:auto;display:block;border-radius:8px;margin-bottom:18px;">
+
+      <!-- number badge + source -->
+      <table cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px;">
+        <tr>
+          <td width="26" height="26" bgcolor="#194aff"
+              style="width:26px;height:26px;border-radius:5px;text-align:center;vertical-align:middle;">
+            <span style="font-size:12px;font-weight:800;color:#ffffff;line-height:26px;">${s.id}</span>
+          </td>
+          <td style="padding-left:10px;font-size:12px;font-weight:700;color:#9ca3af;text-transform:uppercase;letter-spacing:0.6px;vertical-align:middle;">
+            ${s.sources[0].label}
+          </td>
+        </tr>
       </table>
+
+      <!-- headline -->
+      <a href="${s.sources[0].url}" target="_blank"
+         style="font-size:22px;font-weight:800;color:#111827;text-decoration:none;line-height:1.3;display:block;margin-bottom:14px;"
+      >${decodeEntities(s.headline)}</a>
+
+      <!-- TL;DR summary -->
+      <p style="margin:0 0 14px;font-size:16px;color:#374151;line-height:1.7;">
+        <strong style="color:#111827;">TL;DR:</strong> ${decodeEntities(s.summary)}
+      </p>
+
+      <!-- Why it matters box -->
+      <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:16px;">
+        <tr>
+          <td style="background:#f0f4ff;border-left:4px solid #194aff;padding:12px 16px;border-radius:0 6px 6px 0;">
+            <p style="margin:0;font-size:15px;color:#1e40af;line-height:1.65;">
+              <strong>Why it matters —</strong> ${decodeEntities(s.why)}
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Read more → right-aligned -->
       <p style="margin:0;text-align:right;">
         <a href="${s.sources[0].url}" target="_blank"
-           style="font-size:13px;font-weight:700;color:#194aff;text-decoration:none;">Read more →</a>
+           style="font-size:14px;font-weight:700;color:#194aff;text-decoration:none;">Read more →</a>
       </p>
-    </td></tr>`).join('');
+
+    </td></tr>`;
+  }).join('');
 
   return `<!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>The AI Brief — ${briefing.date}</title></head>
-<body style="margin:0;padding:0;background:#f0f3f8;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;">
-<table cellpadding="0" cellspacing="0" width="100%" style="background:#f0f3f8;">
-<tr><td align="center" style="padding:20px 16px 36px;">
-<table cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The AI Brief &mdash; ${briefing.date}</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f0f3f8;font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;">
 
-  <tr><td style="padding:0 0 10px;text-align:center;">
-    <span style="font-size:12px;color:#9ca3af;">Trouble viewing? </span>
-    <a href="${site}" target="_blank" style="font-size:12px;font-weight:600;color:#194aff;text-decoration:none;">Read online →</a>
-  </td></tr>
+<table cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color:#f0f3f8;">
+<tr><td align="center" style="padding:24px 16px 40px;">
 
-  <tr><td style="background:#194aff;border-radius:10px 10px 0 0;padding:22px 28px 18px;">
-    <table cellpadding="0" cellspacing="0" width="100%"><tr>
-      <td>
-        <p style="margin:0 0 2px;font-size:22px;font-weight:900;color:#fff;letter-spacing:-0.3px;">● The AI Brief</p>
-        <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.7);">Daily AI &amp; Healthcare Intelligence · by InPharmD</p>
-      </td>
-      <td align="right" valign="middle">
-        <p style="margin:0 0 2px;font-size:10px;font-weight:800;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:0.7px;">Issue #${briefing.issue}</p>
-        <p style="margin:0;font-size:14px;font-weight:700;color:#fff;">${briefing.date}</p>
-      </td>
-    </tr></table>
-  </td></tr>
+  <table cellpadding="0" cellspacing="0" border="0" width="600" style="max-width:600px;width:100%;">
 
-  <tr><td style="background:#ffffff;padding:28px 28px 8px;">
-    <table cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:28px;border:1px solid #b2dfdb;border-top:3px solid #00897b;border-radius:8px;">
-      <tr><td style="padding:18px 20px;">
-        <p style="margin:0 0 14px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:#00897b;">⚕ Pharma &amp; Healthcare AI</p>
-        <table cellpadding="0" cellspacing="0" width="100%">
-          ${pharmaRows}
-          <tr><td style="height:4px;"></td></tr>
-        </table>
-      </td></tr>
-    </table>
+    <!-- VIEW ONLINE -->
+    <tr><td style="padding:0 0 12px;text-align:center;">
+      <span style="font-size:13px;color:#9ca3af;">Trouble viewing?&nbsp;</span>
+      <a href="${site}" target="_blank"
+         style="font-size:13px;font-weight:600;color:#194aff;text-decoration:none;">Read online →</a>
+    </td></tr>
 
-    <p style="margin:0 0 20px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:#9ca3af;border-top:2px solid #e5e7eb;padding-top:18px;">Today's AI Briefing</p>
-
-    <table cellpadding="0" cellspacing="0" width="100%">${storyRows}</table>
-  </td></tr>
-
-  <tr><td style="background:#0c1a6e;border-radius:0 0 10px 10px;padding:22px 28px;">
-    <table cellpadding="0" cellspacing="0" width="100%">
-      <tr>
-        <td>
-          <p style="margin:0 0 3px;font-size:14px;font-weight:900;color:#fff;">The AI Brief</p>
-          <p style="margin:0;font-size:12px;color:rgba(255,255,255,0.45);">by <a href="https://inpharmd.com" target="_blank" style="color:rgba(255,255,255,0.6);text-decoration:none;">InPharmD</a></p>
+    <!-- HEADER -->
+    <tr><td bgcolor="#194aff" style="background-color:#194aff;border-radius:10px 10px 0 0;padding:24px 32px 20px;">
+      <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr>
+        <td valign="middle">
+          <p style="margin:0 0 4px;font-size:24px;font-weight:900;color:#ffffff;letter-spacing:-0.5px;">&#9679; The AI Brief</p>
+          <p style="margin:0;font-size:14px;color:rgba(255,255,255,0.75);">Daily AI &amp; Healthcare Intelligence &middot; by InPharmD</p>
         </td>
         <td align="right" valign="middle">
-          <a href="${site}" target="_blank" style="font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;margin-right:16px;">Website</a>
-          <a href="${site}/archive.html" target="_blank" style="font-size:12px;color:rgba(255,255,255,0.5);text-decoration:none;">Archive</a>
+          <p style="margin:0 0 3px;font-size:11px;font-weight:700;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:0.7px;">Issue #${briefing.issue}</p>
+          <p style="margin:0;font-size:15px;font-weight:700;color:#ffffff;">${briefing.date}</p>
         </td>
-      </tr>
-      <tr><td colspan="2" style="padding-top:12px;border-top:1px solid rgba(255,255,255,0.08);">
-        <p style="margin:6px 0 0;font-size:11px;color:rgba(255,255,255,0.3);line-height:1.6;">
-          You're receiving this because you subscribed to The AI Brief. &nbsp;·&nbsp;
-          <a href="${unsub}" style="color:rgba(255,255,255,0.45);text-decoration:underline;">Unsubscribe</a>
-        </p>
-      </td></tr>
-    </table>
-  </td></tr>
+      </tr></table>
+    </td></tr>
 
-</table>
+    <!-- BODY -->
+    <tr><td bgcolor="#ffffff" style="background-color:#ffffff;padding:28px 32px 12px;">
+
+      <!-- PHARMA SECTION -->
+      <table cellpadding="0" cellspacing="0" border="0" width="100%"
+             style="margin-bottom:30px;border:1px solid #b2dfdb;border-top:3px solid #00897b;border-radius:8px;">
+        <tr><td style="padding:20px 22px;">
+          <p style="margin:0 0 16px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#00897b;">
+            &#9877; Pharma &amp; Healthcare AI
+          </p>
+          <table cellpadding="0" cellspacing="0" border="0" width="100%">
+            ${pharmaRows}
+          </table>
+        </td></tr>
+      </table>
+
+      <!-- SECTION LABEL -->
+      <p style="margin:0 0 22px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#9ca3af;border-top:2px solid #e5e7eb;padding-top:20px;">
+        Today's AI Briefing
+      </p>
+
+      <!-- STORIES -->
+      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        ${storyRows}
+      </table>
+
+    </td></tr>
+
+    <!-- FOOTER -->
+    <tr><td bgcolor="#0c1a6e" style="background-color:#0c1a6e;border-radius:0 0 10px 10px;padding:24px 32px;">
+      <table cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td valign="middle">
+            <p style="margin:0 0 3px;font-size:15px;font-weight:900;color:#ffffff;">The AI Brief</p>
+            <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.5);">by
+              <a href="https://inpharmd.com" target="_blank"
+                 style="color:rgba(255,255,255,0.65);text-decoration:none;">InPharmD</a>
+            </p>
+          </td>
+          <td align="right" valign="middle">
+            <a href="${site}" target="_blank"
+               style="font-size:13px;color:rgba(255,255,255,0.55);text-decoration:none;margin-right:18px;">Website</a>
+            <a href="${site}/archive.html" target="_blank"
+               style="font-size:13px;color:rgba(255,255,255,0.55);text-decoration:none;">Archive</a>
+          </td>
+        </tr>
+        <tr><td colspan="2" style="padding-top:14px;border-top:1px solid rgba(255,255,255,0.1);">
+          <p style="margin:6px 0 0;font-size:12px;color:rgba(255,255,255,0.35);line-height:1.6;">
+            You're receiving this because you subscribed to The AI Brief.&nbsp;&nbsp;&middot;&nbsp;&nbsp;
+            <a href="${unsub}"
+               style="color:rgba(255,255,255,0.5);text-decoration:underline;">Unsubscribe</a>
+          </p>
+        </td></tr>
+      </table>
+    </td></tr>
+
+  </table>
+
 </td></tr>
 </table>
 </body></html>`;
@@ -224,7 +277,11 @@ function parseRSS(xml, sourceName) {
       block.match(/<enclosure[^>]+url="([^"]+)"[^>]+type="image/)?.[1] ||
       rawDesc.match(/<img[^>]+src="([^"']+)"/)?.[1] ||
       null;
-    const desc = rawDesc.replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, ' ').trim().substring(0, 220);
+    // Decode HTML entities before stripping tags — Google News encodes as &lt;a href=...&gt;
+    const decodedDesc = rawDesc
+      .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')
+      .replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+    const desc = decodedDesc.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().substring(0, 220);
     const isSkippable = SKIP_TITLES.some(s => title.toLowerCase().includes(s));
     if (title && link && !isSkippable) items.push({ title, link, desc, image, source: sourceName });
   }
@@ -271,22 +328,28 @@ async function commitToGitHub(briefing) {
   const token = process.env.GITHUB_TOKEN;
   const msg   = `Daily briefing: ${briefing.date}`;
 
+  // Critical writes — always run these
   await githubPut(token, 'data/latest.json', briefing, msg);
   await githubPut(token, `data/${briefing.date_slug}.json`, briefing, msg);
 
-  const owner = 'tulaseerao';
-  const repo  = 'ai-briefing-site';
-  const headers = { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' };
-  const archiveRes  = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/data/archive.json`, { headers });
-  const archiveFile = await archiveRes.json();
-  let archive = [];
-  if (archiveFile.content) {
-    archive = JSON.parse(Buffer.from(archiveFile.content, 'base64').toString('utf-8'));
+  // Archive update — best-effort, never block critical writes
+  try {
+    const owner   = 'tulaseerao';
+    const repo    = 'ai-briefing-site';
+    const headers = { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github+json' };
+    const archiveRes  = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/data/archive.json`, { headers });
+    const archiveFile = await archiveRes.json();
+    let archive = [];
+    if (archiveFile.content) {
+      archive = JSON.parse(Buffer.from(archiveFile.content.replace(/\n/g, ''), 'base64').toString('utf-8'));
+    }
+    if (!archive.find(e => e.date_slug === briefing.date_slug)) {
+      archive.unshift({ date: briefing.date, date_slug: briefing.date_slug, issue: briefing.issue, storiesCount: briefing.stories.length });
+      await githubPut(token, 'data/archive.json', archive, msg);
+    }
+  } catch (err) {
+    console.error('Archive update failed (non-fatal):', err.message);
   }
-  if (!archive.find(e => e.date_slug === briefing.date_slug)) {
-    archive.unshift({ date: briefing.date, date_slug: briefing.date_slug, issue: briefing.issue, storiesCount: briefing.stories.length });
-  }
-  await githubPut(token, 'data/archive.json', archive, msg);
 }
 
 module.exports = async function handler(req, res) {
