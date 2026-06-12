@@ -280,8 +280,8 @@ function parseRSS(xml, sourceName) {
     // Decode HTML entities before stripping tags — Google News encodes as &lt;a href=...&gt;
     const decodedDesc = rawDesc
       .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')
-      .replace(/&quot;/g, '"').replace(/&#39;/g, "'");
-    const desc = decodedDesc.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().substring(0, 220);
+      .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ');
+    const desc = decodedDesc.replace(/<[^>]+>/g, '').replace(/🛎️\s*/g, '').replace(/\s+/g, ' ').trim().substring(0, 220);
     const isSkippable = SKIP_TITLES.some(s => title.toLowerCase().includes(s));
     if (title && link && !isSkippable) items.push({ title, link, desc, image, source: sourceName });
   }
@@ -370,11 +370,13 @@ module.exports = async function handler(req, res) {
     });
     const dateSlug = now.toISOString().split('T')[0];
 
+    const cleanTitle = t => t.replace(/🛎️\s*/g, '').replace(/\s+/g, ' ').trim();
+
     const stories = items.slice(0, 6).map((item, i) => ({
       id: i + 1,
       confidence: 'HIGH',
       vote: '3-0',
-      headline: item.title,
+      headline: cleanTitle(item.title),
       summary: item.desc || 'Read the full story at the source.',
       why: `An important development covered by ${item.source} worth tracking today.`,
       image: item.image || null,
@@ -392,7 +394,7 @@ module.exports = async function handler(req, res) {
       .slice(0, 4)
       .map((item, i) => ({
         id: i + 1,
-        headline: item.title,
+        headline: cleanTitle(item.title),
         summary: item.desc || 'Read the full story at the source.',
         why: `Healthcare AI development covered by ${item.source}.`,
         image: item.image || null,
