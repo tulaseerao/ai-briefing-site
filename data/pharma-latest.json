@@ -4,21 +4,8 @@
   "stories": [
     {
       "id": 1,
-      "headline": "FDA launches effort to speed up clinical trials, using AI - statnews.com",
-      "summary": "a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPZmxKRXVjRnZISW96WXU2SjRnLWpXSm5UeWxvZlRpbGFDTTM2THVvLUhNNW12eEFkV0ZhbWc3cE9JS2NobXA4M0F4VmdXOFlDZXhQMWZvM1FjZVhreG1UejNIWnVMY3ROaExIV0w2V2hUVnJWNG1haXAzQWp1RFB",
-      "why": "Healthcare AI development covered by Google News.",
-      "image": null,
-      "sources": [
-        {
-          "label": "Google News",
-          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZmxKRXVjRnZISW96WXU2SjRnLWpXSm5UeWxvZlRpbGFDTTM2THVvLUhNNW12eEFkV0ZhbWc3cE9JS2NobXA4M0F4VmdXOFlDZXhQMWZvM1FjZVhreG1UejNIWnVMY3ROaExIV0w2V2hUVnJWNG1haXAzQWp1RFBNdlZ3Z0xNM1phX3hCZElwNkxvc1NhdDNJNUplVFpKNzNyWkYtQm56ZmtncmJ3NW43cA?oc=5"
-        }
-      ]
-    },
-    {
-      "id": 2,
       "headline": "U.S. Medical Centers Need a New Model for Drug Discovery and Development - Harvard Business Review",
-      "summary": "a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxNaGJUdllMN2VXUjRBMGtYYjVLZEtQUWNrbTFnbGV0QnpEZ3lGMHJYZTU0U2hOUGFXdVpDSHNodVBUaGh3QTlCZjc4N29Pak5PejQxWEhtTHFLVWkzaXFTSlBlbnhfaDE4RURXTEZlZHF6TnhBQi11eEJaWnh0a3J",
+      "summary": "U.S. Medical Centers Need a New Model for Drug Discovery and Development&nbsp;&nbsp;Harvard Business Review",
       "why": "Healthcare AI development covered by Google News.",
       "image": null,
       "sources": [
@@ -29,9 +16,22 @@
       ]
     },
     {
+      "id": 2,
+      "headline": "FDA and EMA release collaborative AI framework for drug development - Clinical Trials Arena",
+      "summary": "FDA and EMA release collaborative AI framework for drug development&nbsp;&nbsp;Clinical Trials Arena",
+      "why": "Healthcare AI development covered by Google News.",
+      "image": null,
+      "sources": [
+        {
+          "label": "Google News",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOT2lMc2NTWUhlNWJvbzdhM09ta1N0OXltTmo0czkzZWlfQTdLRkNJb2JSczdqelZBZU9DcTRvSWhMdV9LSWZ3YXAwUkg0Mmw0SjQxSV9xUlNaOHItTnlRZlBUdkxGNDNqUHlGczBXM3V5b09MZUdzZEpLSlVMd1FPX1lpeGhSbTY4NkhmZmNB?oc=5"
+        }
+      ]
+    },
+    {
       "id": 3,
       "headline": "7 ways AI is transforming healthcare - The World Economic Forum",
-      "summary": "a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTFBlZ0NJWmozWnBaTTNmUHFmVFM5OVFCY2Q1bWdqSWpsWVk2OVBKRDdZdHhzc0lMbE5WNHJWcXRXTlhvbFYzSHV6Y3ZScXRZcDQ0WktOYlV2S0tHNEVVRVN1OHI4SWtQUGRMWGRjb0VEVjdBZ19HZUExUzZB?oc=5\" ",
+      "summary": "7 ways AI is transforming healthcare&nbsp;&nbsp;The World Economic Forum",
       "why": "Healthcare AI development covered by Google News.",
       "image": null,
       "sources": [
@@ -44,7 +44,7 @@
     {
       "id": 4,
       "headline": "From cure to care: China's first AI hospital shows how artificial intelligence could connect diagnosis, treatment and long-term health management - Global Times",
-      "summary": "a href=\"https://news.google.com/rss/articles/CBMiYkFVX3lxTE50bjE4MzlXU29YWnRRRTdSdWZGbjZGWkt6TTZmYkp0UEtNQkpFUVloR3VOeUdVdFdKMWp3cC1WYWg4cG03SGdKbi15eXZkN0wydEtnYVhSV2hBbG1KTlhYWnV3?oc=5\" target=\"_blank\" From cure to car",
+      "summary": "From cure to care: China's first AI hospital shows how artificial intelligence could connect diagnosis, treatment and long-term health management&nbsp;&nbsp;Global Times",
       "why": "Healthcare AI development covered by Google News.",
       "image": null,
       "sources": [
