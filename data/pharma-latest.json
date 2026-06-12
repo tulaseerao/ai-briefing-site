@@ -1,9 +1,22 @@
 {
-  "date": "June 11, 2026",
-  "date_slug": "2026-06-11",
+  "date": "June 12, 2026",
+  "date_slug": "2026-06-12",
   "stories": [
     {
       "id": 1,
+      "headline": "FDA launches effort to speed up clinical trials, using AI - statnews.com",
+      "summary": "a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPZmxKRXVjRnZISW96WXU2SjRnLWpXSm5UeWxvZlRpbGFDTTM2THVvLUhNNW12eEFkV0ZhbWc3cE9JS2NobXA4M0F4VmdXOFlDZXhQMWZvM1FjZVhreG1UejNIWnVMY3ROaExIV0w2V2hUVnJWNG1haXAzQWp1RFB",
+      "why": "Healthcare AI development covered by Google News.",
+      "image": null,
+      "sources": [
+        {
+          "label": "Google News",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZmxKRXVjRnZISW96WXU2SjRnLWpXSm5UeWxvZlRpbGFDTTM2THVvLUhNNW12eEFkV0ZhbWc3cE9JS2NobXA4M0F4VmdXOFlDZXhQMWZvM1FjZVhreG1UejNIWnVMY3ROaExIV0w2V2hUVnJWNG1haXAzQWp1RFBNdlZ3Z0xNM1phX3hCZElwNkxvc1NhdDNJNUplVFpKNzNyWkYtQm56ZmtncmJ3NW43cA?oc=5"
+        }
+      ]
+    },
+    {
+      "id": 2,
       "headline": "U.S. Medical Centers Need a New Model for Drug Discovery and Development - Harvard Business Review",
       "summary": "a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxNaGJUdllMN2VXUjRBMGtYYjVLZEtQUWNrbTFnbGV0QnpEZ3lGMHJYZTU0U2hOUGFXdVpDSHNodVBUaGh3QTlCZjc4N29Pak5PejQxWEhtTHFLVWkzaXFTSlBlbnhfaDE4RURXTEZlZHF6TnhBQi11eEJaWnh0a3J",
       "why": "Healthcare AI development covered by Google News.",
@@ -12,19 +25,6 @@
         {
           "label": "Google News",
           "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaGJUdllMN2VXUjRBMGtYYjVLZEtQUWNrbTFnbGV0QnpEZ3lGMHJYZTU0U2hOUGFXdVpDSHNodVBUaGh3QTlCZjc4N29Pak5PejQxWEhtTHFLVWkzaXFTSlBlbnhfaDE4RURXTEZlZHF6TnhBQi11eEJaWnh0a3JGbTFjSWpmTXJMSU9nVXNDV2c3R2hhY1NjNDZsdw?oc=5"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "headline": "FDA and EMA release collaborative AI framework for drug development - Clinical Trials Arena",
-      "summary": "a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxOT2lMc2NTWUhlNWJvbzdhM09ta1N0OXltTmo0czkzZWlfQTdLRkNJb2JSczdqelZBZU9DcTRvSWhMdV9LSWZ3YXAwUkg0Mmw0SjQxSV9xUlNaOHItTnlRZlBUdkxGNDNqUHlGczBXM3V5b09MZUdzZEpLSlVMd1F",
-      "why": "Healthcare AI development covered by Google News.",
-      "image": null,
-      "sources": [
-        {
-          "label": "Google News",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOT2lMc2NTWUhlNWJvbzdhM09ta1N0OXltTmo0czkzZWlfQTdLRkNJb2JSczdqelZBZU9DcTRvSWhMdV9LSWZ3YXAwUkg0Mmw0SjQxSV9xUlNaOHItTnlRZlBUdkxGNDNqUHlGczBXM3V5b09MZUdzZEpLSlVMd1FPX1lpeGhSbTY4NkhmZmNB?oc=5"
         }
       ]
     },
