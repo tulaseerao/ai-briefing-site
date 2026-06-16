@@ -1,20 +1,20 @@
 {
-  "date": "June 14, 2026",
-  "date_slug": "2026-06-14",
-  "issue": 10,
+  "date": "June 16, 2026",
+  "date_slug": "2026-06-16",
+  "issue": 12,
   "stories": [
     {
       "id": 1,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "As Anthropic suspends access to new models, India debates its AI future",
-      "summary": "Tech leaders debate whether the Anthropic episode is a wake-up call for India’s AI ambitions.",
+      "headline": "SpaceX to acquire Cursor for $60B in stock, days after blockbuster IPO",
+      "summary": "The deal is supposed to help SpaceX's struggling AI division. The company told IPO investors it sees a $26 trillion addressable market in AI.",
       "why": "An important development covered by TechCrunch AI worth tracking today.",
       "image": null,
       "sources": [
         {
           "label": "TechCrunch AI",
-          "url": "https://techcrunch.com/2026/06/13/as-anthropic-suspends-access-to-new-models-india-debates-its-ai-future/"
+          "url": "https://techcrunch.com/2026/06/16/spacex-to-acquire-cursor-for-60b-in-stock-days-after-blockbuster-ipo/"
         }
       ]
     },
@@ -22,14 +22,14 @@
       "id": 2,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "Meta reportedly moves to unwind $2B Manus deal after Beijing&#8217;s demand",
-      "summary": "Meta starts dismantling its $2 billion Manus acquisition after Beijing ordered the deal reversed.",
+      "headline": "Malaysia&#8217;s AI agent-powered messaging app Respond.io raises $62.5M, eyes acquisitions",
+      "summary": "Respond.io, one of Malaysia startups to watch, uses AI agents to handle high volumes of customer inquiries and charges per convo, not per seat.",
       "why": "An important development covered by TechCrunch AI worth tracking today.",
       "image": null,
       "sources": [
         {
           "label": "TechCrunch AI",
-          "url": "https://techcrunch.com/2026/06/13/meta-reportedly-moves-to-unwind-2b-manus-deal-after-beijings-demand/"
+          "url": "https://techcrunch.com/2026/06/15/malaysias-respond-io-raises-62-5m-eyes-acquisitions-in-north-america-and-europe/"
         }
       ]
     },
@@ -67,14 +67,14 @@
       "id": 5,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "Anthropic Is Midwifing a God",
-      "summary": "Plus: Gemini Plays the World Cup, Nuclear Cooling Comes for AI",
+      "headline": "Fake AI Beat Real AI",
+      "summary": "Plus: Anthropic Forgot It’s a Company, The Age Wall Goes Global",
       "why": "An important development covered by AI Secret worth tracking today.",
-      "image": "https://d18e5vrcqydw4b.cloudfront.net/2026/06/l144_9171780613785.webp",
+      "image": "https://d18e5vrcqydw4b.cloudfront.net/2026/06/1be377eda86576f67f64800876fe393e.webp",
       "sources": [
         {
           "label": "AI Secret",
-          "url": "https://aisecret.us/anthropic-is-midwifing-a-god/"
+          "url": "https://aisecret.us/fake-ai-beat-real-ai/"
         }
       ]
     },
@@ -82,14 +82,14 @@
       "id": 6,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "Americans Fear AI Most",
-      "summary": "Plus: OpenAI Wants a Price War, AI Broke Our Lie Detector",
+      "headline": "Claude Fable “Died” in Four Days",
+      "summary": "Plus: Loop Engineering Has Arrived, Token Capital Is Cope",
       "why": "An important development covered by AI Secret worth tracking today.",
-      "image": "https://d18e5vrcqydw4b.cloudfront.net/2026/06/ai-skeptic-inc-2151296073_541902_xti7ia.jpg",
+      "image": "https://d18e5vrcqydw4b.cloudfront.net/2026/06/anthropic-claude-fable-1.jpg",
       "sources": [
         {
           "label": "AI Secret",
-          "url": "https://aisecret.us/americans-fear-ai-most/"
+          "url": "https://aisecret.us/claude-fable-died-in-four-days/"
         }
       ]
     }
