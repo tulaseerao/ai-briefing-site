@@ -7,14 +7,14 @@
       "id": 1,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "How to turn off AI in your Google Docs",
-      "summary": "Here's what you need to do to get those pesky \"write with Gemini\" pop-ups to go away.",
+      "headline": "General Intuition in talks to raise $300M at around $2B valuation",
+      "summary": "General Intuition is in talks to raise around $300 million at a roughly $2 billion valuation from backers including Jeff Bezos. The startup trains AI agents on spatial-temporal reasoning.",
       "why": "An important development covered by TechCrunch AI worth tracking today.",
-      "image": null,
+      "image": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&q=75&fit=crop",
       "sources": [
         {
           "label": "TechCrunch AI",
-          "url": "https://techcrunch.com/2026/06/17/how-to-turn-off-ai-in-your-google-docs/"
+          "url": "https://techcrunch.com/2026/06/18/general-intuition-in-talks-to-raise-300m-at-around-2b-valuation/"
         }
       ]
     },
@@ -22,49 +22,19 @@
       "id": 2,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "Roelof Botha joins SpaceX&#8217;s board of directors",
-      "summary": "The former Sequoia Capital leader is filling an \"existing vacancy\" on SpaceX's board, days after the company went public in the largest IPO ever.",
+      "headline": "A tech worker-backed PAC is bringing a $5M knife to Big Tech’s $100M gunfight",
+      "summary": "Guardrails positions itself as a populist political movement that runs on small donations from people in the trenches of the AI boom.",
       "why": "An important development covered by TechCrunch AI worth tracking today.",
-      "image": null,
+      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=700&q=75&fit=crop",
       "sources": [
         {
           "label": "TechCrunch AI",
-          "url": "https://techcrunch.com/2026/06/17/roelof-botha-joins-spacexs-board-of-directors/"
+          "url": "https://techcrunch.com/2026/06/18/a-tech-worker-backed-pac-is-bringing-a-5m-knife-to-big-techs-100m-gunfight/"
         }
       ]
     },
     {
       "id": 3,
-      "confidence": "HIGH",
-      "vote": "3-0",
-      "headline": "Google just redesigned the search box for the first time in 25 years — here’s why it matters more than you think.",
-      "summary": "For a quarter century, the Google search box has been one of the most recognizable interfaces in computing: a thin white rectangle, a blinking cursor, a few typed words, and a list of blue links. On Tuesday, Google will ",
-      "why": "An important development covered by VentureBeat AI worth tracking today.",
-      "image": "https://images.ctfassets.net/jdtwqhzvc2n1/1TD0Sl7Zq6nnBSZMK9FXpl/41ce2cc6da055da7647670c71ba8aa6b/Nuneybits_Vector_art_of_an_oversized_white_search_bar_rimmed_in_695cac3f-1536-4438-acc1-51c16e2ff51f.webp?w=300&amp;q=30",
-      "sources": [
-        {
-          "label": "VentureBeat AI",
-          "url": "https://venturebeat.com/technology/google-just-redesigned-the-search-box-for-the-first-time-in-25-years-heres-why-it-matters-more-than-you-think"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "confidence": "HIGH",
-      "vote": "3-0",
-      "headline": "Railway secures $100 million to challenge AWS with AI-native cloud infrastructure",
-      "summary": "Railway, a San Francisco-based cloud platform that has quietly amassed two million developers without spending a dollar on marketing, announced Thursday that it raised $100 million in a Series B funding round, as surging",
-      "why": "An important development covered by VentureBeat AI worth tracking today.",
-      "image": "https://images.ctfassets.net/jdtwqhzvc2n1/5RLyQIpBeVXxv0RpcXZxWQ/fd9680c6d82acd8208ac341fc575f5fb/nuneybits_Vector_art_of_a_sleek_bullet_train_bursting_from_a_cl_32a805aa-272c-4b34-ac16-cf20508b7ff4.webp?w=300&amp;q=30",
-      "sources": [
-        {
-          "label": "VentureBeat AI",
-          "url": "https://venturebeat.com/infrastructure/railway-secures-usd100-million-to-challenge-aws-with-ai-native-cloud"
-        }
-      ]
-    },
-    {
-      "id": 5,
       "confidence": "HIGH",
       "vote": "3-0",
       "headline": "A Billion Bodies",
@@ -79,7 +49,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": 4,
       "confidence": "HIGH",
       "vote": "3-0",
       "headline": "Cursor Crowned and Toppled Fast",
@@ -90,6 +60,36 @@
         {
           "label": "AI Secret",
           "url": "https://aisecret.us/cursor-crowned-and-toppled-fast/"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "confidence": "HIGH",
+      "vote": "3-0",
+      "headline": "AI Workplace Proficiency Course - Superhuman AI Certification",
+      "summary": "AI Workplace Proficiency Course&nbsp;&nbsp;Superhuman AI Certification",
+      "why": "An important development covered by Superhuman AI worth tracking today.",
+      "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=700&q=75&fit=crop",
+      "sources": [
+        {
+          "label": "Superhuman AI",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1oallhV25pOGNpY2ZaV0pvY2Y1TjNEZGk0M0twM0VnUG9xY1RWMnp0SFIzaE84N25ZVlhmLTZqM05RMlB2Z213MzJhWkJrdw?oc=5"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "confidence": "HIGH",
+      "vote": "3-0",
+      "headline": "OpenAI launches a Partner Program while its legal woes grow - Superhuman AI",
+      "summary": "OpenAI launches a Partner Program while its legal woes grow&nbsp;&nbsp;Superhuman AI",
+      "why": "An important development covered by Superhuman AI worth tracking today.",
+      "image": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=700&q=75&fit=crop",
+      "sources": [
+        {
+          "label": "Superhuman AI",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNMXA1UF83bzl1N1JLT2VMVXBaaXBaaF9sNEcweVBkYlpqX1p6TzA4bUZrM2NlVnk3UzhhalVmdlBLb3BucGFJdjlIWGRDV0t3alpIcXFLdkMtZ0pIY2EzZXJKaTZDOURoYXRxemhSZEVaenZnUTVDXzQ2ZVVNQnlUN3BZODFPNy0wLUtDaklUbVo?oc=5"
         }
       ]
     }
