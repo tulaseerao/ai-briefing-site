@@ -56,27 +56,26 @@ function buildEmailHtml(briefing, pharma) {
   const site  = 'https://ai-briefing-site.vercel.app';
   const unsub = 'mailto:support@inpharmd.com?subject=Unsubscribe%20from%20The%20AI%20Brief';
 
-  /* ── pharma rows: clean PH-style rows on light teal bg ── */
+  /* ── pharma rows ── */
   const pharmaRows = pharma.stories.map((s, i) => `
-    <tr><td style="padding:16px 40px;${i < pharma.stories.length - 1 ? 'border-bottom:1px solid #e0f2f1;' : ''}background-color:#f7fffe;">
+    <tr><td class="ep" style="padding:16px 40px;${i < pharma.stories.length - 1 ? 'border-bottom:1px solid #e0f2f1;' : ''}background-color:#f7fffe;">
       <a href="${s.sources[0].url}" target="_blank"
-         style="font-size:16px;font-weight:700;color:#1c1c21;text-decoration:none;line-height:1.4;display:block;margin-bottom:5px;"
+         style="font-size:16px;font-weight:700;color:#1c1c21;text-decoration:none;line-height:1.4;display:block;margin-bottom:5px;word-break:break-word;"
       >${decodeEntities(s.headline)}</a>
-      <p style="margin:0 0 7px;font-size:14px;color:#4a5568;line-height:1.6;">${decodeEntities(s.summary)}</p>
+      <p style="margin:0 0 7px;font-size:14px;color:#4a5568;line-height:1.6;word-break:break-word;">${decodeEntities(s.summary)}</p>
       <a href="${s.sources[0].url}" target="_blank"
          style="font-size:12px;font-weight:700;color:#00897b;text-decoration:none;"
       >${s.sources[0].label} ↗</a>
     </td></tr>`).join('');
 
-  /* ── main story rows: Product Hunt thumbnail-left layout ── */
+  /* ── main story rows ── */
   const storyRows = briefing.stories.map((s, i) => {
     const imgUrl = s.image || FALLBACK_IMGS[i % FALLBACK_IMGS.length];
     return `
-    <tr><td style="padding:22px 40px;${i < briefing.stories.length - 1 ? 'border-bottom:1px solid #e8e8e8;' : ''}">
+    <tr><td class="es" style="padding:22px 40px;${i < briefing.stories.length - 1 ? 'border-bottom:1px solid #e8e8e8;' : ''}">
       <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr valign="top">
 
-        <!-- number circle -->
-        <td width="36" style="padding-right:0;padding-top:2px;">
+        <td class="eb" width="36" style="padding-right:0;padding-top:2px;">
           <table cellpadding="0" cellspacing="0" border="0"><tr>
             <td width="24" height="24" bgcolor="#FF6154"
                 style="width:24px;height:24px;border-radius:12px;text-align:center;vertical-align:middle;">
@@ -85,22 +84,20 @@ function buildEmailHtml(briefing, pharma) {
           </tr></table>
         </td>
 
-        <!-- thumbnail -->
-        <td width="106" style="padding:0 16px 0 8px;">
+        <td class="et" width="106" style="padding:0 16px 0 8px;">
           <img src="${imgUrl}" alt="" width="90"
                style="display:block;width:90px;height:auto;border-radius:8px;">
         </td>
 
-        <!-- content -->
         <td>
           <span style="font-size:11px;font-weight:700;color:#FF6154;text-transform:uppercase;letter-spacing:0.6px;">${s.sources[0].label}</span>
           <a href="${s.sources[0].url}" target="_blank"
-             style="display:block;font-size:18px;font-weight:700;color:#1c1c21;text-decoration:none;line-height:1.35;margin:5px 0 10px;"
+             style="display:block;font-size:18px;font-weight:700;color:#1c1c21;text-decoration:none;line-height:1.35;margin:5px 0 10px;word-break:break-word;"
           >${decodeEntities(s.headline)}</a>
-          <p style="margin:0 0 9px;font-size:14px;color:#374151;line-height:1.65;">
+          <p style="margin:0 0 9px;font-size:14px;color:#374151;line-height:1.65;word-break:break-word;">
             <strong style="color:#1c1c21;">TL;DR:</strong> ${decodeEntities(s.summary)}
           </p>
-          <p style="margin:0 0 12px;font-size:13px;color:#6b7280;line-height:1.55;">
+          <p style="margin:0 0 12px;font-size:13px;color:#6b7280;line-height:1.55;word-break:break-word;">
             <strong style="color:#FF6154;">Why it matters —</strong> ${decodeEntities(s.why)}
           </p>
           <a href="${s.sources[0].url}" target="_blank"
@@ -117,13 +114,28 @@ function buildEmailHtml(briefing, pharma) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>The AI Brief &mdash; ${briefing.date}</title>
+<style type="text/css">
+  /* Mobile: reduce padding, hide thumbnail, stack cleanly */
+  @media only screen and (max-width: 620px) {
+    .eo  { padding: 0 0 20px !important; }
+    .eh  { padding: 18px 16px 16px !important; }
+    .epl { padding: 12px 16px 0    !important; }
+    .ep  { padding: 14px 16px      !important; }
+    .esl { padding: 16px 16px 0    !important; }
+    .es  { padding: 16px 16px      !important; }
+    .ef  { padding: 20px 16px      !important; }
+    /* hide thumbnail column on mobile — content fills the space */
+    .et  { display: none !important; width: 0 !important; max-height: 0 !important;
+           overflow: hidden !important; mso-hide: all !important; }
+    .eb  { width: 30px !important; }
+  }
+</style>
 </head>
 <body style="margin:0;padding:0;background-color:#f2f2f2;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
 
 <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#f2f2f2" style="background-color:#f2f2f2;">
-<tr><td align="center" style="padding:16px 16px 40px;">
+<tr><td class="eo" align="center" style="padding:16px 16px 40px;">
 
-  <!-- 600px white card -->
   <table cellpadding="0" cellspacing="0" border="0" width="600" bgcolor="#ffffff"
          style="max-width:600px;width:100%;background-color:#ffffff;">
 
@@ -134,8 +146,8 @@ function buildEmailHtml(briefing, pharma) {
          style="font-size:12px;font-weight:600;color:#FF6154;text-decoration:none;">Read online →</a>
     </td></tr>
 
-    <!-- HEADER: clean PH-style, orange underline accent -->
-    <tr><td style="padding:28px 40px 22px;border-bottom:2px solid #FF6154;">
+    <!-- HEADER -->
+    <tr><td class="eh" style="padding:28px 40px 22px;border-bottom:2px solid #FF6154;">
       <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr>
         <td valign="middle">
           <p style="margin:0 0 4px;font-size:26px;font-weight:900;color:#1c1c21;letter-spacing:-0.5px;">
@@ -145,7 +157,7 @@ function buildEmailHtml(briefing, pharma) {
             Daily AI &amp; Healthcare Intelligence &middot; by InPharmD
           </p>
         </td>
-        <td align="right" valign="middle">
+        <td align="right" valign="middle" style="white-space:nowrap;">
           <p style="margin:0 0 3px;font-size:11px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.6px;">Issue #${briefing.issue}</p>
           <p style="margin:0;font-size:14px;font-weight:700;color:#1c1c21;">${briefing.date}</p>
         </td>
@@ -153,27 +165,25 @@ function buildEmailHtml(briefing, pharma) {
     </td></tr>
 
     <!-- PHARMA SECTION LABEL -->
-    <tr><td bgcolor="#f7fffe" style="background-color:#f7fffe;padding:14px 40px 0;border-left:3px solid #00897b;">
+    <tr><td class="epl" bgcolor="#f7fffe" style="background-color:#f7fffe;padding:14px 40px 0;border-left:3px solid #00897b;">
       <p style="margin:0;font-size:10px;font-weight:800;color:#00897b;text-transform:uppercase;letter-spacing:1px;">
         &#9877; Pharma &amp; Healthcare AI
       </p>
     </td></tr>
 
-    <!-- PHARMA STORIES -->
     ${pharmaRows}
 
     <!-- DIVIDER + AI SECTION LABEL -->
-    <tr><td style="padding:22px 40px 0;">
+    <tr><td class="esl" style="padding:22px 40px 0;">
       <p style="margin:0;font-size:10px;font-weight:800;color:#9ca3af;text-transform:uppercase;letter-spacing:1px;border-top:2px solid #e8e8e8;padding-top:20px;">
         Today's AI Briefing
       </p>
     </td></tr>
 
-    <!-- AI STORIES -->
     ${storyRows}
 
     <!-- FOOTER -->
-    <tr><td style="padding:24px 40px;border-top:1px solid #e8e8e8;text-align:center;">
+    <tr><td class="ef" style="padding:24px 40px;border-top:1px solid #e8e8e8;text-align:center;">
       <p style="margin:0 0 10px;font-size:14px;font-weight:700;color:#1c1c21;">
         The AI Brief &middot; by
         <a href="https://inpharmd.com" target="_blank"
