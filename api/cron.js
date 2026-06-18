@@ -369,7 +369,14 @@ module.exports = async function handler(req, res) {
     });
     const dateSlug = now.toISOString().split('T')[0];
 
-    const cleanTitle = t => t.replace(/🛎️\s*/g, '').replace(/\s+/g, ' ').trim();
+    const GNEWS_SRC = ['Superhuman AI', 'AI Toast', 'The AI Report', 'TechCrunch', 'The Verge', 'Product Hunt'];
+    const cleanTitle = t => {
+      let s = t.replace(/🛎️\s*/g, '').replace(/\s+/g, ' ').trim();
+      for (const src of GNEWS_SRC) {
+        s = s.replace(new RegExp('\\s*[-–—]\\s*' + src.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\s*$'), '').trim();
+      }
+      return s;
+    };
 
     const stories = items.slice(0, 6).map((item, i) => ({
       id: i + 1,
