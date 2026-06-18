@@ -1,11 +1,11 @@
 {
-  "date": "June 17, 2026",
-  "date_slug": "2026-06-17",
+  "date": "June 18, 2026",
+  "date_slug": "2026-06-18",
   "stories": [
     {
       "id": 1,
       "headline": "U.S. Medical Centers Need a New Model for Drug Discovery and Development - Harvard Business Review",
-      "summary": "U.S. Medical Centers Need a New Model for Drug Discovery and Development Harvard Business Review",
+      "summary": "U.S. Medical Centers Need a New Model for Drug Discovery and Development&nbsp;&nbsp;Harvard Business Review",
       "why": "Healthcare AI development covered by Google News.",
       "image": null,
       "sources": [
@@ -18,7 +18,7 @@
     {
       "id": 2,
       "headline": "FDA and EMA release collaborative AI framework for drug development - Clinical Trials Arena",
-      "summary": "FDA and EMA release collaborative AI framework for drug development Clinical Trials Arena",
+      "summary": "FDA and EMA release collaborative AI framework for drug development&nbsp;&nbsp;Clinical Trials Arena",
       "why": "Healthcare AI development covered by Google News.",
       "image": null,
       "sources": [
@@ -30,27 +30,27 @@
     },
     {
       "id": 3,
+      "headline": "AI diagnostic errors raise hospital blame unless doctors stay deeply involved - News-Medical",
+      "summary": "AI diagnostic errors raise hospital blame unless doctors stay deeply involved&nbsp;&nbsp;News-Medical",
+      "why": "Healthcare AI development covered by Google News.",
+      "image": null,
+      "sources": [
+        {
+          "label": "Google News",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOTUl3U3BEaWVoU3hZOWxjclFyOUluSUZsQkVRQjFPcVh5OHRqTEQ2X2ZZV2ozcFB4MEVLMXNzT2pxckZGYnBtbzA2WHRfR2NrNDA2TlpYZnl2WUNNOWJwRl8taEJsMlF6NFRmUnEwbWRNMVljR0hqWWN4MWJybFg2NkJoV2twUEIwTHFCWngzR3VVT0J1MkJjWjE4NUFOUUpFOEtKclpwelNFeGlscU9LYzEyYWtlSTdrNEhNai1tVDdub1E?oc=5"
+        }
+      ]
+    },
+    {
+      "id": 4,
       "headline": "From cure to care: China's first AI hospital shows how artificial intelligence could connect diagnosis, treatment and long-term health management - Global Times",
-      "summary": "From cure to care: China's first AI hospital shows how artificial intelligence could connect diagnosis, treatment and long-term health management Global Times",
+      "summary": "From cure to care: China's first AI hospital shows how artificial intelligence could connect diagnosis, treatment and long-term health management&nbsp;&nbsp;Global Times",
       "why": "Healthcare AI development covered by Google News.",
       "image": null,
       "sources": [
         {
           "label": "Google News",
           "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE50bjE4MzlXU29YWnRRRTdSdWZGbjZGWkt6TTZmYkp0UEtNQkpFUVloR3VOeUdVdFdKMWp3cC1WYWg4cG03SGdKbi15eXZkN0wydEtnYVhSV2hBbG1KTlhYWnV3?oc=5"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "headline": "7 ways AI is transforming healthcare - The World Economic Forum",
-      "summary": "7 ways AI is transforming healthcare The World Economic Forum",
-      "why": "Healthcare AI development covered by Google News.",
-      "image": null,
-      "sources": [
-        {
-          "label": "Google News",
-          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBlZ0NJWmozWnBaTTNmUHFmVFM5OVFCY2Q1bWdqSWpsWVk2OVBKRDdZdHhzc0lMbE5WNHJWcXRXTlhvbFYzSHV6Y3ZScXRZcDQ0WktOYlV2S0tHNEVVRVN1OHI4SWtQUGRMWGRjb0VEVjdBZ19HZUExUzZB?oc=5"
         }
       ]
     }
