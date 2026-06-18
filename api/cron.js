@@ -265,7 +265,12 @@ function parseRSS(xml, sourceName) {
     const decodedDesc = rawDesc
       .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')
       .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ');
-    const desc = decodedDesc.replace(/<[^>]+>/g, '').replace(/🛎️\s*/g, '').replace(/\s+/g, ' ').trim().substring(0, 220);
+    const desc = decodedDesc
+      .replace(/<[^>]+>/g, '')          // strip HTML tags
+      .replace(/\[https?:\/\/[^\]]*\]/g, '')  // strip [https://...] inline URL references
+      .replace(/\[\/[^\]]*\]/g, '')     // strip [/path/...] relative URL references
+      .replace(/🛎️\s*/g, '')
+      .replace(/\s+/g, ' ').trim().substring(0, 220);
     const isSkippable = SKIP_TITLES.some(s => title.toLowerCase().includes(s));
     if (title && link && !isSkippable) items.push({ title, link, desc, image, source: sourceName });
   }
