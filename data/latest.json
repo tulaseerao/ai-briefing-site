@@ -1,20 +1,20 @@
 {
-  "date": "June 18, 2026",
-  "date_slug": "2026-06-18",
-  "issue": 14,
+  "date": "June 19, 2026",
+  "date_slug": "2026-06-19",
+  "issue": 15,
   "stories": [
     {
       "id": 1,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "General Intuition in talks to raise $300M at around $2B valuation",
-      "summary": "The startup trains embodied AI and world models using Medal’s dataset of 2 billion videos per year from 10 million monthly active users.",
+      "headline": "The US says ASML&#8217;s top chip tool may be in China. ASML says it isn&#8217;t",
+      "summary": "There's a commercial logic that cuts against the idea that ASML would risk its export license to arm a Chinese customer.",
       "why": "An important development covered by TechCrunch AI worth tracking today.",
-      "image": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&q=75&fit=crop",
+      "image": null,
       "sources": [
         {
           "label": "TechCrunch AI",
-          "url": "https://techcrunch.com/2026/06/18/general-intuition-in-talks-to-raise-300m-at-around-2b-valuation/"
+          "url": "https://techcrunch.com/2026/06/19/the-us-says-asmls-top-chip-tool-may-be-in-china-asml-says-it-isnt/"
         }
       ]
     },
@@ -22,19 +22,34 @@
       "id": 2,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "A tech worker-backed PAC is bringing a $5M knife to Big Tech’s $100M gunfight",
-      "summary": "Guardrails positions itself as a populist political movement that runs on small donations from people in the trenches of the AI boom.",
+      "headline": "Source: Elastic agrees to buy CRV-backed DeductiveAI for up to $85M",
+      "summary": "DeductiveAI, a startup that uses AI to catch and resolve bugs in software, was founded just three years ago.",
       "why": "An important development covered by TechCrunch AI worth tracking today.",
-      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=700&q=75&fit=crop",
+      "image": null,
       "sources": [
         {
           "label": "TechCrunch AI",
-          "url": "https://techcrunch.com/2026/06/18/a-tech-worker-backed-pac-is-bringing-a-5m-knife-to-big-techs-100m-gunfight/"
+          "url": "https://techcrunch.com/2026/06/18/source-elastic-agrees-to-buy-crv-backed-deductiveai-for-up-to-85m/"
         }
       ]
     },
     {
       "id": 3,
+      "confidence": "HIGH",
+      "vote": "3-0",
+      "headline": "AI Search Just Lost Its Shield",
+      "summary": "Plus: The Universal Decoder for Brains, Americans Use AI and Hate It",
+      "why": "An important development covered by AI Secret worth tracking today.",
+      "image": "https://d18e5vrcqydw4b.cloudfront.net/2026/06/YLIYAXTQG5MHRAMTV7B2ALHP34-1.jpg",
+      "sources": [
+        {
+          "label": "AI Secret",
+          "url": "https://aisecret.us/ai-search-just-lost-its-shield/"
+        }
+      ]
+    },
+    {
+      "id": 4,
       "confidence": "HIGH",
       "vote": "3-0",
       "headline": "A Billion Bodies",
@@ -49,32 +64,17 @@
       ]
     },
     {
-      "id": 4,
-      "confidence": "HIGH",
-      "vote": "3-0",
-      "headline": "Cursor Crowned and Toppled Fast",
-      "summary": "Plus: Seattle Let an AI Triage 911 Illegally, DOJ Shields xAI’s Smokestacks",
-      "why": "An important development covered by AI Secret worth tracking today.",
-      "image": "https://d18e5vrcqydw4b.cloudfront.net/2026/06/spacex-expands-ai-business-with-60-billion-cursor-v0-mgbaovptuo7h1.webp",
-      "sources": [
-        {
-          "label": "AI Secret",
-          "url": "https://aisecret.us/cursor-crowned-and-toppled-fast/"
-        }
-      ]
-    },
-    {
       "id": 5,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "AI Workplace Proficiency Course - Superhuman AI Certification",
-      "summary": "AI Workplace Proficiency Course Superhuman AI Certification",
+      "headline": "Superhuman AI newsletter | #1 AI &amp; Tech Newsletter",
+      "summary": "Superhuman AI newsletter | #1 AI & Tech Newsletter Superhuman AI",
       "why": "An important development covered by Superhuman AI worth tracking today.",
-      "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=700&q=75&fit=crop",
+      "image": null,
       "sources": [
         {
           "label": "Superhuman AI",
-          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1oallhV25pOGNpY2ZaV0pvY2Y1TjNEZGk0M0twM0VnUG9xY1RWMnp0SFIzaE84N25ZVlhmLTZqM05RMlB2Z213MzJhWkJrdw?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiP0FVX3lxTE5Mc251N2pYby15QnU1QTdaZ0ZYZGNVUENSMVhHdEdCMlFTYzFncVBDQW5oUk5JdXFhNWpLWmUwcw?oc=5"
         }
       ]
     },
@@ -82,14 +82,14 @@
       "id": 6,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "OpenAI launches a Partner Program while its legal woes grow",
-      "summary": "OpenAI launches a Partner Program while its legal woes grow Superhuman AI",
+      "headline": "AI Workplace Proficiency Course - Superhuman AI Certification",
+      "summary": "AI Workplace Proficiency Course Superhuman AI Certification",
       "why": "An important development covered by Superhuman AI worth tracking today.",
-      "image": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=700&q=75&fit=crop",
+      "image": null,
       "sources": [
         {
           "label": "Superhuman AI",
-          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNMXA1UF83bzl1N1JLT2VMVXBaaXBaaF9sNEcweVBkYlpqX1p6TzA4bUZrM2NlVnk3UzhhalVmdlBLb3BucGFJdjlIWGRDV0t3alpIcXFLdkMtZ0pIY2EzZXJKaTZDOURoYXRxemhSZEVaenZnUTVDXzQ2ZVVNQnlUN3BZODFPNy0wLUtDaklUbVo?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1oallhV25pOGNpY2ZaV0pvY2Y1TjNEZGk0M0twM0VnUG9xY1RWMnp0SFIzaE84N25ZVlhmLTZqM05RMlB2Z213MzJhWkJrdw?oc=5"
         }
       ]
     }
