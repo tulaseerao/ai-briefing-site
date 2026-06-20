@@ -1,20 +1,20 @@
 {
-  "date": "June 19, 2026",
-  "date_slug": "2026-06-19",
-  "issue": 15,
+  "date": "June 20, 2026",
+  "date_slug": "2026-06-20",
+  "issue": 16,
   "stories": [
     {
       "id": 1,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "The US says ASML&#8217;s top chip tool may be in China. ASML says it isn&#8217;t",
-      "summary": "There's a commercial logic that cuts against the idea that ASML would risk its export license to arm a Chinese customer.",
+      "headline": "From PGP to Mythos: a brief history of export controls that didn&#8217;t stop anyone",
+      "summary": "For the last 30 years, stopping the flow of cybersecurity-related software has proven to be ineffective. It's unclear why it would work now with Anthropic’s cybersecurity model Mythos.",
       "why": "An important development covered by TechCrunch AI worth tracking today.",
       "image": null,
       "sources": [
         {
           "label": "TechCrunch AI",
-          "url": "https://techcrunch.com/2026/06/19/the-us-says-asmls-top-chip-tool-may-be-in-china-asml-says-it-isnt/"
+          "url": "https://techcrunch.com/2026/06/19/encryption-spyware-and-now-mythos-history-shows-why-cyber-export-control-doesnt-work/"
         }
       ]
     },
@@ -22,14 +22,14 @@
       "id": 2,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "Source: Elastic agrees to buy CRV-backed DeductiveAI for up to $85M",
-      "summary": "DeductiveAI, a startup that uses AI to catch and resolve bugs in software, was founded just three years ago.",
+      "headline": "Is the US government&#8217;s Anthropic ban accidentally helping the brand?",
+      "summary": "Just as last week&#160;was ending,&#160;the US government&#160;forced Anthropic to pull its two newest models, Fable 5 and Mythos 5, citing national security concerns after Amazon researchers allegedly found a way to byp",
       "why": "An important development covered by TechCrunch AI worth tracking today.",
       "image": null,
       "sources": [
         {
           "label": "TechCrunch AI",
-          "url": "https://techcrunch.com/2026/06/18/source-elastic-agrees-to-buy-crv-backed-deductiveai-for-up-to-85m/"
+          "url": "https://techcrunch.com/video/is-the-us-governments-anthropic-ban-accidentally-helping-the-brand/"
         }
       ]
     },
@@ -67,21 +67,6 @@
       "id": 5,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "Superhuman AI newsletter | #1 AI &amp; Tech Newsletter",
-      "summary": "Superhuman AI newsletter | #1 AI & Tech Newsletter Superhuman AI",
-      "why": "An important development covered by Superhuman AI worth tracking today.",
-      "image": null,
-      "sources": [
-        {
-          "label": "Superhuman AI",
-          "url": "https://news.google.com/rss/articles/CBMiP0FVX3lxTE5Mc251N2pYby15QnU1QTdaZ0ZYZGNVUENSMVhHdEdCMlFTYzFncVBDQW5oUk5JdXFhNWpLWmUwcw?oc=5"
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "confidence": "HIGH",
-      "vote": "3-0",
       "headline": "AI Workplace Proficiency Course - Superhuman AI Certification",
       "summary": "AI Workplace Proficiency Course Superhuman AI Certification",
       "why": "An important development covered by Superhuman AI worth tracking today.",
@@ -90,6 +75,21 @@
         {
           "label": "Superhuman AI",
           "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1oallhV25pOGNpY2ZaV0pvY2Y1TjNEZGk0M0twM0VnUG9xY1RWMnp0SFIzaE84N25ZVlhmLTZqM05RMlB2Z213MzJhWkJrdw?oc=5"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "confidence": "HIGH",
+      "vote": "3-0",
+      "headline": "Apple set to raise prices due to AI",
+      "summary": "Apple set to raise prices due to AI Superhuman AI",
+      "why": "An important development covered by Superhuman AI worth tracking today.",
+      "image": null,
+      "sources": [
+        {
+          "label": "Superhuman AI",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1hbnhsTGJFWWF5elZGSGd6ZVFHZ2U4dXFrblJWNzh2QjMybWJOMkRqR2NYUFZVaVFzejB3c0lJYWZZSW5CSVRhOXg0UGZfeWVGTHF3c0dQdXkxTTRkblVRV3gzXzRmNEwwbGR6S1ZIaHU?oc=5"
         }
       ]
     }
