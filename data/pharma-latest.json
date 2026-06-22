@@ -4,27 +4,27 @@
   "stories": [
     {
       "id": 1,
-      "headline": "STAT+: Up and down the ladder: The latest comings and goings",
-      "summary": "From new hires to departures, promotions and transfers, here are the latest comings and goings in the pharmaceutical industry.",
+      "headline": "What’s next for GLP-1 weight loss drugs?",
+      "summary": "What’s next for GLP-1 weight loss drugs? Alex Hogan explores on the new episode of STATus Report. Watch now.",
       "why": "Healthcare AI development covered by STAT News.",
-      "image": "https://www.statnews.com/wp-content/uploads/2021/03/Pharmalot_ComingGoing_STILL-1024x576.jpg",
+      "image": "https://www.statnews.com/wp-content/uploads/2026/06/SR_40_HR_still-1024x576.jpg",
       "sources": [
         {
           "label": "STAT News",
-          "url": "https://www.statnews.com/pharmalot/2026/06/19/up-and-down-the-ladder-jobs-bristol-novartis-pfizer-moderna-astrazeneca/?utm_campaign=rss"
+          "url": "https://www.statnews.com/2026/06/18/weight-loss-drug-market-update-status-report-alex-hogan/?utm_campaign=rss"
         }
       ]
     },
     {
       "id": 2,
-      "headline": "STAT+: FDA advisory panel endorses Moderna mRNA flu vaccine that was subject of controversy",
-      "summary": "A panel of advisers to FDA gave its endorsement to a seasonal mRNA flu vaccine that was developed by Moderna and that earlier this year became the subject of controversy.",
+      "headline": "Covid vaccination cut risk of adverse heart events, large study finds",
+      "summary": "Covid vaccination was also tied to a nearly 24% reduction in all-cause cardiac events in a large study, surprising researchers.",
       "why": "Healthcare AI development covered by STAT News.",
-      "image": "https://www.statnews.com/wp-content/uploads/2025/05/AdobeStock_525738206_Editorial_Use_Only-1024x576.jpeg",
+      "image": "https://www.statnews.com/wp-content/uploads/2022/03/GettyImages-1237088557-1024x576.jpg",
       "sources": [
         {
           "label": "STAT News",
-          "url": "https://www.statnews.com/2026/06/18/fda-mrna-flu-vaccine-vrbpac-advisers-endorse-moderna-shots/?utm_campaign=rss"
+          "url": "https://www.statnews.com/2026/06/15/covid-vaccination-cardiovascular-protection-jama-study/?utm_campaign=rss"
         }
       ]
     },
