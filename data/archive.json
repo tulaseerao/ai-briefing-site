@@ -1,5 +1,11 @@
 [
   {
+    "date": "June 22, 2026",
+    "date_slug": "2026-06-22",
+    "issue": 18,
+    "storiesCount": 6
+  },
+  {
     "date": "June 18, 2026",
     "date_slug": "2026-06-18",
     "issue": 14,
