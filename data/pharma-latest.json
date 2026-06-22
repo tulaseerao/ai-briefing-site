@@ -4,53 +4,53 @@
   "stories": [
     {
       "id": 1,
-      "headline": "Opinion: STAT readers debate blue zones, open-access publishing fees, and more",
-      "summary": "Keep those letters coming!",
+      "headline": "STAT+: Up and down the ladder: The latest comings and goings",
+      "summary": "From new hires to departures, promotions and transfers, here are the latest comings and goings in the pharmaceutical industry.",
       "why": "Healthcare AI development covered by STAT News.",
-      "image": "https://www.statnews.com/wp-content/uploads/2023/11/LettersToEditor_v2_Illustration_MollyFerguson_112723-1024x576.jpg",
+      "image": "https://www.statnews.com/wp-content/uploads/2021/03/Pharmalot_ComingGoing_STILL-1024x576.jpg",
       "sources": [
         {
           "label": "STAT News",
-          "url": "https://www.statnews.com/2026/06/20/blue-zones-real-open-access-publishing-fees-letters-to-editor/?utm_campaign=rss"
+          "url": "https://www.statnews.com/pharmalot/2026/06/19/up-and-down-the-ladder-jobs-bristol-novartis-pfizer-moderna-astrazeneca/?utm_campaign=rss"
         }
       ]
     },
     {
       "id": 2,
-      "headline": "Opinion: Why the space in ‘health care’ matters",
-      "summary": "When STAT polled our readers on ‘health care’ vs. ‘healthcare,’ about 60% of our readers voted for one word.",
+      "headline": "STAT+: FDA advisory panel endorses Moderna mRNA flu vaccine that was subject of controversy",
+      "summary": "A panel of advisers to FDA gave its endorsement to a seasonal mRNA flu vaccine that was developed by Moderna and that earlier this year became the subject of controversy.",
       "why": "Healthcare AI development covered by STAT News.",
-      "image": "https://www.statnews.com/wp-content/uploads/2026/06/FOP_06172026_Wordpress_Transcript_Featured_Image-1-1024x576.jpg",
+      "image": "https://www.statnews.com/wp-content/uploads/2025/05/AdobeStock_525738206_Editorial_Use_Only-1024x576.jpeg",
       "sources": [
         {
           "label": "STAT News",
-          "url": "https://www.statnews.com/2026/06/20/healthcare-or-health-care-stat-style-guide-ap/?utm_campaign=rss"
+          "url": "https://www.statnews.com/2026/06/18/fda-mrna-flu-vaccine-vrbpac-advisers-endorse-moderna-shots/?utm_campaign=rss"
         }
       ]
     },
     {
       "id": 3,
-      "headline": "<a href=\"/providers/rural-independent-kansas-hospitals-launch-clinically-integrated-network\" hreflang=\"en\">Rural, independent Kansas hospitals launch clinically integrated network</a>",
-      "summary": "The Kansas High Value Network's seven members together command $545 million in net revenue, and hope to improve quality and efficiency through shared services and value-based contracting.",
-      "why": "Healthcare AI development covered by Fierce Healthcare.",
+      "headline": "Moderna flu vaccine wins unanimous support from FDA panel",
+      "summary": "The endorsement of an advisory committee positions Moderna to complete a dramatic turnaround for a shot the FDA declined to review earlier this year.",
+      "why": "Healthcare AI development covered by BioPharma Dive.",
       "image": null,
       "sources": [
         {
-          "label": "Fierce Healthcare",
-          "url": "https://www.fiercehealthcare.com/providers/rural-independent-kansas-hospitals-launch-clinically-integrated-network"
+          "label": "BioPharma Dive",
+          "url": "https://www.biopharmadive.com/news/moderna-mflusiva-mrna-flu-vaccine-fda-committee-vote/823275/"
         }
       ]
     },
     {
       "id": 4,
-      "headline": "<a href=\"/health-tech/look-epics-long-term-play-build-tech-operations-starting-scheduling\" hreflang=\"en\">A look at Epic's long-term play to build tech for operations, starting with scheduling</a>",
-      "summary": "The company is working to build a natively integrated enterprise resource planning (ERP) suite exclusively for healthcare operations that will collect financial, operational and clinical data in one unified system.",
-      "why": "Healthcare AI development covered by Fierce Healthcare.",
+      "headline": "cAMPfield lands $180M to build gut disease drug",
+      "summary": "The biotech is advancing an anti-inflammatory drug that originated with vTv for inflammatory bowel diseases, leaning on a better side effect profile.",
+      "why": "Healthcare AI development covered by BioPharma Dive.",
       "image": null,
       "sources": [
         {
-          "label": "Fierce Healthcare",
-          "url": "https://www.fiercehealthcare.com/health-tech/look-epics-long-term-play-build-tech-operations-starting-scheduling"
+          "label": "BioPharma Dive",
+          "url": "https://www.biopharmadive.com/news/campfield-series-a-launch-immune-drugs/823259/"
         }
       ]
     }
