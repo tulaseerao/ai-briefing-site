@@ -1,56 +1,56 @@
 {
-  "date": "June 18, 2026",
-  "date_slug": "2026-06-18",
+  "date": "June 22, 2026",
+  "date_slug": "2026-06-22",
   "stories": [
     {
       "id": 1,
-      "headline": "U.S. Medical Centers Need a New Model for Drug Discovery and Development - Harvard Business Review",
-      "summary": "U.S. Medical Centers Need a New Model for Drug Discovery and Development Harvard Business Review",
-      "why": "Healthcare AI development covered by Google News.",
-      "image": null,
+      "headline": "Opinion: STAT readers debate blue zones, open-access publishing fees, and more",
+      "summary": "Keep those letters coming!",
+      "why": "Healthcare AI development covered by STAT News.",
+      "image": "https://www.statnews.com/wp-content/uploads/2023/11/LettersToEditor_v2_Illustration_MollyFerguson_112723-1024x576.jpg",
       "sources": [
         {
-          "label": "Google News",
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNaGJUdllMN2VXUjRBMGtYYjVLZEtQUWNrbTFnbGV0QnpEZ3lGMHJYZTU0U2hOUGFXdVpDSHNodVBUaGh3QTlCZjc4N29Pak5PejQxWEhtTHFLVWkzaXFTSlBlbnhfaDE4RURXTEZlZHF6TnhBQi11eEJaWnh0a3JGbTFjSWpmTXJMSU9nVXNDV2c3R2hhY1NjNDZsdw?oc=5"
+          "label": "STAT News",
+          "url": "https://www.statnews.com/2026/06/20/blue-zones-real-open-access-publishing-fees-letters-to-editor/?utm_campaign=rss"
         }
       ]
     },
     {
       "id": 2,
-      "headline": "FDA and EMA release collaborative AI framework for drug development - Clinical Trials Arena",
-      "summary": "FDA and EMA release collaborative AI framework for drug development Clinical Trials Arena",
-      "why": "Healthcare AI development covered by Google News.",
-      "image": null,
+      "headline": "Opinion: Why the space in ‘health care’ matters",
+      "summary": "When STAT polled our readers on ‘health care’ vs. ‘healthcare,’ about 60% of our readers voted for one word.",
+      "why": "Healthcare AI development covered by STAT News.",
+      "image": "https://www.statnews.com/wp-content/uploads/2026/06/FOP_06172026_Wordpress_Transcript_Featured_Image-1-1024x576.jpg",
       "sources": [
         {
-          "label": "Google News",
-          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOT2lMc2NTWUhlNWJvbzdhM09ta1N0OXltTmo0czkzZWlfQTdLRkNJb2JSczdqelZBZU9DcTRvSWhMdV9LSWZ3YXAwUkg0Mmw0SjQxSV9xUlNaOHItTnlRZlBUdkxGNDNqUHlGczBXM3V5b09MZUdzZEpLSlVMd1FPX1lpeGhSbTY4NkhmZmNB?oc=5"
+          "label": "STAT News",
+          "url": "https://www.statnews.com/2026/06/20/healthcare-or-health-care-stat-style-guide-ap/?utm_campaign=rss"
         }
       ]
     },
     {
       "id": 3,
-      "headline": "AI diagnostic errors raise hospital blame unless doctors stay deeply involved - News-Medical",
-      "summary": "AI diagnostic errors raise hospital blame unless doctors stay deeply involved News-Medical",
-      "why": "Healthcare AI development covered by Google News.",
+      "headline": "<a href=\"/providers/rural-independent-kansas-hospitals-launch-clinically-integrated-network\" hreflang=\"en\">Rural, independent Kansas hospitals launch clinically integrated network</a>",
+      "summary": "The Kansas High Value Network's seven members together command $545 million in net revenue, and hope to improve quality and efficiency through shared services and value-based contracting.",
+      "why": "Healthcare AI development covered by Fierce Healthcare.",
       "image": null,
       "sources": [
         {
-          "label": "Google News",
-          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOTUl3U3BEaWVoU3hZOWxjclFyOUluSUZsQkVRQjFPcVh5OHRqTEQ2X2ZZV2ozcFB4MEVLMXNzT2pxckZGYnBtbzA2WHRfR2NrNDA2TlpYZnl2WUNNOWJwRl8taEJsMlF6NFRmUnEwbWRNMVljR0hqWWN4MWJybFg2NkJoV2twUEIwTHFCWngzR3VVT0J1MkJjWjE4NUFOUUpFOEtKclpwelNFeGlscU9LYzEyYWtlSTdrNEhNai1tVDdub1E?oc=5"
+          "label": "Fierce Healthcare",
+          "url": "https://www.fiercehealthcare.com/providers/rural-independent-kansas-hospitals-launch-clinically-integrated-network"
         }
       ]
     },
     {
       "id": 4,
-      "headline": "From cure to care: China's first AI hospital shows how artificial intelligence could connect diagnosis, treatment and long-term health management - Global Times",
-      "summary": "From cure to care: China's first AI hospital shows how artificial intelligence could connect diagnosis, treatment and long-term health management Global Times",
-      "why": "Healthcare AI development covered by Google News.",
+      "headline": "<a href=\"/health-tech/look-epics-long-term-play-build-tech-operations-starting-scheduling\" hreflang=\"en\">A look at Epic's long-term play to build tech for operations, starting with scheduling</a>",
+      "summary": "The company is working to build a natively integrated enterprise resource planning (ERP) suite exclusively for healthcare operations that will collect financial, operational and clinical data in one unified system.",
+      "why": "Healthcare AI development covered by Fierce Healthcare.",
       "image": null,
       "sources": [
         {
-          "label": "Google News",
-          "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE50bjE4MzlXU29YWnRRRTdSdWZGbjZGWkt6TTZmYkp0UEtNQkpFUVloR3VOeUdVdFdKMWp3cC1WYWg4cG03SGdKbi15eXZkN0wydEtnYVhSV2hBbG1KTlhYWnV3?oc=5"
+          "label": "Fierce Healthcare",
+          "url": "https://www.fiercehealthcare.com/health-tech/look-epics-long-term-play-build-tech-operations-starting-scheduling"
         }
       ]
     }
