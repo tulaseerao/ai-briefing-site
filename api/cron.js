@@ -9,14 +9,14 @@ const RSS_SOURCES = [
 ];
 
 const PHARMA_SOURCES = [
-  { url: 'https://www.statnews.com/feed/', source: 'STAT News' },
-  { url: 'https://www.fiercehealthcare.com/rss/xml', source: 'Fierce Healthcare' },
-  { url: 'https://www.fiercepharma.com/rss/xml', source: 'Fierce Pharma' },
+  { url: 'https://www.statnews.com/category/pharma/feed/', source: 'STAT News' },
   { url: 'https://www.biopharmadive.com/feeds/news/', source: 'BioPharma Dive' },
   { url: 'https://medcitynews.com/feed/', source: 'MedCity News' },
+  { url: 'https://www.fiercepharma.com/rss/xml', source: 'Fierce Pharma' },
+  { url: 'https://www.fiercehealthcare.com/rss/xml', source: 'Fierce Healthcare' },
 ];
 
-const SKIP_TITLES = ['subscribe', 'home', 'refund', 'privacy', 'about', 'contact', 'google news', 'join the world'];
+const SKIP_TITLES = ['subscribe', 'home', 'refund', 'privacy', 'about', 'contact', 'google news', 'join the world', 'opinion'];
 
 // InPharmD brand colours
 const C = {
@@ -270,7 +270,7 @@ function parseRSS(xml, sourceName) {
       const pubDate = new Date(pubDateStr);
       if (!isNaN(pubDate.getTime()) && pubDate.getTime() < cutoff) continue;
     }
-    const title = get('title');
+    const title = get('title').replace(/<[^>]+>/g, '').trim();
     const link = get('link') || get('guid');
     const rawDesc = get('description');
     const image =
