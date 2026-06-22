@@ -1,0 +1,97 @@
+{
+  "date": "June 22, 2026",
+  "date_slug": "2026-06-22",
+  "issue": 18,
+  "stories": [
+    {
+      "id": 1,
+      "confidence": "HIGH",
+      "vote": "3-0",
+      "headline": "When the Trump administration cracks down on Anthropic, who benefits?",
+      "summary": "On the new episode of Equity, we discussed what actually prompted the administration's latest moves against Anthropic, and what this might mean for the AI ecosystem.",
+      "why": "An important development covered by TechCrunch AI worth tracking today.",
+      "image": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&q=75&fit=crop",
+      "sources": [
+        {
+          "label": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/06/21/when-the-trump-administration-cracks-down-on-anthropic-who-benefits/"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "confidence": "HIGH",
+      "vote": "3-0",
+      "headline": "Beyond Siri: Here are the practical AI features coming to your iPhone in iOS 27",
+      "summary": "Siri’s AI overhaul may have grabbed the headlines at WWDC, but some of Apple’s most useful AI features are arriving elsewhere in iOS 27.",
+      "why": "An important development covered by TechCrunch AI worth tracking today.",
+      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=700&q=75&fit=crop",
+      "sources": [
+        {
+          "label": "TechCrunch AI",
+          "url": "https://techcrunch.com/2026/06/21/beyond-siri-here-are-the-practical-ai-features-coming-to-your-iphone-in-ios-27/"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "confidence": "HIGH",
+      "vote": "3-0",
+      "headline": "AI Search Just Lost Its Shield",
+      "summary": "Plus: The Universal Decoder for Brains, Americans Use AI and Hate It",
+      "why": "An important development covered by AI Secret worth tracking today.",
+      "image": "https://d18e5vrcqydw4b.cloudfront.net/2026/06/YLIYAXTQG5MHRAMTV7B2ALHP34-1.jpg",
+      "sources": [
+        {
+          "label": "AI Secret",
+          "url": "https://aisecret.us/ai-search-just-lost-its-shield/"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "confidence": "HIGH",
+      "vote": "3-0",
+      "headline": "A Billion Bodies",
+      "summary": "Plus: AI Took A Seat At The G7, GPUs Are The New Exit",
+      "why": "An important development covered by AI Secret worth tracking today.",
+      "image": "https://d18e5vrcqydw4b.cloudfront.net/2026/06/midjourney_16x9-1.jpg",
+      "sources": [
+        {
+          "label": "AI Secret",
+          "url": "https://aisecret.us/a-billion-bodies/"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "confidence": "HIGH",
+      "vote": "3-0",
+      "headline": "Apple set to raise prices due to AI",
+      "summary": "Apple set to raise prices due to AI Superhuman AI",
+      "why": "An important development covered by Superhuman AI worth tracking today.",
+      "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=700&q=75&fit=crop",
+      "sources": [
+        {
+          "label": "Superhuman AI",
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1hbnhsTGJFWWF5elZGSGd6ZVFHZ2U4dXFrblJWNzh2QjMybWJOMkRqR2NYUFZVaVFzejB3c0lJYWZZSW5CSVRhOXg0UGZfeWVGTHF3c0dQdXkxTTRkblVRV3gzXzRmNEwwbGR6S1ZIaHU?oc=5"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "confidence": "HIGH",
+      "vote": "3-0",
+      "headline": "OpenAI launches a Partner Program while its legal woes grow",
+      "summary": "OpenAI launches a Partner Program while its legal woes grow Superhuman AI",
+      "why": "An important development covered by Superhuman AI worth tracking today.",
+      "image": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=700&q=75&fit=crop",
+      "sources": [
+        {
+          "label": "Superhuman AI",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNMXA1UF83bzl1N1JLT2VMVXBaaXBaaF9sNEcweVBkYlpqX1p6TzA4bUZrM2NlVnk3UzhhalVmdlBLb3BucGFJdjlIWGRDV0t3alpIcXFLdkMtZ0pIY2EzZXJKaTZDOURoYXRxemhSZEVaenZnUTVDXzQ2ZVVNQnlUN3BZODFPNy0wLUtDaklUbVo?oc=5"
+        }
+      ]
+    }
+  ]
+}
