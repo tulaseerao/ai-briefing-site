@@ -9,10 +9,11 @@ const RSS_SOURCES = [
 ];
 
 const PHARMA_SOURCES = [
-  { url: 'https://news.google.com/rss/search?q=AI+FDA+drug+discovery+pharma+clinical+trials&hl=en-US&gl=US&ceid=US:en', source: 'Google News' },
-  { url: 'https://news.google.com/rss/search?q=AI+hospital+healthcare+diagnosis+treatment&hl=en-US&gl=US&ceid=US:en', source: 'Google News' },
-  { url: 'https://www.fiercehealthcare.com/rss/xml', source: 'Fierce Healthcare' },
   { url: 'https://www.statnews.com/feed/', source: 'STAT News' },
+  { url: 'https://www.fiercehealthcare.com/rss/xml', source: 'Fierce Healthcare' },
+  { url: 'https://www.fiercepharma.com/rss/xml', source: 'Fierce Pharma' },
+  { url: 'https://www.biopharmadive.com/feeds/news/', source: 'BioPharma Dive' },
+  { url: 'https://medcitynews.com/feed/', source: 'MedCity News' },
 ];
 
 const SKIP_TITLES = ['subscribe', 'home', 'refund', 'privacy', 'about', 'contact', 'google news', 'join the world'];
@@ -256,6 +257,7 @@ async function sendNewsletter(briefing, pharmaData) {
 function parseRSS(xml, sourceName) {
   const items = [];
   const itemRegex = /<item>([\s\S]*?)<\/item>/g;
+  const cutoff = Date.now() - 14 * 24 * 60 * 60 * 1000; // drop anything older than 14 days
   let match;
   while ((match = itemRegex.exec(xml)) !== null) {
     const block = match[1];
@@ -263,6 +265,11 @@ function parseRSS(xml, sourceName) {
       const m = block.match(new RegExp(`<${tag}[^>]*>(?:<!\\[CDATA\\[)?([\\s\\S]*?)(?:\\]\\]>)?<\\/${tag}>`, 'i'));
       return m ? m[1].trim() : '';
     };
+    const pubDateStr = get('pubDate') || get('published');
+    if (pubDateStr) {
+      const pubDate = new Date(pubDateStr);
+      if (!isNaN(pubDate.getTime()) && pubDate.getTime() < cutoff) continue;
+    }
     const title = get('title');
     const link = get('link') || get('guid');
     const rawDesc = get('description');
