@@ -1,20 +1,20 @@
 {
-  "date": "June 21, 2026",
-  "date_slug": "2026-06-21",
-  "issue": 17,
+  "date": "June 22, 2026",
+  "date_slug": "2026-06-22",
+  "issue": 18,
   "stories": [
     {
       "id": 1,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "Signal’s Meredith Whittaker wants you to remember that AI chatbots ‘are not your friends’",
-      "summary": "\"These are not your friends. These are not conscious beings. These are not sentient interlocutors.”",
+      "headline": "When the Trump administration cracks down on Anthropic, who benefits?",
+      "summary": "On the new episode of Equity, we discussed what actually prompted the administration's latest moves against Anthropic, and what this might mean for the AI ecosystem.",
       "why": "An important development covered by TechCrunch AI worth tracking today.",
-      "image": null,
+      "image": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=700&q=75&fit=crop",
       "sources": [
         {
           "label": "TechCrunch AI",
-          "url": "https://techcrunch.com/2026/06/20/signals-meredith-whittaker-wants-you-to-remember-that-ai-chatbots-are-not-your-friends/"
+          "url": "https://techcrunch.com/2026/06/21/when-the-trump-administration-cracks-down-on-anthropic-who-benefits/"
         }
       ]
     },
@@ -22,14 +22,14 @@
       "id": 2,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "In the Weights is your new AI-centric vanity search",
-      "summary": "So ... what's your In the Weights score?",
+      "headline": "Beyond Siri: Here are the practical AI features coming to your iPhone in iOS 27",
+      "summary": "Siri’s AI overhaul may have grabbed the headlines at WWDC, but some of Apple’s most useful AI features are arriving elsewhere in iOS 27.",
       "why": "An important development covered by TechCrunch AI worth tracking today.",
-      "image": null,
+      "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=700&q=75&fit=crop",
       "sources": [
         {
           "label": "TechCrunch AI",
-          "url": "https://techcrunch.com/2026/06/20/in-the-weights-is-your-new-ai-centric-vanity-search/"
+          "url": "https://techcrunch.com/2026/06/21/beyond-siri-here-are-the-practical-ai-features-coming-to-your-iphone-in-ios-27/"
         }
       ]
     },
@@ -67,14 +67,14 @@
       "id": 5,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "AI Workplace Proficiency Course - Superhuman AI Certification",
-      "summary": "AI Workplace Proficiency Course Superhuman AI Certification",
+      "headline": "Apple set to raise prices due to AI",
+      "summary": "Apple set to raise prices due to AI Superhuman AI",
       "why": "An important development covered by Superhuman AI worth tracking today.",
-      "image": null,
+      "image": "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=700&q=75&fit=crop",
       "sources": [
         {
           "label": "Superhuman AI",
-          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1oallhV25pOGNpY2ZaV0pvY2Y1TjNEZGk0M0twM0VnUG9xY1RWMnp0SFIzaE84N25ZVlhmLTZqM05RMlB2Z213MzJhWkJrdw?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1hbnhsTGJFWWF5elZGSGd6ZVFHZ2U4dXFrblJWNzh2QjMybWJOMkRqR2NYUFZVaVFzejB3c0lJYWZZSW5CSVRhOXg0UGZfeWVGTHF3c0dQdXkxTTRkblVRV3gzXzRmNEwwbGR6S1ZIaHU?oc=5"
         }
       ]
     },
@@ -82,14 +82,14 @@
       "id": 6,
       "confidence": "HIGH",
       "vote": "3-0",
-      "headline": "Apple set to raise prices due to AI",
-      "summary": "Apple set to raise prices due to AI Superhuman AI",
+      "headline": "OpenAI launches a Partner Program while its legal woes grow",
+      "summary": "OpenAI launches a Partner Program while its legal woes grow Superhuman AI",
       "why": "An important development covered by Superhuman AI worth tracking today.",
-      "image": null,
+      "image": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=700&q=75&fit=crop",
       "sources": [
         {
           "label": "Superhuman AI",
-          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1hbnhsTGJFWWF5elZGSGd6ZVFHZ2U4dXFrblJWNzh2QjMybWJOMkRqR2NYUFZVaVFzejB3c0lJYWZZSW5CSVRhOXg0UGZfeWVGTHF3c0dQdXkxTTRkblVRV3gzXzRmNEwwbGR6S1ZIaHU?oc=5"
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNMXA1UF83bzl1N1JLT2VMVXBaaXBaaF9sNEcweVBkYlpqX1p6TzA4bUZrM2NlVnk3UzhhalVmdlBLb3BucGFJdjlIWGRDV0t3alpIcXFLdkMtZ0pIY2EzZXJKaTZDOURoYXRxemhSZEVaenZnUTVDXzQ2ZVVNQnlUN3BZODFPNy0wLUtDaklUbVo?oc=5"
         }
       ]
     }
