@@ -16,7 +16,7 @@ const PHARMA_SOURCES = [
   { url: 'https://www.fiercehealthcare.com/rss/xml', source: 'Fierce Healthcare' },
 ];
 
-const SKIP_TITLES = ['subscribe', 'home', 'refund', 'privacy', 'about', 'contact', 'google news', 'join the world', 'opinion'];
+const SKIP_TITLES = ['subscribe', 'home', 'refund', 'privacy', 'about', 'contact', 'google news', 'join the world', 'opinion', 'stat+:', 'up and down the ladder', 'comings and goings'];
 
 // InPharmD brand colours
 const C = {
