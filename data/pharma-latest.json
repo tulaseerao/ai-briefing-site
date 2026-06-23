@@ -1,6 +1,6 @@
 {
-  "date": "June 22, 2026",
-  "date_slug": "2026-06-22",
+  "date": "June 23, 2026",
+  "date_slug": "2026-06-23",
   "stories": [
     {
       "id": 1,
@@ -17,40 +17,40 @@
     },
     {
       "id": 2,
-      "headline": "Covid vaccination cut risk of adverse heart events, large study finds",
-      "summary": "Covid vaccination was also tied to a nearly 24% reduction in all-cause cardiac events in a large study, surprising researchers.",
-      "why": "Healthcare AI development covered by STAT News.",
-      "image": "https://www.statnews.com/wp-content/uploads/2022/03/GettyImages-1237088557-1024x576.jpg",
+      "headline": "Regenxbio to resubmit gene therapy as FDA backtracks on another drug rejection",
+      "summary": "The agency took another step toward clearing a backlog of Makary-era rejections that appeared to contradict earlier agreements with drugmakers.",
+      "why": "Healthcare AI development covered by BioPharma Dive.",
+      "image": null,
       "sources": [
         {
-          "label": "STAT News",
-          "url": "https://www.statnews.com/2026/06/15/covid-vaccination-cardiovascular-protection-jama-study/?utm_campaign=rss"
+          "label": "BioPharma Dive",
+          "url": "https://www.biopharmadive.com/news/regenxbio-fda-resubmit-hunter-syndrome-gene-therapy/823381/"
         }
       ]
     },
     {
       "id": 3,
-      "headline": "Bionyra brings in $165M for next-generation immune drugs",
-      "summary": "The biotech, co-founded by Sofinnova Partners and a former Sanofi immunology R&amp;D head, is testing new biologics against common immune conditions.",
+      "headline": "Sanofi swaps R&amp;D leaders; Merck’s Prometheus deal pays dividends",
+      "summary": "Houman Ashrafian is leaving Sanofi to pursue a new opportunity. Elsewhere, one of Merck&rsquo;s prized immune drugs succeeded in a pivotal study and a psychedelics biotech&rsquo;s shares surged.",
       "why": "Healthcare AI development covered by BioPharma Dive.",
       "image": null,
       "sources": [
         {
           "label": "BioPharma Dive",
-          "url": "https://www.biopharmadive.com/news/bionyra-immune-drug-startup-sofinnova-jeito/823296/"
+          "url": "https://www.biopharmadive.com/news/sanofi-ashrafian-fontoura-merck-prometheus-definium-nura-bioarctic/823359/"
         }
       ]
     },
     {
       "id": 4,
-      "headline": "From episodes to a lifetime: How AI can enable women’s health brands to build a partnership that lasts",
-      "summary": "Women's health audiences have long memories and finely tuned instincts for what is performative.",
-      "why": "Healthcare AI development covered by BioPharma Dive.",
-      "image": null,
+      "headline": "AbbVie’s $11B Apogee Acquisition Brings an Eczema Drug With an Edge",
+      "summary": "Apogee Therapeutics brings AbbVie a long-acting antibody ready for Phase 3 testing in atopic dermatitis, also called eczema. This therapy’s pipeline in a product potential includes respiratory conditions such as asthma —",
+      "why": "Healthcare AI development covered by MedCity News.",
+      "image": "https://medcitynews.com/wp-content/uploads/sites/7/2023/05/GettyImages-1144878985-600x400.jpg",
       "sources": [
         {
-          "label": "BioPharma Dive",
-          "url": "https://www.biopharmadive.com/spons/from-episodes-to-a-lifetime-how-ai-can-enable-womens-health-brands-to-bui/822817/"
+          "label": "MedCity News",
+          "url": "https://medcitynews.com/2026/06/abbvie-apogee-acquisition-eczema-atopic-dermatitis-inflammation-immunloogy-il-13-abbv-apge/"
         }
       ]
     }
