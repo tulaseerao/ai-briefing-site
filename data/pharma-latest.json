@@ -1,6 +1,6 @@
 {
-  "date": "June 23, 2026",
-  "date_slug": "2026-06-23",
+  "date": "June 24, 2026",
+  "date_slug": "2026-06-24",
   "stories": [
     {
       "id": 1,
@@ -17,40 +17,40 @@
     },
     {
       "id": 2,
-      "headline": "Regenxbio to resubmit gene therapy as FDA backtracks on another drug rejection",
-      "summary": "The agency took another step toward clearing a backlog of Makary-era rejections that appeared to contradict earlier agreements with drugmakers.",
+      "headline": "Ollin refuels with $330M to back pivotal tests of Vabysmo challenger",
+      "summary": "One of the year&rsquo;s largest venture funding rounds comes just after a head-to-head study showed Ollin&rsquo;s drug &mdash; licensed from a China-based developer &mdash; had certain advantages over Roche&rsquo;s eye t",
       "why": "Healthcare AI development covered by BioPharma Dive.",
       "image": null,
       "sources": [
         {
           "label": "BioPharma Dive",
-          "url": "https://www.biopharmadive.com/news/regenxbio-fda-resubmit-hunter-syndrome-gene-therapy/823381/"
+          "url": "https://www.biopharmadive.com/news/ollin-biosciences-financing-china-innovent-vabysmo-amd-dme/823564/"
         }
       ]
     },
     {
       "id": 3,
-      "headline": "Sanofi swaps R&amp;D leaders; Merck’s Prometheus deal pays dividends",
-      "summary": "Houman Ashrafian is leaving Sanofi to pursue a new opportunity. Elsewhere, one of Merck&rsquo;s prized immune drugs succeeded in a pivotal study and a psychedelics biotech&rsquo;s shares surged.",
+      "headline": "Pfizer drug acquired in Seagen deal disappoints in lung cancer study",
+      "summary": "The setback dims the outlook for a medicine Pfizer sees as an important contributor going forward, though some analysts are optimistic about the drug&rsquo;s chances in another trial.",
       "why": "Healthcare AI development covered by BioPharma Dive.",
       "image": null,
       "sources": [
         {
           "label": "BioPharma Dive",
-          "url": "https://www.biopharmadive.com/news/sanofi-ashrafian-fontoura-merck-prometheus-definium-nura-bioarctic/823359/"
+          "url": "https://www.biopharmadive.com/news/pfizer-sigvotatug-vedotin-lung-cancer-results-seagen/823501/"
         }
       ]
     },
     {
       "id": 4,
-      "headline": "AbbVie’s $11B Apogee Acquisition Brings an Eczema Drug With an Edge",
-      "summary": "Apogee Therapeutics brings AbbVie a long-acting antibody ready for Phase 3 testing in atopic dermatitis, also called eczema. This therapy’s pipeline in a product potential includes respiratory conditions such as asthma —",
+      "headline": "Cadence Rakes In $100M to Automate Chronic Care at Scale",
+      "summary": "Cadence raised $100 million in Series C funding to scale its AI-powered chronic care platform, which monitors patients at home and adjusts their medications in real time.The startup, now valued at $1.23 billion, partners",
       "why": "Healthcare AI development covered by MedCity News.",
-      "image": "https://medcitynews.com/wp-content/uploads/sites/7/2023/05/GettyImages-1144878985-600x400.jpg",
+      "image": "https://medcitynews.com/wp-content/uploads/sites/7/2026/06/meds.jpg",
       "sources": [
         {
           "label": "MedCity News",
-          "url": "https://medcitynews.com/2026/06/abbvie-apogee-acquisition-eczema-atopic-dermatitis-inflammation-immunloogy-il-13-abbv-apge/"
+          "url": "https://medcitynews.com/2026/06/cadence-chronic-conditions/"
         }
       ]
     }
